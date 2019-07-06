@@ -13,4 +13,5 @@ tile_data = PoolIntArray( 0, 0, 3, 1, 0, 3, 2, 0, 3, 3, 0, 3, 4, 0, 3, 5, 0, 3, 
 position = Vector2( 1643.95, 828.268 )
 
 [node name="roomba" parent="." instance=ExtResource( 3 )]
-position = Vector2( 299.586, 551.34 )
+position = Vector2( 297.736, 477.315 )
+rotation = -4.61365
