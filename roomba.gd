@@ -17,6 +17,5 @@ func _physics_process(_delta):
 		if collision:
 			target_rotation += adjustment_angle
 	else:
-		print(rotation)
 		rotation += rotation_speed
 		target_rotation -= rotation_speed

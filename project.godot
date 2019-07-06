@@ -17,7 +17,7 @@ _global_script_class_icons={
 
 config/name="robo"
 run/main_scene="res://TileMap.tscn"
-config/icon="res://icon.png"
+config/icon="res://textures/robo.png"
 
 [display]
 

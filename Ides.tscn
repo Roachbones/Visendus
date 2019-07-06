@@ -3,7 +3,7 @@
 [ext_resource path="res://Ides.gd" type="Script" id=1]
 [ext_resource path="res://textures/robo.png" type="Texture" id=2]
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=1]
 radius = 101.133
 
 [node name="Ides" type="KinematicBody2D"]
@@ -15,4 +15,4 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -11.53, -24.18 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )

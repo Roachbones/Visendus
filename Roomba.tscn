@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://roomba.gd" type="Script" id=1]
 [ext_resource path="res://textures/roomba.png" type="Texture" id=2]
+[ext_resource path="res://Seer.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 65.1162
@@ -15,3 +16,5 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[node name="Seer" parent="." instance=ExtResource( 3 )]
