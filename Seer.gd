@@ -10,6 +10,8 @@ var to_target: Vector2 #normalized, direction towards target
 var looking: Vector2 #normalized, direction we're looking
 var peripherality: float #radians
 
+func _process(_delta):
+	$AnimatedSprite.rotation = -global_rotation
 
 func _physics_process(_delta):
 	to_target = target.global_position - global_position
@@ -20,7 +22,7 @@ func _physics_process(_delta):
 		collision = space_state.intersect_ray(global_position, target.global_position, [self])
 		if collision.collider == target:
 			print("TARGET SPOTTED!!!!")
-			$AnimatedSprite.animation = "alert"
-			$AnimatedSprite.play()
+			$AnimatedSprite.play("alert")
+			$AnimatedSprite.set_frame(0)
 		
 		

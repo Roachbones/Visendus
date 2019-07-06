@@ -15,9 +15,9 @@ light_mask = 0
 position = Vector2( 374.426, 626.551 )
 
 [node name="roomba" parent="." instance=ExtResource( 3 )]
-position = Vector2( 440.761, 676.79 )
+position = Vector2( 244.595, 421.405 )
 rotation = -6.28975
-speed = 0
+speed = 1
 rotation_speed = 0.02
 
 [node name="Seer" parent="roomba" index="2"]
