@@ -20,8 +20,9 @@ func _on_collision_mouse_entered(interacted_node):
 
 func _on_collision_mouse_exited(interacted_node):
 	if interacted_node == node_to_scan:
+		if scan_in_progress:
+			emit_signal("logged_bbcode", "Scan failed.\n")
 		cancel_scan()
-		emit_signal("logged_bbcode", "Scan failed.\n")
 		print("emitting")
 
 func cancel_scan():
@@ -41,7 +42,7 @@ func _process(delta):
 			scan_progress += scan_speed * delta
 			emit_signal("scan_progress_changed", scan_progress)
 			if scan_progress >= 1:
-				print("SUCCESSFULLY SCANNED ", node_to_scan)
+				emit_signal("logged_bbcode", "Scan complete.\n")
 				cancel_scan() #make this look better later
 	else:
 		if Input.is_action_pressed("scan_object") and node_to_scan != null:
@@ -49,7 +50,9 @@ func _process(delta):
 		
 
 export(int) var speed = 15000
+export var turn_speed = 20 #just visual
 var velocity = Vector2()
+var turn_direction: int
 
 func get_input():
 	velocity = Vector2()
@@ -62,6 +65,8 @@ func get_input():
 	if Input.is_action_pressed('ui_up'):
 		velocity.y -= 1
 	velocity = velocity.normalized() * speed
+		
+		
 	if Input.is_action_just_pressed("toggle_fullscreen"): #move this later
 		OS.window_fullscreen = !OS.window_fullscreen
 
@@ -69,3 +74,12 @@ func _physics_process(delta):
 	get_input()
 # warning-ignore:return_value_discarded
 	move_and_slide(velocity * delta)
+	if velocity != Vector2.ZERO:
+		#rotation = velocity.angle()
+		if Vector2(cos(rotation), sin(rotation)).angle_to(velocity) <= 0:
+			turn_direction = -1
+		else:
+			turn_direction = 1
+		rotation += turn_direction * delta * turn_speed
+		if (Vector2(cos(rotation), sin(rotation)).angle_to(velocity) <= 0) != (turn_direction <= 0): #hard to read. format better?
+			rotation = velocity.angle()
