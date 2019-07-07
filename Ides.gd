@@ -7,6 +7,7 @@ export var scan_base_speed = 0.05 #per second
 export var scan_proximity_bonus = 200
 var scan_speed = 0
 const proximity_margin = 256
+var scanned_node: Node2D
 
 signal scan_progress_changed(scan_progress)
 signal logged_bbcode(bbcode)
@@ -43,6 +44,7 @@ func _process(delta):
 			emit_signal("scan_progress_changed", scan_progress)
 			if scan_progress >= 1:
 				emit_signal("logged_bbcode", "Scan complete.\n")
+				scanned_node = node_to_scan
 				cancel_scan() #make this look better later
 	else:
 		if Input.is_action_pressed("scan_object") and node_to_scan != null:

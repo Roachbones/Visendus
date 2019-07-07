@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://tileset2.tres" type="TileSet" id=1]
 [ext_resource path="res://Roomba.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Ides.tscn" type="PackedScene" id=3]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=4]
 [ext_resource path="res://PottedPlant.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Doomba.tscn" type="PackedScene" id=6]
 
 [node name="Stage" type="Node2D"]
 
@@ -17,7 +18,6 @@ tile_data = PoolIntArray( 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 
 [node name="roomba" parent="." instance=ExtResource( 2 )]
 position = Vector2( 244.595, 421.405 )
 rotation = -0.00656193
-input_pickable = true
 
 [node name="Ides" parent="." instance=ExtResource( 3 )]
 light_mask = 0
@@ -36,6 +36,9 @@ position = Vector2( 652.074, 451.12 )
 
 [node name="PottedPlant4" parent="." instance=ExtResource( 5 )]
 position = Vector2( 894.038, 451.12 )
+
+[node name="Doomba" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1061.67, 200.646 )
 [connection signal="logged_bbcode" from="Ides" to="HUD" method="_on_Ides_logged_bbcode"]
 [connection signal="scan_progress_changed" from="Ides" to="HUD" method="_on_Ides_scan_progress_changed"]
 
