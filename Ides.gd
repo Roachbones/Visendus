@@ -11,6 +11,7 @@ var scanned_node: Node2D
 
 signal scan_progress_changed(scan_progress)
 signal logged_bbcode(bbcode)
+signal scanned_node_changed(scanned_node)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -40,11 +41,11 @@ func _process(delta):
 			scan_speed = scan_base_speed
 			scan_speed += scan_proximity_bonus * 1/((global_position - node_to_scan.global_position).length() + proximity_margin)
 			scan_progress += scan_speed * delta
-			print(scan_speed)
 			emit_signal("scan_progress_changed", scan_progress)
 			if scan_progress >= 1:
 				emit_signal("logged_bbcode", "Scan complete.\n")
 				scanned_node = node_to_scan
+				emit_signal("scanned_node_changed", scanned_node)
 				cancel_scan() #make this look better later
 	else:
 		if Input.is_action_pressed("scan_object") and node_to_scan != null:

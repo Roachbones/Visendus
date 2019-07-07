@@ -41,5 +41,6 @@ position = Vector2( 894.038, 451.12 )
 position = Vector2( 1061.67, 200.646 )
 [connection signal="logged_bbcode" from="Ides" to="HUD" method="_on_Ides_logged_bbcode"]
 [connection signal="scan_progress_changed" from="Ides" to="HUD" method="_on_Ides_scan_progress_changed"]
+[connection signal="scanned_node_changed" from="Ides" to="HUD" method="_on_Ides_scanned_node_changed"]
 
 [editable path="HUD"]
