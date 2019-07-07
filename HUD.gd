@@ -1,12 +1,18 @@
 extends CanvasLayer
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+export var progress_path: NodePath
+export var system_log_path: NodePath
+
+var progress: TextureProgress
+var system_log: RichTextLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	progress = get_node(progress_path)
+	system_log = get_node(system_log_path)
 
 func _on_Ides_scan_progress_changed(scan_progress):
-	$ColorRect/MarginContainer/VBoxContainer/CenterContainer/TextureProgress.value = scan_progress
+	progress.value = scan_progress
+
+func _on_Ides_logged_bbcode(bbcode):
+	assert system_log.append_bbcode(bbcode) == OK
