@@ -1,14 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://tileset2.tres" type="TileSet" id=1]
 [ext_resource path="res://Roomba.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Ides.tscn" type="PackedScene" id=3]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=4]
+[ext_resource path="res://PottedPlant.tscn" type="PackedScene" id=5]
 
 [node name="Stage" type="Node2D"]
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Level0" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -26,6 +24,18 @@ light_mask = 0
 position = Vector2( 374.426, 626.551 )
 
 [node name="HUD" parent="." instance=ExtResource( 4 )]
+
+[node name="PottedPlant" parent="." instance=ExtResource( 5 )]
+position = Vector2( 897.898, 707.351 )
+
+[node name="PottedPlant2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 650.023, 707.438 )
+
+[node name="PottedPlant3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 652.074, 451.12 )
+
+[node name="PottedPlant4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 894.038, 451.12 )
 [connection signal="logged_bbcode" from="Ides" to="HUD" method="_on_Ides_logged_bbcode"]
 [connection signal="scan_progress_changed" from="Ides" to="HUD" method="_on_Ides_scan_progress_changed"]
 

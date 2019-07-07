@@ -3,8 +3,8 @@ extends KinematicBody2D
 var scan_in_progress = false
 var node_to_scan: Node2D
 var scan_progress = 0 #out of 1
-export var scan_base_speed = 0.1 #per second
-export var scan_proximity_bonus = 100
+export var scan_base_speed = 0.05 #per second
+export var scan_proximity_bonus = 200
 var scan_speed = 0
 const proximity_margin = 256
 
@@ -23,7 +23,6 @@ func _on_collision_mouse_exited(interacted_node):
 		if scan_in_progress:
 			emit_signal("logged_bbcode", "Scan failed.\n")
 		cancel_scan()
-		print("emitting")
 
 func cancel_scan():
 	scan_in_progress = false
@@ -35,11 +34,12 @@ func cancel_scan():
 func _process(delta):
 	if scan_in_progress:
 		if not Input.is_action_pressed("scan_object"):
-			cancel_scan()
+			pass
 		else:
 			scan_speed = scan_base_speed
-			scan_speed += scan_proximity_bonus * 1/((position - node_to_scan.position).length() + proximity_margin)
+			scan_speed += scan_proximity_bonus * 1/((global_position - node_to_scan.global_position).length() + proximity_margin)
 			scan_progress += scan_speed * delta
+			print(scan_speed)
 			emit_signal("scan_progress_changed", scan_progress)
 			if scan_progress >= 1:
 				emit_signal("logged_bbcode", "Scan complete.\n")

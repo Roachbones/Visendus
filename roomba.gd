@@ -9,8 +9,7 @@ var target_rotation = 0
 var collision: KinematicCollision2D
 
 func _ready(): #bear with me here
-	assert connect("mouse_entered", get_parent().get_node("Ides"), "_on_collision_mouse_entered", [self]) == 0
-	assert connect("mouse_exited", get_parent().get_node("Ides"), "_on_collision_mouse_exited", [self]) == 0
+	pass
 
 func _physics_process(delta):
 	rotation = fposmod(rotation, TAU)
