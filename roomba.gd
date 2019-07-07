@@ -8,10 +8,9 @@ export(float) var adjustment_angle = PI * 0.7
 var target_rotation = 0
 var collision: KinematicCollision2D
 
-
-
-func _ready():
-	assert connect("input_event", get_parent(), "handle_collision_input", [self]) == 0
+func _ready(): #bear with me here
+	assert connect("mouse_entered", get_parent(), "_on_collision_mouse_entered", [self]) == 0
+	assert connect("mouse_exited", get_parent(), "_on_collision_mouse_exited", [self]) == 0
 
 func _physics_process(_delta):
 	rotation = fposmod(rotation, TAU)
