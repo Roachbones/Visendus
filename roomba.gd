@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+
 export(int) var speed = 2
 export(float) var rotation_speed = 0.05
 export(float) var adjustment_angle = PI * 0.7
@@ -7,8 +8,10 @@ export(float) var adjustment_angle = PI * 0.7
 var target_rotation = 0
 var collision: KinematicCollision2D
 
+
+
 func _ready():
-	pass # Replace with function body.
+	assert connect("input_event", get_parent(), "handle_collision_input", [self]) == 0
 
 func _physics_process(_delta):
 	rotation = fposmod(rotation, TAU)
@@ -19,3 +22,5 @@ func _physics_process(_delta):
 	else:
 		rotation += rotation_speed
 		target_rotation -= rotation_speed
+
+#func _on_input_event(viewport, event, shape_idx):
