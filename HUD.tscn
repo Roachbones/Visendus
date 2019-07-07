@@ -10,8 +10,9 @@
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 1 )
 progress_path = NodePath("ColorRect/MarginContainer/VBoxContainer/CenterContainer/TextureProgress")
-system_log_path = NodePath("ColorRect/MarginContainer/VBoxContainer/CenterContainer2/RichTextLabel")
+system_log_path = NodePath("ColorRect/MarginContainer/VBoxContainer/CenterContainer2/SystemLog")
 node_preview_path = NodePath("ColorRect/MarginContainer/VBoxContainer/CenterContainer3/NodePreview")
+transmission_log_path = NodePath("ColorRect/MarginContainer/VBoxContainer/CenterContainer4/TransmissionLog")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_left = 1.0
@@ -66,7 +67,7 @@ margin_right = 530.0
 margin_bottom = 468.28
 rect_min_size = Vector2( 0, 22.28 )
 
-[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer"]
+[node name="SystemLogTitle" type="Label" parent="ColorRect/MarginContainer/VBoxContainer"]
 margin_top = 484.0
 margin_right = 530.0
 margin_bottom = 521.0
@@ -82,7 +83,7 @@ margin_bottom = 683.38
 size_flags_horizontal = 3
 size_flags_vertical = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/MarginContainer/VBoxContainer/CenterContainer2"]
+[node name="SystemLog" type="RichTextLabel" parent="ColorRect/MarginContainer/VBoxContainer/CenterContainer2"]
 margin_left = 25.0
 margin_right = 503.09
 margin_bottom = 146.38
@@ -98,3 +99,31 @@ scroll_following = true
 margin_top = 699.0
 margin_right = 530.0
 margin_bottom = 703.0
+
+[node name="TransmissionLogTitle" type="Label" parent="ColorRect/MarginContainer/VBoxContainer"]
+margin_top = 719.0
+margin_right = 530.0
+margin_bottom = 756.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 5 )
+text = "TRANSMISSION LOG"
+align = 1
+
+[node name="CenterContainer4" type="CenterContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
+margin_top = 772.0
+margin_right = 530.0
+margin_bottom = 918.38
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="TransmissionLog" type="RichTextLabel" parent="ColorRect/MarginContainer/VBoxContainer/CenterContainer4"]
+margin_left = 25.0
+margin_right = 503.09
+margin_bottom = 146.38
+rect_min_size = Vector2( 478.09, 146.38 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/normal_font = ExtResource( 6 )
+text = "Incoming transmission from BRUCE.
+"
+scroll_following = true

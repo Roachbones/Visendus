@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://tileset2.tres" type="TileSet" id=1]
 [ext_resource path="res://Roomba.tscn" type="PackedScene" id=2]
@@ -6,6 +6,10 @@
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=4]
 [ext_resource path="res://PottedPlant.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Doomba.tscn" type="PackedScene" id=6]
+[ext_resource path="res://DialogTrigger.tscn" type="PackedScene" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 214.644, 210.863 )
 
 [node name="Stage" type="Node2D"]
 
@@ -24,6 +28,7 @@ light_mask = 0
 position = Vector2( 374.426, 626.551 )
 
 [node name="HUD" parent="." instance=ExtResource( 4 )]
+editor/display_folded = true
 
 [node name="PottedPlant" parent="." instance=ExtResource( 5 )]
 position = Vector2( 897.898, 707.351 )
@@ -39,6 +44,14 @@ position = Vector2( 894.038, 451.12 )
 
 [node name="Doomba" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1061.67, 200.646 )
+
+[node name="DialogTrigger" parent="." instance=ExtResource( 7 )]
+visible = true
+bbcode_dialog = "You found the plant room."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTrigger"]
+position = Vector2( 770.369, 583.383 )
+shape = SubResource( 1 )
 [connection signal="logged_bbcode" from="Ides" to="HUD" method="_on_Ides_logged_bbcode"]
 [connection signal="scan_progress_changed" from="Ides" to="HUD" method="_on_Ides_scan_progress_changed"]
 [connection signal="scanned_node_changed" from="Ides" to="HUD" method="_on_Ides_scanned_node_changed"]
