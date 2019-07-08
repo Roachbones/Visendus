@@ -12,6 +12,5 @@ func _ready():
 
 func _on_DialogTrigger_body_entered(body):
 	if not triggered and body == get_parent().get_node("Ides"):
-		print(colored_bbcode_dialog)
 		get_parent().get_node("HUD").append_transmission(colored_bbcode_dialog)
 		triggered = true

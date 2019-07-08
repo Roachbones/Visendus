@@ -90,6 +90,7 @@ margin_bottom = 146.38
 rect_min_size = Vector2( 478.09, 146.38 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_fonts/bold_font = ExtResource( 5 )
 custom_fonts/normal_font = ExtResource( 6 )
 text = "Prototype 15 online.
 "

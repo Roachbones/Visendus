@@ -2,8 +2,9 @@
 
 [ext_resource path="res://roomba.gd" type="Script" id=1]
 [ext_resource path="res://textures/roomba.png" type="Texture" id=2]
-[ext_resource path="res://Seer.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scannable.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Ability/Seer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Ability/Scannable.tscn" type="PackedScene" id=4]
+
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 65.1162

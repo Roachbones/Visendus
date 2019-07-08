@@ -21,7 +21,7 @@ func _on_Ides_scan_progress_changed(scan_progress):
 	progress.value = scan_progress
 
 func _on_Ides_logged_bbcode(bbcode):
-	assert system_log.append_bbcode(bbcode) == OK
+	assert system_log.append_bbcode(bbcode + "\n") == OK
 
 func _on_Ides_scanned_node_changed(scanned_node: Node2D):
 	node_preview.set_texture(scanned_node.get_node("Sprite").texture) #probably unreliable
