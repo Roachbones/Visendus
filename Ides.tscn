@@ -1,10 +1,20 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Ides.gd" type="Script" id=1]
 [ext_resource path="res://textures/ides.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 18.0
+
+[sub_resource type="Shader" id=2]
+code = "shader_type canvas_item;
+void fragment(){
+  COLOR = texture(TEXTURE, UV); //read from texture
+  COLOR.b += 0.0625; //set blue channel to 1.0
+}"
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 2 )
 
 [node name="Ides" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -20,3 +30,4 @@ shape = SubResource( 1 )
 [node name="Disguise" type="Sprite" parent="."]
 visible = false
 modulate = Color( 0.658824, 0.87451, 1, 1 )
+material = SubResource( 3 )

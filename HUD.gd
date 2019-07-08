@@ -27,5 +27,4 @@ func _on_Ides_scanned_node_changed(scanned_node: Node2D):
 	node_preview.set_texture(scanned_node.get_node("Sprite").texture) #probably unreliable
 
 func append_transmission(bbcode):
-	print(bbcode)
 	assert transmission_log.append_bbcode(bbcode) == OK

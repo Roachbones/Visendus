@@ -51,7 +51,7 @@ position = Vector2( 1061.67, 200.646 )
 
 [node name="DialogTrigger" parent="." instance=ExtResource( 6 )]
 visible = true
-bbcode_dialog = "You found the plant room."
+bbcode_dialog = "Sometimes plants can grow, even in the debug room."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTrigger"]
 position = Vector2( 770.369, 583.383 )

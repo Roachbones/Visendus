@@ -38,7 +38,7 @@ func _physics_process(delta):
 			rotation = velocity.angle()
 	
 	if scan_in_progress:
-		if not Input.is_action_pressed("scan_object"):
+		if not Input.is_action_pressed("scan_object") or disguised:
 			pass
 		else:
 			space_state = get_world_2d().direct_space_state
