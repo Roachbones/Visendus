@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="robo"
-run/main_scene="res://Arena.tscn"
+run/main_scene="res://levels/Tutorial.tscn"
 config/icon="res://textures/ides.png"
 
 [display]

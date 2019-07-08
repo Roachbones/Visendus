@@ -20,11 +20,26 @@ func _ready():
 func _on_Ides_scan_progress_changed(scan_progress):
 	progress.value = scan_progress
 
-func _on_Ides_logged_bbcode(bbcode):
-	assert system_log.append_bbcode(bbcode + "\n") == OK
+func _on_Ides_logged_bbcode(bbcode: String):
+	append_log(bbcode + "\n")
+
+func _on_AnimationPlayer_logged_bbcode(bbcode):
+	append_log(bbcode)
 
 func _on_Ides_scanned_node_changed(scanned_node: Node2D):
 	node_preview.set_texture(scanned_node.get_node("Sprite").texture) #probably unreliable
 
-func append_transmission(bbcode):
+func append_transmission(bbcode: String):
 	assert transmission_log.append_bbcode(bbcode) == OK
+
+func append_log(bbcode: String):
+	assert system_log.append_bbcode(bbcode) == OK
+
+
+
+
+
+
+
+
+

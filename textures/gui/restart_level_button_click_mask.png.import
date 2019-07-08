@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/restart_level_button_click_mask.png-adc994220d59d18fab3e06add65e5726.res"
+
+[deps]
+
+source_file="res://textures/gui/restart_level_button_click_mask.png"
+dest_files=[ "res://.import/restart_level_button_click_mask.png-adc994220d59d18fab3e06add65e5726.res" ]
+
+[params]
+
+create_from=0
+threshold=0.5

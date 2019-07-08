@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://HUD.gd" type="Script" id=1]
 [ext_resource path="res://textures/scanprogress/under.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://fonts/Courier_New_Bold.tres" type="DynamicFont" id=5]
 [ext_resource path="res://other_resources/styleboxflat.tres" type="StyleBox" id=6]
 [ext_resource path="res://fonts/Courier_New.tres" type="DynamicFont" id=7]
+[ext_resource path="res://Button.gd" type="Script" id=8]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.231373, 0.231373, 0.231373, 1 )
@@ -47,7 +48,7 @@ margin_left = -530.0
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer"]
 margin_right = 530.0
 margin_bottom = 1080.0
-custom_constants/separation = 16
+custom_constants/separation = 3
 
 [node name="CenterContainer" type="CenterContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
 margin_right = 530.0
@@ -64,9 +65,9 @@ texture_over = ExtResource( 3 )
 texture_progress = ExtResource( 4 )
 
 [node name="CenterContainer3" type="CenterContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
-margin_top = 80.0
+margin_top = 67.0
 margin_right = 530.0
-margin_bottom = 430.0
+margin_bottom = 417.0
 
 [node name="Panel" type="Panel" parent="ColorRect/MarginContainer/VBoxContainer/CenterContainer3"]
 margin_left = 90.0
@@ -86,33 +87,33 @@ expand = true
 stretch_mode = 6
 
 [node name="HSeparator" type="HSeparator" parent="ColorRect/MarginContainer/VBoxContainer"]
-margin_top = 446.0
+margin_top = 420.0
 margin_right = 530.0
-margin_bottom = 468.28
+margin_bottom = 442.28
 rect_min_size = Vector2( 0, 22.28 )
 custom_styles/separator = SubResource( 2 )
 
 [node name="SystemLogTitle" type="Label" parent="ColorRect/MarginContainer/VBoxContainer"]
-margin_top = 484.0
+margin_top = 445.0
 margin_right = 530.0
-margin_bottom = 512.0
+margin_bottom = 473.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
 text = "SYSTEM LOG"
 align = 1
 
 [node name="CenterContainer2" type="CenterContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
-margin_top = 528.0
+margin_top = 476.0
 margin_right = 530.0
-margin_bottom = 728.0
+margin_bottom = 703.66
 size_flags_horizontal = 3
 size_flags_vertical = 0
 
 [node name="SystemLog" type="RichTextLabel" parent="ColorRect/MarginContainer/VBoxContainer/CenterContainer2"]
-margin_left = 25.0
-margin_right = 503.09
-margin_bottom = 200.0
-rect_min_size = Vector2( 478.09, 200 )
+margin_left = 14.0
+margin_right = 515.2
+margin_bottom = 227.66
+rect_min_size = Vector2( 501.2, 227.66 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/normal = ExtResource( 6 )
@@ -126,38 +127,62 @@ text = "Prototype 15 online.
 scroll_following = true
 
 [node name="HSeparator2" type="HSeparator" parent="ColorRect/MarginContainer/VBoxContainer"]
-margin_top = 744.0
+margin_top = 706.0
 margin_right = 530.0
-margin_bottom = 766.28
+margin_bottom = 728.28
 rect_min_size = Vector2( 0, 22.28 )
 custom_styles/separator = SubResource( 2 )
 
 [node name="TransmissionLogTitle" type="Label" parent="ColorRect/MarginContainer/VBoxContainer"]
-margin_top = 782.0
+margin_top = 731.0
 margin_right = 530.0
-margin_bottom = 810.0
+margin_bottom = 759.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
 text = "TRANSMISSION LOG"
 align = 1
 
 [node name="CenterContainer4" type="CenterContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
-margin_top = 826.0
+margin_top = 762.0
 margin_right = 530.0
-margin_bottom = 972.38
+margin_bottom = 989.66
 size_flags_horizontal = 3
 size_flags_vertical = 0
 
 [node name="TransmissionLog" type="RichTextLabel" parent="ColorRect/MarginContainer/VBoxContainer/CenterContainer4"]
-margin_left = 25.0
-margin_right = 503.09
-margin_bottom = 200.0
-rect_min_size = Vector2( 478.09, 146.38 )
+margin_left = 14.0
+margin_right = 515.2
+margin_bottom = 227.66
+rect_min_size = Vector2( 501.2, 227.66 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/normal = ExtResource( 6 )
 custom_fonts/bold_font = ExtResource( 5 )
 custom_fonts/normal_font = ExtResource( 7 )
+bbcode_enabled = true
+bbcode_text = "Incoming transmission from BRUCE.
+"
 text = "Incoming transmission from BRUCE.
 "
 scroll_following = true
+
+[node name="HSeparator3" type="HSeparator" parent="ColorRect/MarginContainer/VBoxContainer"]
+margin_top = 992.0
+margin_right = 530.0
+margin_bottom = 1014.28
+rect_min_size = Vector2( 0, 22.28 )
+custom_styles/separator = SubResource( 2 )
+
+[node name="CenterContainer5" type="CenterContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
+margin_top = 1017.0
+margin_right = 530.0
+margin_bottom = 1057.0
+
+[node name="Button" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/CenterContainer5"]
+margin_left = 190.0
+margin_right = 340.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 150, 40 )
+text = "restart level"
+script = ExtResource( 8 )
+[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/CenterContainer5/Button" to="ColorRect/MarginContainer/VBoxContainer/CenterContainer5/Button" method="_on_Button_pressed"]

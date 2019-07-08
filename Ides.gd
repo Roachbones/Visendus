@@ -13,9 +13,9 @@ var disguised = false
 var space_state: Physics2DDirectSpaceState
 var collision: Dictionary
 
-signal scan_progress_changed(scan_progress)
-signal logged_bbcode(bbcode)
-signal scanned_node_changed(scanned_node)
+signal scan_progress_changed(scan_progress) #sent to HUD
+signal logged_bbcode(bbcode) #sent to HUD
+signal scanned_node_changed(scanned_node) #sent to HUD and $Disguise
 
 func _ready():
 	pass
@@ -50,9 +50,6 @@ func _physics_process(delta):
 				emit_signal("scan_progress_changed", scan_progress)
 				if scan_progress >= 1:
 					scanned_node = node_to_scan
-					$Disguise.texture = scanned_node.get_node("Sprite").texture #unstable
-					$Disguise.scale = scanned_node.get_node("Sprite").scale
-					$Disguise.rotation = scanned_node.get_node("Sprite").rotation
 					emit_signal("logged_bbcode", "Scanned [b]" + scanned_node.get_node("Scannable").hud_name + "[/b].")
 					emit_signal("scanned_node_changed", scanned_node)
 					cancel_scan() #make this look better later

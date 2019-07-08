@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-enum travel_modes {RIDE_PATH}
+enum travel_modes {STATIONARY, RIDE_PATH}
 
-export(travel_modes) var travel_mode = travel_modes.RIDE_PATH
+export(travel_modes) var travel_mode = travel_modes.STATIONARY
 export(float) var speed = 100
 
 var path_follower: PathFollow2D

@@ -5,9 +5,12 @@
 
 [node name="LevelTemplate" type="Node2D"]
 
-[node name="Ides" parent="." instance=ExtResource( 1 )]
-
 [node name="TileMap" type="TileMap" parent="."]
 format = 1
 
+[node name="Ides" parent="." instance=ExtResource( 1 )]
+
 [node name="HUD" parent="." instance=ExtResource( 2 )]
+[connection signal="logged_bbcode" from="Ides" to="HUD" method="_on_Ides_logged_bbcode"]
+[connection signal="scan_progress_changed" from="Ides" to="HUD" method="_on_Ides_scan_progress_changed"]
+[connection signal="scanned_node_changed" from="Ides" to="HUD" method="_on_Ides_scanned_node_changed"]

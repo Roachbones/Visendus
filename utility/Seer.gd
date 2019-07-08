@@ -1,7 +1,8 @@
 extends Node2D
 
 export var max_peripheral_angle = 0.3
-#export(NodePath) var target_path
+export var can_see = true #if not, we just use it for the alert (currently placeholder_alert())
+
 var target: Node2D
 var space_state: Physics2DDirectSpaceState
 var collision: Dictionary
@@ -14,13 +15,14 @@ signal seen_ides(ides)
 
 func _ready():
 	#target = get_node(target_path)
-	target = get_tree().get_nodes_in_group("ides")[0]
+	if len(get_tree().get_nodes_in_group("ides")) == 1:
+		target = get_tree().get_nodes_in_group("ides")[0]
 
 func _process(_delta):
 	$AnimatedSprite.rotation = -global_rotation
 
 func _physics_process(_delta):
-	if target == null:
+	if target == null or not can_see:
 		return
 	to_target = target.global_position - global_position
 	looking = Vector2(cos(global_rotation), sin(global_rotation))

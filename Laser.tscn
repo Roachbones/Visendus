@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Laser.gd" type="Script" id=1]
+[ext_resource path="res://utility/Seer.tscn" type="PackedScene" id=2]
 
 [node name="Laser" type="Area2D"]
 script = ExtResource( 1 )
@@ -11,7 +12,11 @@ scale = Vector2( 0.699197, 0.640862 )
 points = PoolVector2Array( 4.92193, 5.28846, 42.0609, 43.7478 )
 width = 3.27
 default_color = Color( 0.6, 0.00784314, 0.00784314, 1 )
+texture_mode = 571017481
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -40.5159, -13.9025 )
+
+[node name="Seer" parent="." instance=ExtResource( 2 )]
+can_see = false
 [connection signal="body_entered" from="." to="." method="_on_Laser_body_entered"]

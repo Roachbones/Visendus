@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Ides.gd" type="Script" id=1]
 [ext_resource path="res://textures/ides.png" type="Texture" id=2]
+[ext_resource path="res://Disguise.gd" type="Script" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 18.0
@@ -16,7 +17,9 @@ void fragment(){
 [sub_resource type="ShaderMaterial" id=3]
 shader = SubResource( 2 )
 
-[node name="Ides" type="KinematicBody2D"]
+[node name="Ides" type="KinematicBody2D" groups=[
+"ides",
+]]
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -31,3 +34,5 @@ shape = SubResource( 1 )
 visible = false
 modulate = Color( 0.658824, 0.87451, 1, 1 )
 material = SubResource( 3 )
+script = ExtResource( 3 )
+[connection signal="scanned_node_changed" from="." to="Disguise" method="_on_Ides_scanned_node_changed"]

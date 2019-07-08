@@ -23,4 +23,6 @@ func _ready():
 
 func _on_Laser_body_entered(body):
 	if body.is_in_group("ides") and body.disguised:
-		print("Laser detected disguised Ides!")
+		$Seer.placeholder_alert()
+	if not body.is_in_group("ides"):
+		pass
