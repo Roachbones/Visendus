@@ -5,7 +5,7 @@ extends Area2D
 # var b = "text"
 var expended = false
 
-const bbcode = "[color=orange]Excellent! Let’s make like a you and leaf. Press [b]space[/b] to disguise yourself. Make sure you don’t move until the guard is looking the other way; I am 95% sure we don’t have any mobile plants in this part of the facility.[/color]"
+const bbcode = "[color=#f5a142]Excellent! Let’s make like a you and leaf. Press [b]space[/b] to disguise yourself. Make sure you don’t move until the guard is looking the other way; I am 95% sure we don’t have any mobile plants in this part of the facility.[/color]\n"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,6 +22,7 @@ func _on_ButtonPrompt_body_entered(body):
 		$Sprite.visible = true
 
 func _on_Ides_scanned_node_changed(_scanned_node):
-	$Sprite.visible = false
-	expended = true
-	emit_signal("transmission_triggered", bbcode)
+	if not expended:
+		$Sprite.visible = false
+		emit_signal("transmission_triggered", bbcode)
+		expended = true

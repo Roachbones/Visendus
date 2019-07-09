@@ -10,7 +10,7 @@ _data = {
 "points": PoolVector2Array( 128.34, 7.03235, -128.34, -7.03235, 382.571, 370.941, -56.2588, -52.7426, 56.2588, 52.7426, 357.958, 887.819, -39.3513, 59.9639, 39.3513, -59.9639, 1008.45, 889.577, 41.2252, 28.1081, -41.2252, -28.1081, 997.902, 377.973, 0, 0, 0, 0, 382.571, 370.941 )
 }
 
-[node name="IntroducingDoomba" index="0" instance=ExtResource( 1 )]
+[node name="IntroducingDoomba" instance=ExtResource( 1 )]
 
 [node name="TileMap" parent="." index="0"]
 tile_set = ExtResource( 2 )
