@@ -33,6 +33,12 @@ func _physics_process(_delta):
 		if collision.collider == target:
 			emit_signal("seen_ides", target)
 
+func alert(ides):
+	placeholder_alert()
+	if ides.mortal:
+		ides.emit_signal("logged_bbcode", "[color=red]Mission failed.[/color]")
+		get_tree().paused = true
+
 func placeholder_alert():
 	$AnimatedSprite.play("alert")
 	$AnimatedSprite.set_frame(0)

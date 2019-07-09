@@ -8,7 +8,10 @@ export var scan_proximity_bonus = 200
 const proximity_margin = 256
 var scan_speed = 0
 var scanned_node: Node2D
+
 var disguised = false
+# warning-ignore:unused_class_variable
+export var mortal = false
 
 var space_state: Physics2DDirectSpaceState
 var collision: Dictionary
@@ -21,7 +24,7 @@ signal logged_bbcode(bbcode) #sent to HUD
 signal scanned_node_changed(scanned_node) #sent to HUD and $Disguise
 
 func _ready():
-	pass
+	$ScanAudioPlayer.pitch_scale = scan_pitch_base
 
 func _process(_delta):
 	pass

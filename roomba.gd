@@ -24,7 +24,7 @@ func _physics_process(delta):
 
 func _on_Seer_seen_ides(ides: Node2D):
 	if not ides.disguised:
-		$Seer.placeholder_alert()
+		$Seer.alert(ides)
 	else:
 		match ides.scanned_node.get_node("Scannable").hud_name:
 			"Potted Plant":

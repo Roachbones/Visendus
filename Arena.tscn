@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://tileset2.tres" type="TileSet" id=1]
 [ext_resource path="res://Ides.tscn" type="PackedScene" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://furniture/tables.tscn" type="PackedScene" id=9]
 [ext_resource path="res://level_components/LoadingZone.tscn" type="PackedScene" id=10]
 [ext_resource path="res://levels/Tutorial.tscn" type="PackedScene" id=11]
+[ext_resource path="res://level_components/Door.tscn" type="PackedScene" id=12]
+[ext_resource path="res://level_components/Switch.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 214.644, 210.863 )
@@ -36,7 +38,7 @@ tile_data = PoolIntArray( 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 
 
 [node name="Ides" parent="." instance=ExtResource( 2 )]
 light_mask = 0
-position = Vector2( 374.426, 626.551 )
+position = Vector2( 1194.95, 892.898 )
 
 [node name="HUD" parent="." instance=ExtResource( 3 )]
 editor/display_folded = true
@@ -57,7 +59,6 @@ position = Vector2( 894.038, 451.12 )
 position = Vector2( 1061.67, 200.646 )
 
 [node name="DialogTrigger" parent="." instance=ExtResource( 6 )]
-visible = true
 bbcode_dialog = "Sometimes plants can grow, even in the debug room."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTrigger"]
@@ -93,15 +94,26 @@ next_scene = ExtResource( 11 )
 shape = SubResource( 3 )
 
 [node name="DialogTrigger2" parent="." instance=ExtResource( 6 )]
-visible = true
 bbcode_dialog = "This will take you to the tutorial."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTrigger2"]
 position = Vector2( 1185, 302.186 )
 shape = SubResource( 4 )
+
+[node name="PottedPlant5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 170.519, 925.984 )
+
+[node name="Door" parent="." instance=ExtResource( 12 )]
+position = Vector2( 1156.57, 826.817 )
+open_direction = -1
+
+[node name="Switch" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1298.8, 872.071 )
 [connection signal="logged_bbcode" from="Ides" to="HUD" method="_on_Ides_logged_bbcode"]
 [connection signal="scan_progress_changed" from="Ides" to="HUD" method="_on_Ides_scan_progress_changed"]
 [connection signal="scanned_node_changed" from="Ides" to="HUD" method="_on_Ides_scanned_node_changed"]
+[connection signal="switched_off" from="Switch" to="Door" method="close"]
+[connection signal="switched_on" from="Switch" to="Door" method="open"]
 
 [editable path="HUD"]
 

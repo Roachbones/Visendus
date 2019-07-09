@@ -23,6 +23,7 @@ shader = SubResource( 2 )
 "ides",
 ]]
 script = ExtResource( 1 )
+mortal = true
 
 [node name="Sprite" type="Sprite" parent="."]
 rotation = 1.5708

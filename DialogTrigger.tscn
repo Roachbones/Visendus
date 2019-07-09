@@ -3,6 +3,5 @@
 [ext_resource path="res://DialogTrigger.gd" type="Script" id=1]
 
 [node name="DialogTrigger" type="Area2D"]
-visible = false
 script = ExtResource( 1 )
 [connection signal="body_entered" from="." to="." method="_on_DialogTrigger_body_entered"]

@@ -1,13 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://HUD.gd" type="Script" id=1]
-[ext_resource path="res://textures/scanprogress/under.png" type="Texture" id=2]
-[ext_resource path="res://textures/scanprogress/over.png" type="Texture" id=3]
-[ext_resource path="res://textures/scanprogress/progress.png" type="Texture" id=4]
-[ext_resource path="res://fonts/Courier_New_Bold.tres" type="DynamicFont" id=5]
-[ext_resource path="res://other_resources/styleboxflat.tres" type="StyleBox" id=6]
-[ext_resource path="res://fonts/Courier_New.tres" type="DynamicFont" id=7]
-[ext_resource path="res://Button.gd" type="Script" id=8]
+[ext_resource path="res://TextureProgress_old.tscn" type="PackedScene" id=2]
+[ext_resource path="res://fonts/Courier_New_Bold.tres" type="DynamicFont" id=3]
+[ext_resource path="res://other_resources/styleboxflat.tres" type="StyleBox" id=4]
+[ext_resource path="res://fonts/Courier_New.tres" type="DynamicFont" id=5]
+[ext_resource path="res://RestartLevelButton.gd" type="Script" id=6]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.231373, 0.231373, 0.231373, 1 )
@@ -54,15 +52,7 @@ custom_constants/separation = 3
 margin_right = 530.0
 margin_bottom = 64.0
 
-[node name="TextureProgress" type="TextureProgress" parent="ColorRect/MarginContainer/VBoxContainer/CenterContainer"]
-margin_left = 137.0
-margin_right = 393.0
-margin_bottom = 64.0
-max_value = 1.0
-step = 0.0
-texture_under = ExtResource( 2 )
-texture_over = ExtResource( 3 )
-texture_progress = ExtResource( 4 )
+[node name="TextureProgress" parent="ColorRect/MarginContainer/VBoxContainer/CenterContainer" instance=ExtResource( 2 )]
 
 [node name="CenterContainer3" type="CenterContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
 margin_top = 67.0
@@ -99,7 +89,7 @@ margin_top = 420.0
 margin_right = 530.0
 margin_bottom = 448.0
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 3 )
 text = "SYSTEM LOG"
 align = 1
 
@@ -117,9 +107,9 @@ margin_bottom = 172.08
 rect_min_size = Vector2( 501.2, 172.08 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/normal = ExtResource( 6 )
-custom_fonts/bold_font = ExtResource( 5 )
-custom_fonts/normal_font = ExtResource( 7 )
+custom_styles/normal = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 3 )
+custom_fonts/normal_font = ExtResource( 5 )
 bbcode_enabled = true
 bbcode_text = "Prototype 15 online.
 "
@@ -139,7 +129,7 @@ margin_top = 651.0
 margin_right = 530.0
 margin_bottom = 679.0
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 3 )
 text = "TRANSMISSION LOG"
 align = 1
 
@@ -157,9 +147,9 @@ margin_bottom = 315.99
 rect_min_size = Vector2( 501.2, 315.99 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/normal = ExtResource( 6 )
-custom_fonts/bold_font = ExtResource( 5 )
-custom_fonts/normal_font = ExtResource( 7 )
+custom_styles/normal = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 3 )
+custom_fonts/normal_font = ExtResource( 5 )
 bbcode_enabled = true
 bbcode_text = "Incoming transmission from BRUCE.
 "
@@ -179,11 +169,12 @@ margin_top = 1025.0
 margin_right = 530.0
 margin_bottom = 1065.0
 
-[node name="Button" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/CenterContainer5"]
+[node name="RestartLevelButton" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/CenterContainer5"]
+pause_mode = 2
 margin_left = 190.0
 margin_right = 340.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 150, 40 )
 text = "restart level"
-script = ExtResource( 8 )
-[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/CenterContainer5/Button" to="ColorRect/MarginContainer/VBoxContainer/CenterContainer5/Button" method="_on_Button_pressed"]
+script = ExtResource( 6 )
+[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/CenterContainer5/RestartLevelButton" to="ColorRect/MarginContainer/VBoxContainer/CenterContainer5/RestartLevelButton" method="_on_Button_pressed"]

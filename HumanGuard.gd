@@ -29,15 +29,15 @@ func _process(delta):
 
 func _on_Seer_seen_ides(ides: Node2D):
 	if not ides.disguised:
-		$Seer.placeholder_alert()
+		$Seer.alert(ides)
 	else:
 		match ides.scanned_node.get_node("Scannable").hud_name:
 			"Potted Plant":
 				if ides.velocity != Vector2.ZERO:
-					$Seer.placeholder_alert()
+					$Seer.alert(ides)
 			"Doomba":
 				pass
 			"Human Guard":
 				if ides.scanned_node == self:
 					print("You're... ME!? AAAAAAAA")
-					$Seer.placeholder_alert()
+					$Seer.alert(ides)
