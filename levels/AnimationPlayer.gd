@@ -15,7 +15,7 @@ var bootlines = [
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$ColorRect.visible = true
+	#$ColorRect.visible = true
 	play("Tutorial Intro")
 
 func update_log():

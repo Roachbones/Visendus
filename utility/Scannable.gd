@@ -1,7 +1,9 @@
 extends Node2D
 
+#both of these are referenced by other scripts
 # warning-ignore:unused_class_variable
 export(String) var hud_name
+# warning-ignore:unused_class_variable
 export var spinnable = true
 
 func _ready():
