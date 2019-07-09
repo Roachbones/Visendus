@@ -19,3 +19,4 @@ shape = SubResource( 1 )
 
 [node name="Scannable" parent="." instance=ExtResource( 2 )]
 hud_name = "Potted Plant"
+spinnable = false

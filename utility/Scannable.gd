@@ -2,6 +2,7 @@ extends Node2D
 
 # warning-ignore:unused_class_variable
 export(String) var hud_name
+export var spinnable = true
 
 func _ready():
 	if not len(get_tree().get_nodes_in_group("ides")) == 1: #if we're not with an Ides
