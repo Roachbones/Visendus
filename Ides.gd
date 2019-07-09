@@ -13,6 +13,9 @@ var disguised = false
 var space_state: Physics2DDirectSpaceState
 var collision: Dictionary
 
+const scan_pitch_base = 0.5
+const scan_pitch_range = 0.6
+
 signal scan_progress_changed(scan_progress) #sent to HUD
 signal logged_bbcode(bbcode) #sent to HUD
 signal scanned_node_changed(scanned_node) #sent to HUD and $Disguise
@@ -48,7 +51,7 @@ func _physics_process(delta):
 				scan_speed += scan_proximity_bonus * 1/((global_position - node_to_scan.global_position).length() + proximity_margin)
 				scan_progress += scan_speed * delta
 				emit_signal("scan_progress_changed", scan_progress)
-				$AudioStreamPlayer.pitch_scale = 1 + scan_progress
+				$AudioStreamPlayer.pitch_scale = scan_pitch_base + scan_pitch_range * scan_progress
 				if scan_progress >= 1:
 					scanned_node = node_to_scan
 					emit_signal("logged_bbcode", "Scanned [b]" + scanned_node.get_node("Scannable").hud_name + "[/b].")
@@ -74,6 +77,7 @@ func cancel_scan():
 	scan_progress = 0
 	emit_signal("scan_progress_changed", scan_progress)
 	$AudioStreamPlayer.stop()
+	$AudioStreamPlayer.pitch_scale = scan_pitch_base
 
 export(int) var speed = 15000
 export var turn_speed = 20 #just visual

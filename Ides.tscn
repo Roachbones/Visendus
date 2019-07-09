@@ -39,4 +39,5 @@ script = ExtResource( 3 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+volume_db = -2.0
 [connection signal="scanned_node_changed" from="." to="Disguise" method="_on_Ides_scanned_node_changed"]
