@@ -48,6 +48,7 @@ func _physics_process(delta):
 				scan_speed += scan_proximity_bonus * 1/((global_position - node_to_scan.global_position).length() + proximity_margin)
 				scan_progress += scan_speed * delta
 				emit_signal("scan_progress_changed", scan_progress)
+				$AudioStreamPlayer.pitch_scale = 1 + scan_progress
 				if scan_progress >= 1:
 					scanned_node = node_to_scan
 					emit_signal("logged_bbcode", "Scanned [b]" + scanned_node.get_node("Scannable").hud_name + "[/b].")
@@ -56,6 +57,7 @@ func _physics_process(delta):
 	else:
 		if Input.is_action_pressed("scan_object") and node_to_scan != null:
 			scan_in_progress = true #begin scan
+			$AudioStreamPlayer.play()
 
 func _on_collision_mouse_entered(interacted_node):
 	node_to_scan = interacted_node
@@ -71,6 +73,7 @@ func cancel_scan():
 	node_to_scan = null
 	scan_progress = 0
 	emit_signal("scan_progress_changed", scan_progress)
+	$AudioStreamPlayer.stop()
 
 export(int) var speed = 15000
 export var turn_speed = 20 #just visual

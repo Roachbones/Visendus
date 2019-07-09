@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Ides.gd" type="Script" id=1]
 [ext_resource path="res://textures/ides.png" type="Texture" id=2]
 [ext_resource path="res://Disguise.gd" type="Script" id=3]
+[ext_resource path="res://sound/whistle.ogg" type="AudioStream" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 18.0
@@ -35,4 +36,7 @@ visible = false
 modulate = Color( 0.658824, 0.87451, 1, 1 )
 material = SubResource( 3 )
 script = ExtResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
 [connection signal="scanned_node_changed" from="." to="Disguise" method="_on_Ides_scanned_node_changed"]
