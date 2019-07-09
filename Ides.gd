@@ -3,7 +3,7 @@ extends KinematicBody2D
 var scan_in_progress = false
 var node_to_scan: Node2D
 var scan_progress = 0 #out of 1
-export var scan_base_speed = 0.05 #per second
+export var scan_base_speed = 0.03 #per second
 export var scan_proximity_bonus = 200
 const proximity_margin = 256
 var scan_speed = 0
