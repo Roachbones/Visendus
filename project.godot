@@ -19,6 +19,10 @@ config/name="robo"
 run/main_scene="res://Arena.tscn"
 config/icon="res://textures/ides.png"
 
+[autoload]
+
+MusicHandler="*res://MusicHandler.tscn"
+
 [display]
 
 window/size/width=1920

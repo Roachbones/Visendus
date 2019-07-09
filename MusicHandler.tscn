@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://sound/music.ogg" type="AudioStream" id=1]
+
+[node name="MusicHandler" type="Node2D"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -1.0
+
+[node name="MusicPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -4.0
