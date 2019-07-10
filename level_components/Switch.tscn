@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Switch.gd" type="Script" id=1]
+[ext_resource path="res://level_components/Switch.gd" type="Script" id=1]
 [ext_resource path="res://textures/switch_1.png" type="Texture" id=2]
 [ext_resource path="res://textures/switch_2.png" type="Texture" id=3]
 [ext_resource path="res://utility/Scannable.tscn" type="PackedScene" id=4]

@@ -1,0 +1,180 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://ui/HUD.gd" type="Script" id=1]
+[ext_resource path="res://TextureProgress_old.tscn" type="PackedScene" id=2]
+[ext_resource path="res://fonts/Courier_New_Bold.tres" type="DynamicFont" id=3]
+[ext_resource path="res://other_resources/styleboxflat.tres" type="StyleBox" id=4]
+[ext_resource path="res://fonts/Courier_New.tres" type="DynamicFont" id=5]
+[ext_resource path="res://ui/RestartLevelButton.gd" type="Script" id=6]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.231373, 0.231373, 0.231373, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.227451, 0.290196, 0.423529, 1 )
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxLine" id=2]
+color = Color( 0.227451, 0.290196, 0.423529, 1 )
+thickness = 0
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 1 )
+progress_path = NodePath("ColorRect/MarginContainer/VBoxContainer/CenterContainer/TextureProgress")
+system_log_path = NodePath("ColorRect/MarginContainer/VBoxContainer/CenterContainer2/SystemLog")
+node_preview_path = NodePath("ColorRect/MarginContainer/VBoxContainer/CenterContainer3/NodePreview")
+transmission_log_path = NodePath("ColorRect/MarginContainer/VBoxContainer/CenterContainer4/TransmissionLog")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -530.0
+color = Color( 0.4, 0.4, 0.4, 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -530.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer"]
+margin_right = 530.0
+margin_bottom = 1080.0
+custom_constants/separation = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
+margin_right = 530.0
+margin_bottom = 64.0
+
+[node name="TextureProgress" parent="ColorRect/MarginContainer/VBoxContainer/CenterContainer" instance=ExtResource( 2 )]
+
+[node name="CenterContainer3" type="CenterContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
+margin_top = 67.0
+margin_right = 530.0
+margin_bottom = 392.0
+
+[node name="Panel" type="Panel" parent="ColorRect/MarginContainer/VBoxContainer/CenterContainer3"]
+margin_left = 105.0
+margin_top = 2.0
+margin_right = 425.0
+margin_bottom = 322.0
+rect_min_size = Vector2( 320, 320 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="NodePreview" type="TextureRect" parent="ColorRect/MarginContainer/VBoxContainer/CenterContainer3"]
+margin_left = 102.0
+margin_right = 427.0
+margin_bottom = 325.0
+rect_min_size = Vector2( 325, 325 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+expand = true
+stretch_mode = 6
+
+[node name="HSeparator" type="HSeparator" parent="ColorRect/MarginContainer/VBoxContainer"]
+margin_top = 395.0
+margin_right = 530.0
+margin_bottom = 417.28
+rect_min_size = Vector2( 0, 22.28 )
+custom_styles/separator = SubResource( 2 )
+
+[node name="SystemLogTitle" type="Label" parent="ColorRect/MarginContainer/VBoxContainer"]
+margin_top = 420.0
+margin_right = 530.0
+margin_bottom = 448.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "SYSTEM LOG"
+align = 1
+
+[node name="CenterContainer2" type="CenterContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
+margin_top = 451.0
+margin_right = 530.0
+margin_bottom = 623.08
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="SystemLog" type="RichTextLabel" parent="ColorRect/MarginContainer/VBoxContainer/CenterContainer2"]
+margin_left = 14.0
+margin_right = 515.2
+margin_bottom = 172.08
+rect_min_size = Vector2( 501.2, 172.08 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/normal = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 3 )
+custom_fonts/normal_font = ExtResource( 5 )
+bbcode_enabled = true
+bbcode_text = "Prototype 15 online.
+"
+text = "Prototype 15 online.
+"
+scroll_following = true
+
+[node name="HSeparator2" type="HSeparator" parent="ColorRect/MarginContainer/VBoxContainer"]
+margin_top = 626.0
+margin_right = 530.0
+margin_bottom = 648.28
+rect_min_size = Vector2( 0, 22.28 )
+custom_styles/separator = SubResource( 2 )
+
+[node name="TransmissionLogTitle" type="Label" parent="ColorRect/MarginContainer/VBoxContainer"]
+margin_top = 651.0
+margin_right = 530.0
+margin_bottom = 679.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "TRANSMISSION LOG"
+align = 1
+
+[node name="CenterContainer4" type="CenterContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
+margin_top = 682.0
+margin_right = 530.0
+margin_bottom = 997.99
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="TransmissionLog" type="RichTextLabel" parent="ColorRect/MarginContainer/VBoxContainer/CenterContainer4"]
+margin_left = 14.0
+margin_right = 515.2
+margin_bottom = 315.99
+rect_min_size = Vector2( 501.2, 315.99 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/normal = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 3 )
+custom_fonts/normal_font = ExtResource( 5 )
+bbcode_enabled = true
+bbcode_text = "Incoming transmission from BRUCE.
+"
+text = "Incoming transmission from BRUCE.
+"
+scroll_following = true
+
+[node name="HSeparator3" type="HSeparator" parent="ColorRect/MarginContainer/VBoxContainer"]
+margin_top = 1000.0
+margin_right = 530.0
+margin_bottom = 1022.28
+rect_min_size = Vector2( 0, 22.28 )
+custom_styles/separator = SubResource( 2 )
+
+[node name="CenterContainer5" type="CenterContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
+margin_top = 1025.0
+margin_right = 530.0
+margin_bottom = 1065.0
+
+[node name="RestartLevelButton" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/CenterContainer5"]
+pause_mode = 2
+margin_left = 190.0
+margin_right = 340.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 150, 40 )
+text = "restart level"
+script = ExtResource( 6 )
+[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/CenterContainer5/RestartLevelButton" to="ColorRect/MarginContainer/VBoxContainer/CenterContainer5/RestartLevelButton" method="_on_Button_pressed"]

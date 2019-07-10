@@ -36,6 +36,7 @@ func _physics_process(_delta):
 func alert(ides):
 	placeholder_alert()
 	if ides.mortal:
+		$AudioStreamPlayer.play()
 		ides.emit_signal("logged_bbcode", "[color=red]Mission failed.[/color]")
 		get_tree().paused = true
 
