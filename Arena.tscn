@@ -109,6 +109,7 @@ open_direction = -1
 
 [node name="Switch" parent="." instance=ExtResource( 13 )]
 position = Vector2( 1298.8, 872.071 )
+rotation = 1.56136
 [connection signal="logged_bbcode" from="Ides" to="HUD" method="_on_Ides_logged_bbcode"]
 [connection signal="scan_progress_changed" from="Ides" to="HUD" method="_on_Ides_scan_progress_changed"]
 [connection signal="scanned_node_changed" from="Ides" to="HUD" method="_on_Ides_scanned_node_changed"]

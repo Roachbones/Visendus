@@ -21,7 +21,7 @@ corner_radius_bottom_left = 32
 
 [sub_resource type="StyleBoxLine" id=2]
 color = Color( 0.227451, 0.290196, 0.423529, 1 )
-thickness = 4
+thickness = 0
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 1 )

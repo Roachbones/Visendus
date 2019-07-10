@@ -41,3 +41,9 @@ func _on_Seer_seen_ides(ides: Node2D):
 				if ides.scanned_node == self:
 					print("You're... ME!? AAAAAAAA")
 					$Seer.alert(ides)
+			"Switch":
+				$Seer.alert(ides)
+
+func _on_LoseAura_body_entered(body):
+	if body.is_in_group("ides"):
+		$Seer.alert(body)

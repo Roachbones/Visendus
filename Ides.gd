@@ -92,8 +92,6 @@ var turn_direction: int
 export var immobile = false
 
 func get_input():
-	if Input.is_action_just_pressed("toggle_fullscreen"): #move this later
-		OS.window_fullscreen = !OS.window_fullscreen
 	if not immobile:
 		velocity = Vector2()
 		if Input.is_action_pressed('ui_right'):

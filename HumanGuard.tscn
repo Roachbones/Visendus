@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://HumanGuard.gd" type="Script" id=1]
 [ext_resource path="res://textures/humanguard.png" type="Texture" id=2]
@@ -7,6 +7,9 @@
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 29.5
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 36.0508
 
 [node name="HumanGuard" type="KinematicBody2D"]
 input_pickable = true
@@ -25,4 +28,10 @@ shape = SubResource( 1 )
 
 [node name="Scannable" parent="." instance=ExtResource( 4 )]
 hud_name = "Human Guard"
+
+[node name="LoseAura" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LoseAura"]
+shape = SubResource( 2 )
 [connection signal="seen_ides" from="Seer" to="." method="_on_Seer_seen_ides"]
+[connection signal="body_entered" from="LoseAura" to="." method="_on_LoseAura_body_entered"]

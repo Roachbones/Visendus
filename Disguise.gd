@@ -9,9 +9,14 @@ var should_keep_rotation: bool
 var base_rotation
 
 func _on_Ides_scanned_node_changed(scanned_node):
-	texture = scanned_node.get_node("Sprite").texture #unstable
-	scale = scanned_node.get_node("Sprite").scale
-	base_rotation = scanned_node.get_node("Sprite").rotation
+	if scanned_node.has_node("Sprite"):
+		texture = scanned_node.get_node("Sprite").texture
+		scale = scanned_node.get_node("Sprite").scale
+		base_rotation = scanned_node.get_node("Sprite").rotation
+	elif scanned_node.has_node("AnimatedSprite"):
+		texture = scanned_node.get_node("AnimatedSprite").frames.get_frame(scanned_node.get_node("AnimatedSprite").animation, 0)
+		scale = scanned_node.get_node("AnimatedSprite").scale
+		base_rotation = scanned_node.get_node("AnimatedSprite").rotation
 	rotation = base_rotation
 	should_keep_rotation = not scanned_node.get_node("Scannable").spinnable
 

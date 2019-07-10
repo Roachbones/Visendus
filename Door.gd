@@ -10,10 +10,8 @@ export var opened = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	base_rotation = rotation
-	print(base_rotation)
 
 func open():
-	print(rotation)
 	if not opened:
 		if $Tween.is_active():
 			$Tween.stop_all()
@@ -29,7 +27,6 @@ func open():
 		$Tween.start()
 		opened = true
 func close():
-	print(rotation)
 	if opened:
 		if $Tween.is_active():
 			$Tween.stop_all()

@@ -33,3 +33,5 @@ func _on_Seer_seen_ides(ides: Node2D):
 				pass
 			"Human Guard":
 				pass
+			"Switch":
+				pass
