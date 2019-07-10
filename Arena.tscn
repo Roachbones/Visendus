@@ -1,18 +1,19 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://tileset2.tres" type="TileSet" id=1]
 [ext_resource path="res://Ides.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ui/HUD.tscn" type="PackedScene" id=3]
 [ext_resource path="res://furniture/PottedPlant.tscn" type="PackedScene" id=4]
 [ext_resource path="res://level_components/Doomba.tscn" type="PackedScene" id=5]
-[ext_resource path="res://level_components/DialogTrigger.tscn" type="PackedScene" id=6]
-[ext_resource path="res://level_components/HumanGuard.tscn" type="PackedScene" id=7]
-[ext_resource path="res://level_components/Laser.tscn" type="PackedScene" id=8]
-[ext_resource path="res://furniture/tables.tscn" type="PackedScene" id=9]
-[ext_resource path="res://level_components/LoadingZone.tscn" type="PackedScene" id=10]
-[ext_resource path="res://levels/Tutorial.tscn" type="PackedScene" id=11]
-[ext_resource path="res://level_components/Door.tscn" type="PackedScene" id=12]
-[ext_resource path="res://level_components/Switch.tscn" type="PackedScene" id=13]
+[ext_resource path="res://level_components/LaserCaster.tscn" type="PackedScene" id=6]
+[ext_resource path="res://level_components/DialogTrigger.tscn" type="PackedScene" id=7]
+[ext_resource path="res://level_components/HumanGuard.tscn" type="PackedScene" id=8]
+[ext_resource path="res://level_components/Laser.tscn" type="PackedScene" id=9]
+[ext_resource path="res://furniture/tables.tscn" type="PackedScene" id=10]
+[ext_resource path="res://level_components/LoadingZone.tscn" type="PackedScene" id=11]
+[ext_resource path="res://levels/Tutorial.tscn" type="PackedScene" id=12]
+[ext_resource path="res://level_components/Door.tscn" type="PackedScene" id=13]
+[ext_resource path="res://level_components/Switch.tscn" type="PackedScene" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 214.644, 210.863 )
@@ -58,7 +59,10 @@ position = Vector2( 894.038, 451.12 )
 [node name="Doomba" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1061.67, 200.646 )
 
-[node name="DialogTrigger" parent="." instance=ExtResource( 6 )]
+[node name="LaserCaster" parent="Doomba" instance=ExtResource( 6 )]
+position = Vector2( 0, -32.9904 )
+
+[node name="DialogTrigger" parent="." instance=ExtResource( 7 )]
 bbcode_dialog = "Sometimes plants can grow, even in the debug room."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTrigger"]
@@ -73,27 +77,27 @@ curve = SubResource( 2 )
 position = Vector2( 296.458, 173.73 )
 rotation = 2.96974
 
-[node name="HumanGuard" parent="Path2D/PathFollow2D" instance=ExtResource( 7 )]
+[node name="HumanGuard" parent="Path2D/PathFollow2D" instance=ExtResource( 8 )]
 position = Vector2( 1.12558, 0.213409 )
 travel_mode = 1
 
-[node name="Laser" parent="." instance=ExtResource( 8 )]
+[node name="Laser" parent="." instance=ExtResource( 9 )]
 position = Vector2( 346.39, 899.932 )
 
 [node name="Line2D" parent="Laser" index="0"]
 points = PoolVector2Array( 45.8595, 15.9672, 68.3005, 118.436 )
 
-[node name="StaticBody2D" parent="." instance=ExtResource( 9 )]
+[node name="StaticBody2D" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1221.36, 696.587 )
 
-[node name="LoadingZone" parent="." instance=ExtResource( 10 )]
+[node name="LoadingZone" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1183.32, 478.223 )
-next_scene = ExtResource( 11 )
+next_scene = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LoadingZone"]
 shape = SubResource( 3 )
 
-[node name="DialogTrigger2" parent="." instance=ExtResource( 6 )]
+[node name="DialogTrigger2" parent="." instance=ExtResource( 7 )]
 bbcode_dialog = "This will take you to the tutorial."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTrigger2"]
@@ -103,13 +107,16 @@ shape = SubResource( 4 )
 [node name="PottedPlant5" parent="." instance=ExtResource( 4 )]
 position = Vector2( 170.519, 925.984 )
 
-[node name="Door" parent="." instance=ExtResource( 12 )]
+[node name="Door" parent="." instance=ExtResource( 13 )]
 position = Vector2( 1156.57, 826.817 )
 open_direction = -1
 
-[node name="Switch" parent="." instance=ExtResource( 13 )]
+[node name="Switch" parent="." instance=ExtResource( 14 )]
 position = Vector2( 1298.8, 872.071 )
 rotation = 1.56136
+
+[node name="LaserCaster" parent="." instance=ExtResource( 6 )]
+position = Vector2( 419.216, 105.222 )
 [connection signal="logged_bbcode" from="Ides" to="HUD" method="_on_Ides_logged_bbcode"]
 [connection signal="scan_progress_changed" from="Ides" to="HUD" method="_on_Ides_scan_progress_changed"]
 [connection signal="scanned_node_changed" from="Ides" to="HUD" method="_on_Ides_scanned_node_changed"]

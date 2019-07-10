@@ -10,7 +10,7 @@ script = ExtResource( 1 )
 position = Vector2( -16.8824, -15.1664 )
 scale = Vector2( 0.699197, 0.640862 )
 points = PoolVector2Array( 4.92193, 5.28846, 42.0609, 43.7478 )
-width = 3.27
+width = 3.0
 default_color = Color( 0.6, 0.00784314, 0.00784314, 1 )
 texture_mode = 571017481
 

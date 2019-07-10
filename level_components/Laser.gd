@@ -8,10 +8,6 @@ func _ready():
 	segment.b = $Line2D.points[1]
 	$CollisionShape2D.shape = segment
 
-func _physics_process(delta):
-	
-
-
 func _on_Laser_body_entered(body):
 	if body.is_in_group("ides") and body.disguised:
 		$Seer.placeholder_alert()
