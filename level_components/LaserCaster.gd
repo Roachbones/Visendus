@@ -19,7 +19,7 @@ func _ready():
 func _process(_delta):
 	if $RayCast2D.is_colliding(): #it should, otherwise it is shooting off the level
 		collider = $RayCast2D.get_collider()
-		if collider.is_in_group("ides") and not collider.disguised:
+		if collider.is_in_group("ides") and not collider.disguised: #then just raycast again
 			$RayCast2D.add_exception(collider)
 			$RayCast2D.force_raycast_update()
 			$RayCast2D.remove_exception(collider)

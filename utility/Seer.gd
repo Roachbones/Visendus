@@ -38,7 +38,9 @@ func alert(ides):
 	if ides.mortal:
 		$AudioStreamPlayer.play()
 		ides.emit_signal("logged_bbcode", "[color=red]Mission failed.[/color]")
-		get_tree().paused = true
+		#get_tree().set_pause(true)
+		get_tree().call_deferred("set_pause", true) #this is probably better, right?
+		
 
 func placeholder_alert():
 	$AnimatedSprite.play("alert")

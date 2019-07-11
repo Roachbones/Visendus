@@ -13,6 +13,8 @@ height = 31.5601
 [node name="Sentinel" type="StaticBody2D"]
 input_pickable = true
 script = ExtResource( 1 )
+upper_pupil_speed = 2.0
+lower_pupil_speed = 1.0
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.21, 0.21 )
@@ -28,6 +30,29 @@ shape = SubResource( 1 )
 hud_name = "Sentinel"
 spinnable = false
 
+[node name="LowerPupil" type="Node2D" parent="."]
+position = Vector2( -1.6347, 33.3932 )
+
+[node name="LaserCaster" parent="LowerPupil" instance=ExtResource( 4 )]
+position = Vector2( 34.748, 0 )
+z_index = 1
+
+[node name="Line2D" parent="LowerPupil/LaserCaster" index="0"]
+width = 8.0
+default_color = Color( 0.905882, 0.105882, 0.105882, 1 )
+
+[node name="Line2D" type="Line2D" parent="LowerPupil"]
+position = Vector2( 12.428, 0 )
+points = PoolVector2Array( 0, 0, 32, 0 )
+width = 8.0
+default_color = Color( 0.905882, 0.105882, 0.105882, 1 )
+texture_mode = -1039925248
+
+[node name="Sprite" type="Sprite" parent="LowerPupil"]
+position = Vector2( 12.0072, -0.939789 )
+scale = Vector2( 0.21, 0.21 )
+texture = ExtResource( 5 )
+
 [node name="UpperPupil" type="Node2D" parent="."]
 position = Vector2( 0.640198, -45.163 )
 
@@ -36,26 +61,13 @@ position = Vector2( 9.7265, 0 )
 
 [node name="Line2D" parent="UpperPupil/LaserCaster" index="0"]
 width = 8.0
+default_color = Color( 0.905882, 0.105882, 0.105882, 1 )
 
 [node name="Sprite" type="Sprite" parent="UpperPupil"]
 position = Vector2( 8.68482, -0.597168 )
 scale = Vector2( 0.21, 0.21 )
 texture = ExtResource( 5 )
 
-[node name="LowerPupil" type="Node2D" parent="."]
-position = Vector2( -1.6347, 33.3932 )
-
-[node name="LaserCaster" parent="LowerPupil" instance=ExtResource( 4 )]
-position = Vector2( 12.4283, 0 )
-
-[node name="Line2D" parent="LowerPupil/LaserCaster" index="0"]
-width = 8.0
-
-[node name="Sprite" type="Sprite" parent="LowerPupil"]
-position = Vector2( 12.0072, -0.939789 )
-scale = Vector2( 0.21, 0.21 )
-texture = ExtResource( 5 )
+[editable path="LowerPupil/LaserCaster"]
 
 [editable path="UpperPupil/LaserCaster"]
-
-[editable path="LowerPupil/LaserCaster"]
