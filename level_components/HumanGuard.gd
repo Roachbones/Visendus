@@ -46,6 +46,11 @@ func _on_Seer_seen_ides(ides: Node2D):
 				$Seer.alert(ides)
 			"Sentinel":
 				$Seer.alert(ides)
+			"Steel Box":
+				if ides.velocity != Vector2.ZERO:
+					$Seer.alert(ides)
+			"Shelves":
+				$Seer.alert(ides)
 
 func _on_LoseAura_body_entered(body):
 	if body.is_in_group("ides"):

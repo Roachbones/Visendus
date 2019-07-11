@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://tileset2.tres" type="TileSet" id=1]
 [ext_resource path="res://Ides.tscn" type="PackedScene" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://level_components/HumanGuardKitty.tscn" type="PackedScene" id=15]
 [ext_resource path="res://level_components/Sentinel.tscn" type="PackedScene" id=16]
 [ext_resource path="res://level_components/SteelBox.tscn" type="PackedScene" id=17]
+[ext_resource path="res://level_components/Shelves.tscn" type="PackedScene" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 214.644, 210.863 )
@@ -44,6 +45,7 @@ tile_data = PoolIntArray( 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 
 [node name="Ides" parent="." instance=ExtResource( 2 )]
 light_mask = 0
 position = Vector2( 1093.2, 867.914 )
+mortal = false
 
 [node name="HUD" parent="." instance=ExtResource( 3 )]
 editor/display_folded = true
@@ -134,6 +136,9 @@ position = Vector2( 767.005, 565.253 )
 [node name="SteelBox" parent="." instance=ExtResource( 17 )]
 position = Vector2( 895.729, 882.058 )
 scale = Vector2( 0.2, 0.2 )
+
+[node name="Shelves" parent="." instance=ExtResource( 18 )]
+position = Vector2( 659.591, 139.232 )
 [connection signal="logged_bbcode" from="Ides" to="HUD" method="_on_Ides_logged_bbcode"]
 [connection signal="scan_progress_changed" from="Ides" to="HUD" method="_on_Ides_scan_progress_changed"]
 [connection signal="scanned_node_changed" from="Ides" to="HUD" method="_on_Ides_scanned_node_changed"]

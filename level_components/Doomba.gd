@@ -39,3 +39,7 @@ func _on_Seer_seen_ides(ides: Node2D):
 				pass
 			"Sentinel":
 				$Seer.alert(ides)
+			"Steel Box":
+				pass
+			"Shelves":
+				$Seer.alert(ides)
