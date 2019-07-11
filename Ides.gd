@@ -51,8 +51,8 @@ func _physics_process(delta):
 			pass
 		else:
 			space_state = get_world_2d().direct_space_state
-			collision = space_state.intersect_ray(global_position, node_to_scan.global_position, [self])
-			if collision.collider == node_to_scan:
+			collision = space_state.intersect_ray(global_position, node_to_scan.global_position, [self], 1)
+			if "collider" in collision and collision.collider == node_to_scan:
 				scan_speed = scan_base_speed
 				scan_speed += scan_proximity_bonus * 1/((global_position - node_to_scan.global_position).length() + proximity_margin)
 				scan_progress += scan_speed * delta

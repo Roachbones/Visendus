@@ -35,5 +35,3 @@ func _on_Laser_body_entered(body):
 		$Seer.placeholder_alert()
 	if not body.is_in_group("ides"):
 		pass
-
-

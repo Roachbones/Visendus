@@ -1,31 +1,66 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Pedestal.gd" type="Script" id=1]
+[ext_resource path="res://level_components/Pedestal.gd" type="Script" id=1]
 [ext_resource path="res://textures/pedestal.png" type="Texture" id=2]
-[ext_resource path="res://textures/BRUCE_orb.png" type="Texture" id=3]
+[ext_resource path="res://Sparks.tscn" type="PackedScene" id=3]
+[ext_resource path="res://textures/BRUCE_orb.png" type="Texture" id=4]
+[ext_resource path="res://textures/light.png" type="Texture" id=5]
+[ext_resource path="res://utility/Scannable.tscn" type="PackedScene" id=6]
+
+[sub_resource type="CanvasItemMaterial" id=2]
+light_mode = 1
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 250.0
 
 [node name="Pedestal" type="StaticBody2D"]
+scale = Vector2( 0.2, 0.2 )
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 position = Vector2( 26.0284, -112.247 )
 scale = Vector2( 61.8413, 87.3817 )
 polygon = PoolVector2Array( -0.0273107, -9.02005, 6.49648, -6.26475, 7.0752, 5.91069, -0.606035, 9.59683, -7.81377, 5.76175, -7.86638, -5.07327 )
 
-[node name="BruceOrb" type="Area2D" parent="."]
-position = Vector2( 15.5717, -315.03 )
+[node name="Sparks" parent="." instance=ExtResource( 3 )]
+light_mask = 2
+material = SubResource( 2 )
+position = Vector2( 18.1536, -294.8 )
+scale = Vector2( 6, 6 )
+z_index = 1
+emitting = false
+one_shot = true
+
+[node name="BruceOrb" type="StaticBody2D" parent="."]
+position = Vector2( 17.1474, -312.942 )
+input_pickable = true
 
 [node name="Sprite" type="Sprite" parent="BruceOrb"]
 scale = Vector2( 0.338418, 0.338418 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BruceOrb"]
 position = Vector2( 6.612, -11.011 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
+
+[node name="Light2D" type="Light2D" parent="BruceOrb"]
+position = Vector2( 13.6225, -20.4337 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 5 )
+texture_scale = 25.0
+color = Color( 1, 0.678431, 0, 1 )
+energy = 0.5
+range_z_min = 0
+range_z_max = 0
+shadow_enabled = true
+
+[node name="Scannable" parent="BruceOrb" instance=ExtResource( 6 )]
+scale = Vector2( 1, 1 )
+hud_name = "BRUCE"
+spinnable = false
 [connection signal="input_event" from="BruceOrb" to="." method="_on_BruceOrb_input_event"]
