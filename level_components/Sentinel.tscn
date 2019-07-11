@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://level_components/Sentinel.gd" type="Script" id=1]
+[ext_resource path="res://textures/sentinel_body.png" type="Texture" id=2]
+[ext_resource path="res://utility/Scannable.tscn" type="PackedScene" id=3]
+[ext_resource path="res://level_components/LaserCaster.tscn" type="PackedScene" id=4]
+[ext_resource path="res://textures/sentinel_pupil.png" type="Texture" id=5]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 57.6912
+height = 31.5601
+
+[node name="Sentinel" type="StaticBody2D"]
+input_pickable = true
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.21, 0.21 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1.08075, 27.5584 )
+rotation = 1.57251
+scale = Vector2( 1, 1 )
+shape = SubResource( 1 )
+
+[node name="Scannable" parent="." instance=ExtResource( 3 )]
+hud_name = "Sentinel"
+spinnable = false
+
+[node name="UpperPupil" type="Node2D" parent="."]
+position = Vector2( 0.640198, -45.163 )
+
+[node name="LaserCaster" parent="UpperPupil" instance=ExtResource( 4 )]
+position = Vector2( 9.7265, 0 )
+
+[node name="Line2D" parent="UpperPupil/LaserCaster" index="0"]
+width = 8.0
+
+[node name="Sprite" type="Sprite" parent="UpperPupil"]
+position = Vector2( 8.68482, -0.597168 )
+scale = Vector2( 0.21, 0.21 )
+texture = ExtResource( 5 )
+
+[node name="LowerPupil" type="Node2D" parent="."]
+position = Vector2( -1.6347, 33.3932 )
+
+[node name="LaserCaster" parent="LowerPupil" instance=ExtResource( 4 )]
+position = Vector2( 12.4283, 0 )
+
+[node name="Line2D" parent="LowerPupil/LaserCaster" index="0"]
+width = 8.0
+
+[node name="Sprite" type="Sprite" parent="LowerPupil"]
+position = Vector2( 12.0072, -0.939789 )
+scale = Vector2( 0.21, 0.21 )
+texture = ExtResource( 5 )
+
+[editable path="UpperPupil/LaserCaster"]
+
+[editable path="LowerPupil/LaserCaster"]

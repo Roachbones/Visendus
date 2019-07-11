@@ -17,6 +17,8 @@ func _physics_process(delta):
 		if collision:
 			target_rotation += adjustment_angle
 	else:
+# warning-ignore:return_value_discarded
+		move_and_slide(Vector2.ZERO)
 		rotation += rotation_speed * delta
 		target_rotation -= rotation_speed * delta
 
@@ -35,3 +37,5 @@ func _on_Seer_seen_ides(ides: Node2D):
 				pass
 			"Switch":
 				pass
+			"Sentinel":
+				$Seer.alert(ides)

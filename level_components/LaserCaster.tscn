@@ -14,11 +14,14 @@ points = PoolVector2Array( 0, 0, 64, 0 )
 width = 3.0
 default_color = Color( 1, 0, 0, 1 )
 texture_mode = -1039925248
+begin_cap_mode = 2
+end_cap_mode = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="Seer" parent="." instance=ExtResource( 2 )]
+can_see = false
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 enabled = true
