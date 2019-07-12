@@ -40,5 +40,6 @@ func append_transmission(bbcode: String):
 
 func append_log(bbcode: String):
 	assert system_log.append_bbcode(bbcode) == OK
+	print(bbcode)
 
 
