@@ -1,7 +1,7 @@
 extends StaticBody2D
 
-export var upper_pupil_speed = 0.2
-export var lower_pupil_speed = 0.1
+export var upper_pupil_speed = 0.22
+export var lower_pupil_speed = 0.09
 
 onready var pupils = [$UpperPupil, $LowerPupil]
 

@@ -7,6 +7,7 @@
 extents = Vector2( 249.448, 249.759 )
 
 [node name="SteelBox" type="StaticBody2D"]
+scale = Vector2( 0.2, 0.2 )
 input_pickable = true
 
 [node name="Sprite" type="Sprite" parent="."]

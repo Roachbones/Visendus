@@ -13,8 +13,6 @@ height = 31.5601
 [node name="Sentinel" type="StaticBody2D"]
 input_pickable = true
 script = ExtResource( 1 )
-upper_pupil_speed = 2.0
-lower_pupil_speed = 1.0
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.21, 0.21 )
@@ -23,7 +21,6 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1.08075, 27.5584 )
 rotation = 1.57251
-scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
 [node name="Scannable" parent="." instance=ExtResource( 3 )]
