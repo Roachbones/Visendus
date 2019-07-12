@@ -165,6 +165,15 @@ position = Vector2( 659.591, 139.232 )
 position = Vector2( 902.055, 1007.74 )
 rotation = -1.36149
 fix_emission_point = true
+
+[node name="LaserCaster2" parent="." instance=ExtResource( 18 )]
+position = Vector2( 128, 128 )
+fix_emission_point = true
+
+[node name="LaserCaster3" parent="." instance=ExtResource( 18 )]
+position = Vector2( 851.662, 944.712 )
+rotation = 1.62551
+fix_emission_point = true
 [connection signal="logged_bbcode" from="Ides" to="HUD" method="_on_Ides_logged_bbcode"]
 [connection signal="scan_progress_changed" from="Ides" to="HUD" method="_on_Ides_scan_progress_changed"]
 [connection signal="scanned_node_changed" from="Ides" to="HUD" method="_on_Ides_scanned_node_changed"]

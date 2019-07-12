@@ -3,7 +3,10 @@ extends Area2D
 const MAX_LENGTH = 2300
 var segment = SegmentShape2D.new()
 var collider: Node2D
-export var fix_emission_point = false #purely visual. backs up $Line2D to whatever is behind us.
+
+export var fix_emission_point = false #does a raycast backwards to move the whole thing back to whatever's behind it
+const EMISSION_POINT_FIX_MARGIN = 0.001 #we want the emission point just a LITTLE bit in front of the thing behind it
+
 export var move_above_siblings = false
 
 func _ready():
@@ -11,8 +14,8 @@ func _ready():
 		$RayCast2D.cast_to = Vector2(-MAX_LENGTH, 0)
 		$RayCast2D.force_raycast_update()
 		#position += to_local($RayCast2D.get_collision_point()) + Vector2(0, 0)
-		position = $RayCast2D.get_collision_point()
-		print(position)
+		position = $RayCast2D.get_collision_point() + Vector2(EMISSION_POINT_FIX_MARGIN,0).rotated(rotation)
+		print(name, " ", global_position)
 	if move_above_siblings:
 		get_parent().call_deferred("move_child", self, 0)
 	$RayCast2D.cast_to = Vector2(MAX_LENGTH, 0)

@@ -37,7 +37,7 @@ rotation_speed = 1.5
 adjustment_angle = 8.5
 
 [node name="LaserCaster" parent="Doomba" index="4" instance=ExtResource( 3 )]
-position = Vector2( 7.70398, -1.12115 )
+position = Vector2( 27.043, -71.4447 )
 rotation = -1.32192
 move_above_siblings = true
 
@@ -74,7 +74,7 @@ travel_mode = 1
 speed = 500.0
 
 [node name="Door" parent="." index="10" instance=ExtResource( 10 )]
-position = Vector2( 1221.48, 372.413 )
+position = Vector2( 1230.27, 344.283 )
 rotation = 0.672919
 
 [node name="Switch" parent="." index="11" instance=ExtResource( 11 )]
