@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 enum d {CLOCKWISE = 1, COUNTERCLOCKWISE = -1}
-export(d) var open_direction
+export(d) var open_direction = d.CLOCKWISE
 var base_rotation
 const ANGLE = PI/2
 const opening_time = 1 #seconds
@@ -12,6 +12,7 @@ func _ready():
 	base_rotation = rotation
 
 func open():
+	print("opening")
 	if not opened:
 		if $Tween.is_active():
 			$Tween.stop_all()
@@ -27,6 +28,7 @@ func open():
 		$Tween.start()
 		opened = true
 func close():
+	print("closing")
 	if opened:
 		if $Tween.is_active():
 			$Tween.stop_all()

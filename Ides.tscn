@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Ides.gd" type="Script" id=1]
 [ext_resource path="res://textures/ides.png" type="Texture" id=2]
 [ext_resource path="res://Disguise.gd" type="Script" id=3]
 [ext_resource path="res://sound/whistle.ogg" type="AudioStream" id=4]
 [ext_resource path="res://sound/ides_walk_3.ogg" type="AudioStream" id=5]
+[ext_resource path="res://textures/light.png" type="Texture" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 18.0
@@ -48,4 +49,11 @@ volume_db = -2.0
 stream = ExtResource( 5 )
 volume_db = -8.0
 autoplay = true
+
+[node name="Light2D" type="Light2D" parent="."]
+visible = false
+texture = ExtResource( 6 )
+color = Color( 0.537255, 0.807843, 0.929412, 1 )
+energy = 0.5
+shadow_enabled = true
 [connection signal="scanned_node_changed" from="." to="Disguise" method="_on_Ides_scanned_node_changed"]

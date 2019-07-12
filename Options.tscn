@@ -4,3 +4,4 @@
 
 [node name="Options" type="Node"]
 script = ExtResource( 1 )
+seer_rays_enabled = false

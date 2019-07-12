@@ -9,7 +9,6 @@ var triggered = false
 func _ready():
 	pass # Replace with function body.
 
-
 func _on_DialogTrigger_body_entered(body):
 	if not triggered and body == get_parent().get_node("Ides"):
 		get_parent().get_node("HUD").append_transmission(colored_bbcode_dialog)

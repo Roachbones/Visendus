@@ -50,6 +50,33 @@ mortal = false
 [node name="HUD" parent="." instance=ExtResource( 3 )]
 editor/display_folded = true
 
+[node name="SystemLogTitle" parent="HUD/ColorRect/MarginContainer/VBoxContainer" index="3"]
+margin_bottom = 439.0
+
+[node name="CenterContainer2" parent="HUD/ColorRect/MarginContainer/VBoxContainer" index="4"]
+margin_top = 442.0
+margin_bottom = 614.08
+
+[node name="HSeparator2" parent="HUD/ColorRect/MarginContainer/VBoxContainer" index="5"]
+margin_top = 617.0
+margin_bottom = 639.28
+
+[node name="TransmissionLogTitle" parent="HUD/ColorRect/MarginContainer/VBoxContainer" index="6"]
+margin_top = 642.0
+margin_bottom = 661.0
+
+[node name="CenterContainer4" parent="HUD/ColorRect/MarginContainer/VBoxContainer" index="7"]
+margin_top = 664.0
+margin_bottom = 979.99
+
+[node name="HSeparator3" parent="HUD/ColorRect/MarginContainer/VBoxContainer" index="8"]
+margin_top = 982.0
+margin_bottom = 1004.28
+
+[node name="CenterContainer5" parent="HUD/ColorRect/MarginContainer/VBoxContainer" index="9"]
+margin_top = 1007.0
+margin_bottom = 1047.0
+
 [node name="PottedPlant" parent="." instance=ExtResource( 4 )]
 position = Vector2( 897.898, 707.351 )
 
@@ -122,7 +149,11 @@ rotation = 1.56136
 position = Vector2( 1219.56, 138.732 )
 
 [node name="Sentinel" parent="." instance=ExtResource( 15 )]
+editor/display_folded = true
 position = Vector2( 767.005, 565.253 )
+
+[node name="LowerPupil" parent="Sentinel" index="3"]
+rotation = 2.84097
 
 [node name="SteelBox" parent="." instance=ExtResource( 16 )]
 position = Vector2( 895.729, 882.058 )
@@ -143,3 +174,5 @@ fix_emission_point = true
 [editable path="HUD"]
 
 [editable path="Laser"]
+
+[editable path="Sentinel"]
