@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://utility/Seer.gd" type="Script" id=1]
 [ext_resource path="res://textures/eyealert.png" type="Texture" id=2]
 [ext_resource path="res://sound/alert.ogg" type="AudioStream" id=3]
+[ext_resource path="res://utility/LineCaster.tscn" type="PackedScene" id=4]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -29,3 +30,9 @@ animation = "0"
 pause_mode = 2
 stream = ExtResource( 3 )
 volume_db = -2.0
+
+[node name="LineCasterLeft" parent="." instance=ExtResource( 4 )]
+visible = false
+
+[node name="LineCasterRight" parent="." instance=ExtResource( 4 )]
+visible = false

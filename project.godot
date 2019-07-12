@@ -23,6 +23,7 @@ config/icon="res://textures/ides.png"
 
 MusicHandler="*res://MusicHandler.tscn"
 FullscreenHandler="*res://ui/FullscreenHandler.tscn"
+Options="*res://Options.tscn"
 
 [display]
 

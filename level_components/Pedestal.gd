@@ -10,3 +10,5 @@ func _on_BruceOrb_input_event(_viewport, event, _shape_idx):
 		$Sparks.emitting = true
 		$BruceOrb.visible = false
 		emit_signal("lost_bruce")
+		if get_tree().get_nodes_in_group("hud"):
+			get_tree().get_nodes_in_group("hud")[0].append_log("Obtained item: BRUCE.\n")

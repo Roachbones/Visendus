@@ -17,7 +17,13 @@ func _ready():
 	#target = get_node(target_path)
 	if len(get_tree().get_nodes_in_group("ides")) == 1:
 		target = get_tree().get_nodes_in_group("ides")[0]
-
+	if can_see and $"/root/Options".seer_rays_enabled:
+		$LineCasterLeft.rotation = -max_peripheral_angle
+		$LineCasterRight.rotation = max_peripheral_angle
+		for line_caster in [$LineCasterLeft, $LineCasterRight]:
+			line_caster.get_node("RayCast2D").enabled = true
+			line_caster.visible = true
+	
 func _process(_delta):
 	$AnimatedSprite.rotation = -global_rotation
 
