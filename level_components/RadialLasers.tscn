@@ -1,8 +1,0 @@
-[gd_scene load_steps=3 format=2]
-
-[ext_resource path="res://RadialLasers.gd" type="Script" id=1]
-[ext_resource path="res://level_components/LaserCaster.tscn" type="PackedScene" id=2]
-
-[node name="RadialLasers" type="Node2D"]
-script = ExtResource( 1 )
-laser_beam_scene = ExtResource( 2 )

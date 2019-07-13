@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://tileset2.tres" type="TileSet" id=1]
+[ext_resource path="res://tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Ides.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ui/HUD.tscn" type="PackedScene" id=3]
+
 
 [node name="LevelTemplate" type="Node2D"]
 

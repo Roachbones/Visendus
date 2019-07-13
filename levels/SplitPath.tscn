@@ -1,16 +1,20 @@
 [gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://level_components/LevelTemplate.tscn" type="PackedScene" id=1]
-[ext_resource path="res://level_components/Sentinel.tscn" type="PackedScene" id=2]
-[ext_resource path="res://level_components/Doomba.tscn" type="PackedScene" id=3]
+[ext_resource path="res://level_components/enemies/Sentinel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://level_components/enemies/Doomba.tscn" type="PackedScene" id=3]
 [ext_resource path="res://level_components/Switch.tscn" type="PackedScene" id=4]
-[ext_resource path="res://level_components/Door.tscn" type="PackedScene" id=5]
-[ext_resource path="res://level_components/LaserCaster.tscn" type="PackedScene" id=6]
-[ext_resource path="res://level_components/HumanGuardKitty.tscn" type="PackedScene" id=7]
-[ext_resource path="res://level_components/HumanGuardBear.tscn" type="PackedScene" id=8]
-[ext_resource path="res://level_components/HumanGuard.tscn" type="PackedScene" id=9]
+[ext_resource path="res://level_components/furniture/Door.tscn" type="PackedScene" id=5]
+[ext_resource path="res://level_components/enemies/LaserCaster.tscn" type="PackedScene" id=6]
+[ext_resource path="res://level_components/enemies/HumanGuardKitty.tscn" type="PackedScene" id=7]
+[ext_resource path="res://level_components/enemies/HumanGuardBear.tscn" type="PackedScene" id=8]
+[ext_resource path="res://level_components/enemies/HumanGuard.tscn" type="PackedScene" id=9]
 [ext_resource path="res://level_components/DialogTrigger.tscn" type="PackedScene" id=10]
 [ext_resource path="res://level_components/LoadingZone.tscn" type="PackedScene" id=11]
+
+
+
+
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -38,7 +42,6 @@ tile_data = PoolIntArray( 327681, -1610612732, 0, 327682, -1610612732, 0, 327683
 
 [node name="Ides" parent="." index="2"]
 position = Vector2( 689.17, 938.818 )
-mortal = false
 
 [node name="HUD" parent="." index="3"]
 progress_path = NodePath("../../SplitPath/HUD/ColorRect/MarginContainer/VBoxContainer/CenterContainer/TextureProgress")

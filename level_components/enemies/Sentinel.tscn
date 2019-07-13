@@ -1,10 +1,13 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://level_components/Sentinel.gd" type="Script" id=1]
+[ext_resource path="res://level_components/enemies/Sentinel.gd" type="Script" id=1]
 [ext_resource path="res://textures/sentinel_body.png" type="Texture" id=2]
 [ext_resource path="res://utility/Scannable.tscn" type="PackedScene" id=3]
-[ext_resource path="res://level_components/LaserCaster.tscn" type="PackedScene" id=4]
+[ext_resource path="res://level_components/enemies/LaserCaster.tscn" type="PackedScene" id=4]
 [ext_resource path="res://textures/sentinel_pupil.png" type="Texture" id=5]
+
+
+
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 63.968

@@ -1,9 +1,12 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://level_components/HumanGuard.gd" type="Script" id=1]
+[ext_resource path="res://level_components/enemies/HumanGuard.gd" type="Script" id=1]
 [ext_resource path="res://utility/Seer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://textures/humanguard.png" type="Texture" id=3]
 [ext_resource path="res://utility/Scannable.tscn" type="PackedScene" id=4]
+
+
+
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 29.5
