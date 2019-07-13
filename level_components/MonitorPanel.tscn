@@ -1,24 +1,27 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://level_components/MonitorPanel.gd" type="Script" id=1]
 [ext_resource path="res://textures/monitorpanel.png" type="Texture" id=2]
 [ext_resource path="res://textures/light.png" type="Texture" id=3]
+[ext_resource path="res://utility/Scannable.tscn" type="PackedScene" id=4]
 
-[sub_resource type="OccluderPolygon2D" id=1]
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 766.707, 465.316 )
+
+[sub_resource type="OccluderPolygon2D" id=2]
 closed = false
 cull_mode = 1
 polygon = PoolVector2Array( -133.633, 212.571, -114.969, -178.725, 123.534, -181.375, 143.96, 205.168 )
 
-[sub_resource type="OccluderPolygon2D" id=2]
+[sub_resource type="OccluderPolygon2D" id=3]
 closed = false
 cull_mode = 1
 polygon = PoolVector2Array( -157.369, 205.649, -141.469, -186.556, 142.085, -186.556, 163.285, 208.299 )
 
 [node name="MonitorPanel" type="StaticBody2D"]
 scale = Vector2( 0.21, 0.21 )
+input_pickable = true
 script = ExtResource( 1 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -1003.53, -741.065 )
@@ -28,18 +31,23 @@ centered = false
 [node name="Sprite2" type="Sprite" parent="Sprite"]
 light_mask = 0
 position = Vector2( 217.726, 290.568 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 2 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 215.428, 286.775, 1617.77, 447.384 )
 region_filter_clip = true
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 4.41226, 61.7723 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 1 )
+
 [node name="MonitorLight" type="Node2D" parent="."]
 position = Vector2( -505.219, -201.837 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="MonitorLight"]
-occluder = SubResource( 1 )
+occluder = SubResource( 2 )
 
 [node name="Light2D" type="Light2D" parent="MonitorLight"]
 position = Vector2( -0.343201, -142.859 )
@@ -52,7 +60,7 @@ shadow_enabled = true
 position = Vector2( 493.845, -201.837 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="MonitorLight2"]
-occluder = SubResource( 2 )
+occluder = SubResource( 3 )
 
 [node name="Light2D" type="Light2D" parent="MonitorLight2"]
 position = Vector2( -0.343201, -142.859 )
@@ -65,7 +73,7 @@ shadow_enabled = true
 position = Vector2( -9.66217, -201.837 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="MonitorLight3"]
-occluder = SubResource( 1 )
+occluder = SubResource( 2 )
 
 [node name="Light2D" type="Light2D" parent="MonitorLight3"]
 position = Vector2( -0.343201, -142.859 )
@@ -73,3 +81,7 @@ texture = ExtResource( 3 )
 texture_scale = 3.5
 color = Color( 0.960784, 0.631373, 0.258824, 1 )
 shadow_enabled = true
+
+[node name="Scannable" parent="." instance=ExtResource( 4 )]
+hud_name = "Control Panel"
+spinnable = false

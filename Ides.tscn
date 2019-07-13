@@ -14,7 +14,7 @@ radius = 18.0
 code = "shader_type canvas_item;
 void fragment(){
   COLOR = texture(TEXTURE, UV); //read from texture
-  COLOR.b += 0.0625; //set blue channel to 1.0
+  COLOR.b += 0.0625;
 }"
 
 [sub_resource type="ShaderMaterial" id=3]
