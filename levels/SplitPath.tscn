@@ -1,0 +1,243 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://level_components/LevelTemplate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://level_components/Sentinel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://level_components/Doomba.tscn" type="PackedScene" id=3]
+[ext_resource path="res://level_components/Switch.tscn" type="PackedScene" id=4]
+[ext_resource path="res://level_components/Door.tscn" type="PackedScene" id=5]
+[ext_resource path="res://level_components/LaserCaster.tscn" type="PackedScene" id=6]
+[ext_resource path="res://level_components/HumanGuardKitty.tscn" type="PackedScene" id=7]
+[ext_resource path="res://level_components/HumanGuardBear.tscn" type="PackedScene" id=8]
+[ext_resource path="res://level_components/HumanGuard.tscn" type="PackedScene" id=9]
+[ext_resource path="res://level_components/DialogTrigger.tscn" type="PackedScene" id=10]
+[ext_resource path="res://level_components/LoadingZone.tscn" type="PackedScene" id=11]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 89.9034, -0.795502, -89.9034, 0.795502, 976.818, 445.686, -48.2708, -59.3691, 48.2708, 59.3691, 931.05, 687.95, -20.9, 34.2, 20.9, -34.2, 1056.45, 682.25, -27.3684, 35.7895, 27.3684, -35.7895, 1096.95, 432.105, -21.9837, -64.4962, 21.9837, 64.4962, 1258, 456.316, 8.51159, -14.7018, -8.51159, 14.7018, 1153.86, 812.596, -50.119, -41.5272, 50.119, 41.5272, 1151.97, 950.621, -14.3197, 52.983, 14.3197, -52.983, 1290.4, 929.905, 83.0544, 78.7585, -83.0544, -78.7585, 1099.95, 649.238, 28.0382, 24.5289, -28.0382, -24.5289, 1025, 464.681, 0, 0, 0, 0, 976.818, 445.686 )
+}
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 161.488, 11.9069, -161.488, -11.9069, 1249.1, 117.232, 53.9279, -29.818, -53.9279, 29.818, 912.366, 143.959, 12.6316, -49.4737, -12.6316, 49.4737, 800.842, 260.842, 31.7335, -21.7124, -31.7335, 21.7124, 766.418, 427.886, 31.7335, 20.0422, -31.7335, -20.0422, 661.197, 431.226, 55.116, 65.1371, -55.116, -65.1371, 534.263, 142.285, 25.0527, -73.488, -25.0527, 73.488, 124.448, 169.607, -58.4564, -13.3615, 58.4564, 13.3615, 231.96, 250.847, -70.1477, -76.8284, 70.1477, 76.8284, 570.316, 233.474, -50.1055, -48.4353, 50.1055, 48.4353, 661.197, 464.63, -23.3826, 30.0633, 23.3826, -30.0633, 758.067, 462.96, -60.1266, 51.7757, 60.1266, -51.7757, 844.917, 225.794, -143.636, 11.6913, 143.636, -11.6913, 1219.04, 252.517, 10.5373, 5.12625, -10.5373, -5.12625, 1267.47, 123.913, 0, 0, 0, 0, 1249.1, 117.232 )
+}
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 89.598
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 97.8032, 36.0942 )
+
+[node name="SplitPath" index="0" instance=ExtResource( 1 )]
+
+[node name="TileMap" parent="." index="0"]
+tile_data = PoolIntArray( 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 6, 2, 0, 7, 2, 0, 8, 2, 0, 9, 2, 0, 10, 2, 0, 11, 2, 0, 12, 2, 0, 13, 2, 0, 14, 2, 0, 15, 2, 0, 16, 2, 0, 17, 2, 0, 18, 2, 0, 19, 2, 0, 20, 2, 0, 21, 2, 0, 65536, 2, 0, 65537, -1610612736, 0, 65538, -1610612736, 0, 65539, -1610612736, 0, 65540, -1610612736, 0, 65541, -1610612736, 0, 65542, -1610612736, 0, 65543, -1610612736, 0, 65544, -1610612736, 0, 65545, -1610612736, 0, 65546, -1610612736, 0, 65547, -1610612736, 0, 65548, -1610612736, 0, 65549, -1610612736, 0, 65550, -1610612736, 0, 65551, -1610612736, 0, 65552, -1610612736, 0, 65553, -1610612736, 0, 65554, -1610612736, 0, 65555, -1610612736, 0, 65556, -1610612736, 0, 65557, 2, 0, 131072, 2, 0, 131073, -1610612736, 0, 131074, -1610612736, 0, 131075, -1610612736, 0, 131076, -1610612736, 0, 131077, -1610612736, 0, 131078, -1610612736, 0, 131079, -1610612736, 0, 131080, -1610612736, 0, 131081, -1610612736, 0, 131082, -1610612736, 0, 131083, -1610612736, 0, 131084, -1610612736, 0, 131085, -1610612736, 0, 131086, -1610612736, 0, 131087, -1610612736, 0, 131088, -1610612736, 0, 131089, -1610612736, 0, 131090, -1610612736, 0, 131091, -1610612736, 0, 131092, -1610612736, 0, 131093, 2, 0, 196608, 2, 0, 196609, -1610612736, 0, 196610, -1610612736, 0, 196611, -1610612736, 0, 196612, -1610612736, 0, 196613, -1610612736, 0, 196614, -1610612736, 0, 196615, -1610612736, 0, 196616, -1610612736, 0, 196617, -1610612736, 0, 196618, -1610612736, 0, 196619, -1610612736, 0, 196620, -1610612736, 0, 196621, -1610612736, 0, 196622, -1610612736, 0, 196623, -1610612736, 0, 196624, -1610612736, 0, 196625, -1610612736, 0, 196626, -1610612736, 0, 196627, -1610612736, 0, 196628, -1610612736, 0, 196629, 2, 0, 262144, 2, 0, 262145, -1610612736, 0, 262146, -1610612736, 0, 262147, -1610612736, 0, 262148, -1610612736, 0, 262149, -1610612736, 0, 262150, -1610612736, 0, 262151, -1610612736, 0, 262152, -1610612736, 0, 262153, -1610612736, 0, 262154, -1610612736, 0, 262155, -1610612736, 0, 262156, -1610612736, 0, 262157, -1610612736, 0, 262158, -1610612736, 0, 262159, -1610612736, 0, 262160, -1610612736, 0, 262161, -1610612736, 0, 262162, -1610612736, 0, 262163, -1610612736, 0, 262164, -1610612736, 0, 262165, 2, 0, 327680, 2, 0, 327681, -1610612736, 0, 327682, -1610612736, 0, 327683, -1610612736, 0, 327684, -1610612736, 0, 327685, -1610612736, 0, 327686, -1610612736, 0, 327687, -1610612736, 0, 327688, -1610612736, 0, 327689, -1610612736, 0, 327690, -1610612736, 0, 327691, -1610612736, 0, 327692, -1610612736, 0, 327693, -1610612736, 0, 327694, -1610612736, 0, 327695, -1610612736, 0, 327696, -1610612736, 0, 327697, -1610612736, 0, 327698, -1610612736, 0, 327699, -1610612736, 0, 327700, -1610612736, 0, 327701, 2, 0, 393216, 2, 0, 393217, -1610612736, 0, 393218, -1610612736, 0, 393219, -1610612736, 0, 393220, -1610612736, 0, 393221, -1610612736, 0, 393222, -1610612736, 0, 393223, -1610612736, 0, 393224, -1610612736, 0, 393225, -1610612736, 0, 393226, -1610612736, 0, 393227, -1610612736, 0, 393228, -1610612736, 0, 393229, -1610612736, 0, 393230, -1610612736, 0, 393231, -1610612736, 0, 393232, -1610612736, 0, 393233, -1610612736, 0, 393234, -1610612736, 0, 393235, -1610612736, 0, 393236, -1610612736, 0, 393237, 2, 0, 458752, 2, 0, 458753, -1610612736, 0, 458754, -1610612736, 0, 458755, -1610612736, 0, 458756, -1610612736, 0, 458757, -1610612736, 0, 458758, -1610612736, 0, 458759, -1610612736, 0, 458760, -1610612736, 0, 458761, -1610612736, 0, 458762, -1610612736, 0, 458763, -1610612736, 0, 458764, -1610612736, 0, 458765, -1610612736, 0, 458766, -1610612736, 0, 458767, -1610612736, 0, 458768, -1610612736, 0, 458769, -1610612736, 0, 458770, -1610612736, 0, 458771, -1610612736, 0, 458772, -1610612736, 0, 458773, 2, 0, 524288, 2, 0, 524289, -1610612736, 0, 524290, -1610612736, 0, 524291, -1610612736, 0, 524292, -1610612736, 0, 524293, -1610612736, 0, 524294, -1610612736, 0, 524295, -1610612736, 0, 524296, -1610612736, 0, 524297, -1610612736, 0, 524298, -1610612736, 0, 524299, -1610612736, 0, 524300, -1610612736, 0, 524301, -1610612736, 0, 524302, -1610612736, 0, 524303, -1610612736, 0, 524304, -1610612736, 0, 524305, -1610612736, 0, 524306, -1610612736, 0, 524307, -1610612736, 0, 524308, -1610612736, 0, 524309, 2, 0, 589824, 2, 0, 589825, -1610612736, 0, 589826, -1610612736, 0, 589827, -1610612736, 0, 589828, -1610612736, 0, 589829, -1610612736, 0, 589830, -1610612736, 0, 589831, -1610612736, 0, 589832, -1610612736, 0, 589833, -1610612736, 0, 589834, -1610612736, 0, 589835, -1610612736, 0, 589836, 1610612736, 0, 589837, -1610612736, 0, 589838, -1610612736, 0, 589839, -1610612736, 0, 589840, -1610612736, 0, 589841, -1610612736, 0, 589842, -1610612736, 0, 589843, -1610612736, 0, 589844, -1610612736, 0, 589845, 2, 0, 655360, 2, 0, 655361, -1610612736, 0, 655362, -1610612736, 0, 655363, -1610612736, 0, 655364, -1610612736, 0, 655365, -1610612736, 0, 655366, -1610612736, 0, 655367, -1610612736, 0, 655368, -1610612736, 0, 655369, -1610612733, 0, 655370, -1610612733, 0, 655371, -1610612733, 0, 655372, -1610612733, 0, 655373, -1610612736, 0, 655374, -1610612736, 0, 655375, -1610612736, 0, 655376, -1610612736, 0, 655377, -1610612736, 0, 655378, -1610612736, 0, 655379, -1610612736, 0, 655380, -1610612736, 0, 655381, 2, 0, 720896, 2, 0, 720897, -1610612736, 0, 720898, -1610612736, 0, 720899, -1610612736, 0, 720900, -1610612736, 0, 720901, -1610612736, 0, 720902, -1610612736, 0, 720903, -1610612736, 0, 720904, -1610612736, 0, 720905, -1610612733, 0, 720906, -1610612733, 0, 720907, -1610612733, 0, 720908, -1610612733, 0, 720909, -1610612736, 0, 720910, -1610612736, 0, 720911, -1610612736, 0, 720912, -1610612736, 0, 720913, -1610612736, 0, 720914, -1610612736, 0, 720915, -1610612736, 0, 720916, -1610612736, 0, 720917, 2, 0, 786432, 2, 0, 786433, -1610612736, 0, 786434, -1610612736, 0, 786435, -1610612736, 0, 786436, -1610612736, 0, 786437, -1610612736, 0, 786438, -1610612736, 0, 786439, -1610612736, 0, 786440, -1610612736, 0, 786441, -1610612736, 0, 786442, -1610612736, 0, 786443, -1610612736, 0, 786444, -1610612736, 0, 786445, -1610612736, 0, 786446, -1610612736, 0, 786447, -1610612736, 0, 786448, -1610612736, 0, 786449, -1610612736, 0, 786450, -1610612736, 0, 786451, -1610612736, 0, 786452, -1610612736, 0, 786453, 2, 0, 851968, 2, 0, 851969, -1610612736, 0, 851970, -1610612736, 0, 851971, -1610612736, 0, 851972, -1610612736, 0, 851973, -1610612736, 0, 851974, -1610612736, 0, 851975, -1610612736, 0, 851976, -1610612736, 0, 851977, -1610612736, 0, 851978, -1610612736, 0, 851979, -1610612736, 0, 851980, -1610612736, 0, 851981, -1610612736, 0, 851982, -1610612736, 0, 851983, -1610612736, 0, 851984, -1610612736, 0, 851985, -1610612736, 0, 851986, -1610612736, 0, 851987, -1610612736, 0, 851988, -1610612736, 0, 851989, 2, 0, 917504, 2, 0, 917505, -1610612736, 0, 917506, -1610612736, 0, 917507, -1610612736, 0, 917508, -1610612736, 0, 917509, -1610612736, 0, 917510, -1610612736, 0, 917511, -1610612736, 0, 917512, -1610612736, 0, 917513, -1610612736, 0, 917514, -1610612736, 0, 917515, -1610612736, 0, 917516, -1610612736, 0, 917517, -1610612736, 0, 917518, -1610612736, 0, 917519, -1610612736, 0, 917520, -1610612736, 0, 917521, -1610612736, 0, 917522, -1610612736, 0, 917523, -1610612736, 0, 917524, -1610612736, 0, 917525, 2, 0, 983040, 2, 0, 983041, -1610612736, 0, 983042, -1610612736, 0, 983043, -1610612736, 0, 983044, -1610612736, 0, 983045, -1610612736, 0, 983046, -1610612736, 0, 983047, -1610612736, 0, 983048, -1610612736, 0, 983049, -1610612736, 0, 983050, -1610612736, 0, 983051, -1610612736, 0, 983052, -1610612736, 0, 983053, -1610612736, 0, 983054, -1610612736, 0, 983055, -1610612736, 0, 983056, -1610612736, 0, 983057, -1610612736, 0, 983058, -1610612736, 0, 983059, -1610612736, 0, 983060, -1610612736, 0, 983061, 2, 0, 1048576, 2, 0, 1048577, 2, 0, 1048578, 2, 0, 1048579, 2, 0, 1048580, 2, 0, 1048581, 2, 0, 1048582, 2, 0, 1048583, 2, 0, 1048584, 2, 0, 1048585, 2, 0, 1048586, 2, 0, 1048587, 2, 0, 1048588, 2, 0, 1048589, 2, 0, 1048590, 2, 0, 1048591, 2, 0, 1048592, 2, 0, 1048593, 2, 0, 1048594, 2, 0, 1048595, 2, 0, 1048596, 2, 0, 1048597, 2, 0 )
+
+[node name="TileMap2" parent="." index="1"]
+tile_data = PoolIntArray( 327681, -1610612732, 0, 327682, -1610612732, 0, 327683, -1610612732, 0, 327686, -1610612732, 0, 327687, -1610612732, 0, 327688, -1610612731, 0, 327693, 5, 0, 327694, -1610612732, 0, 327695, -1610612732, 0, 327698, -1610612732, 0, 327699, -1610612732, 0, 327700, -1610612732, 0, 393224, 1610612740, 0, 393229, 4, 0, 458760, 1610612740, 0, 458765, 4, 0, 524296, 1610612740, 0, 524301, 4, 0, 589832, 1610612740, 0, 589833, -1610612732, 0, 589836, -1610612732, 0, 589837, 4, 0, 655368, 1610612740, 0, 655369, -1610612732, 0, 655372, -1610612732, 0, 655373, 4, 0, 720904, 1610612740, 0, 720909, 4, 0, 786437, 5, 0, 786438, -1610612732, 0, 786439, -1610612732, 0, 786440, -1610612731, 0, 786441, -1610612732, 0, 786442, -1610612732, 0, 786443, -1610612732, 0, 786444, -1610612732, 0, 786445, 5, 0, 786446, -1610612732, 0, 786447, -1610612732, 0, 786448, -1610612731, 0, 917509, 4, 0, 917512, 1610612740, 0, 917517, 4, 0, 917520, 1610612740, 0, 983045, 4, 0, 983048, 1610612740, 0, 983053, 4, 0, 983056, 1610612740, 0 )
+
+[node name="Ides" parent="." index="2"]
+position = Vector2( 689.17, 938.818 )
+mortal = false
+
+[node name="HUD" parent="." index="3"]
+progress_path = NodePath("../../SplitPath/HUD/ColorRect/MarginContainer/VBoxContainer/CenterContainer/TextureProgress")
+system_log_path = NodePath("../../SplitPath/HUD/ColorRect/MarginContainer/VBoxContainer/CenterContainer2/SystemLog")
+node_preview_path = NodePath("../../SplitPath/HUD/ColorRect/MarginContainer/VBoxContainer/CenterContainer3/NodePreview")
+transmission_log_path = NodePath("../../SplitPath/HUD/ColorRect/MarginContainer/VBoxContainer/CenterContainer4/TransmissionLog")
+
+[node name="Sentinel" parent="." index="4" instance=ExtResource( 2 )]
+editor/display_folded = true
+position = Vector2( 706.056, 155.138 )
+
+[node name="LowerPupil" parent="Sentinel" index="4"]
+rotation = 0.581661
+
+[node name="UpperPupil" parent="Sentinel" index="5"]
+rotation = -2.93905
+
+[node name="Doomba" parent="." index="5" instance=ExtResource( 3 )]
+position = Vector2( 195.411, 462.641 )
+rotation = 1.28773
+
+[node name="Doomba2" parent="." index="6" instance=ExtResource( 3 )]
+position = Vector2( 357.419, 641.35 )
+rotation = -0.280912
+
+[node name="Doomba3" parent="." index="7" instance=ExtResource( 3 )]
+position = Vector2( 141.965, 835.091 )
+
+[node name="PuzzleElements" type="Node" parent="." index="8"]
+editor/display_folded = true
+
+[node name="SwitchL0" parent="PuzzleElements" index="0" instance=ExtResource( 4 )]
+position = Vector2( 381.227, 938.263 )
+toggleable = false
+
+[node name="SwitchL1" parent="PuzzleElements" index="1" instance=ExtResource( 4 )]
+position = Vector2( 419.04, 369.298 )
+toggleable = false
+
+[node name="DoorL0" parent="PuzzleElements" index="2" instance=ExtResource( 5 )]
+position = Vector2( 566.935, 889.96 )
+opened = true
+
+[node name="DoorL1" parent="PuzzleElements" index="3" instance=ExtResource( 5 )]
+position = Vector2( 327.607, 892.572 )
+rotation = -1.5708
+open_direction = -1
+
+[node name="DoorL2_0" parent="PuzzleElements" index="4" instance=ExtResource( 5 )]
+position = Vector2( 260.048, 328.762 )
+open_direction = -1
+
+[node name="DoorL2_1" parent="PuzzleElements" index="5" instance=ExtResource( 5 )]
+position = Vector2( 378.974, 328.163 )
+rotation = -3.14159
+
+[node name="DoorR0" parent="PuzzleElements" index="6" instance=ExtResource( 5 )]
+position = Vector2( 840.686, 889.034 )
+rotation = 3.14159
+open_direction = -1
+opened = true
+
+[node name="DoorR1" parent="PuzzleElements" index="7" instance=ExtResource( 5 )]
+position = Vector2( 1080.96, 893.522 )
+rotation = -1.5708
+
+[node name="DoorR2_0" parent="PuzzleElements" index="8" instance=ExtResource( 5 )]
+position = Vector2( 1026.67, 328.258 )
+open_direction = -1
+
+[node name="DoorR2_1" parent="PuzzleElements" index="9" instance=ExtResource( 5 )]
+position = Vector2( 1147.09, 327.506 )
+rotation = -3.14159
+
+[node name="SwitchR0" parent="PuzzleElements" index="10" instance=ExtResource( 4 )]
+position = Vector2( 1023.82, 933.632 )
+toggleable = false
+
+[node name="SwitchR1" parent="PuzzleElements" index="11" instance=ExtResource( 4 )]
+position = Vector2( 992.357, 369.449 )
+toggleable = false
+
+[node name="DoorL3_0" parent="PuzzleElements" index="12" instance=ExtResource( 5 )]
+position = Vector2( 642.603, 585.482 )
+
+[node name="DoorL3_1" parent="PuzzleElements" index="13" instance=ExtResource( 5 )]
+position = Vector2( 763.758, 584.465 )
+rotation = 3.14159
+open_direction = -1
+
+[node name="DoorR3_0" parent="PuzzleElements" index="14" instance=ExtResource( 5 )]
+position = Vector2( 642.603, 645.776 )
+
+[node name="DoorR3_1" parent="PuzzleElements" index="15" instance=ExtResource( 5 )]
+position = Vector2( 764.776, 645.536 )
+rotation = 3.14159
+open_direction = -1
+
+[node name="LaserCasters" type="Node" parent="." index="9"]
+editor/display_folded = true
+
+[node name="LaserCaster" parent="LaserCasters" index="0" instance=ExtResource( 6 )]
+position = Vector2( 170.359, 80.1687 )
+rotation = 0.998395
+fix_emission_point = true
+
+[node name="LaserCaster2" parent="LaserCasters" index="1" instance=ExtResource( 6 )]
+position = Vector2( 233.826, 86.8495 )
+rotation = 1.13979
+fix_emission_point = true
+
+[node name="LaserCaster3" parent="LaserCasters" index="2" instance=ExtResource( 6 )]
+position = Vector2( 303.973, 86.8495 )
+rotation = 1.64401
+fix_emission_point = true
+
+[node name="LaserCaster4" parent="LaserCasters" index="3" instance=ExtResource( 6 )]
+position = Vector2( 488.111, 73.488 )
+rotation = 2.1315
+fix_emission_point = true
+
+[node name="LaserCaster5" parent="LaserCasters" index="4" instance=ExtResource( 6 )]
+position = Vector2( 923.611, 95.2004 )
+rotation = 0.915077
+fix_emission_point = true
+
+[node name="LaserCaster6" parent="LaserCasters" index="5" instance=ExtResource( 6 )]
+position = Vector2( 1028.83, 95.2004 )
+rotation = 1.23066
+fix_emission_point = true
+
+[node name="LaserCaster7" parent="LaserCasters" index="6" instance=ExtResource( 6 )]
+position = Vector2( 1137.39, 93.5302 )
+rotation = 1.72835
+fix_emission_point = true
+
+[node name="LaserCaster8" parent="LaserCasters" index="7" instance=ExtResource( 6 )]
+position = Vector2( 1109, 85.1793 )
+rotation = 1.58814
+scale = Vector2( 1, 1 )
+fix_emission_point = true
+
+[node name="Path2D" type="Path2D" parent="." index="10"]
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" index="0"]
+position = Vector2( 919.52, 461.65 )
+rotation = -2.90632
+
+[node name="HumanGuardKitty" parent="Path2D/PathFollow2D" index="0" instance=ExtResource( 7 )]
+scale = Vector2( 0.85, 0.85 )
+travel_mode = 1
+speed = 200.0
+
+[node name="HumanGuardBear" parent="." index="11" instance=ExtResource( 8 )]
+position = Vector2( 1187.11, 552.741 )
+travel_mode = 3
+stare_target_path = NodePath("../Path2D/PathFollow2D/HumanGuardKitty")
+
+[node name="Path2D2" type="Path2D" parent="." index="12"]
+curve = SubResource( 2 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D2" index="0"]
+position = Vector2( 1249.1, 117.232 )
+rotation = -2.86387
+
+[node name="HumanGuard" parent="Path2D2/PathFollow2D" index="0" instance=ExtResource( 9 )]
+scale = Vector2( 0.9, 0.9 )
+travel_mode = 1
+
+[node name="DialogTrigger" parent="." index="13" instance=ExtResource( 10 )]
+position = Vector2( 704.483, 947.244 )
+bbcode_dialog = "These terminals have limited clearance."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTrigger" index="0"]
+shape = SubResource( 3 )
+
+[node name="LoadingZone" parent="." index="14" instance=ExtResource( 11 )]
+position = Vector2( 705.642, 705.642 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LoadingZone" index="0"]
+shape = SubResource( 4 )
+[connection signal="switched_on" from="PuzzleElements/SwitchL0" to="PuzzleElements/DoorL0" method="close"]
+[connection signal="switched_on" from="PuzzleElements/SwitchL0" to="PuzzleElements/DoorL1" method="open"]
+[connection signal="switched_on" from="PuzzleElements/SwitchL0" to="PuzzleElements/DoorL3_0" method="open"]
+[connection signal="switched_on" from="PuzzleElements/SwitchL0" to="PuzzleElements/DoorL3_1" method="open"]
+[connection signal="switched_on" from="PuzzleElements/SwitchL1" to="PuzzleElements/DoorL1" method="open"]
+[connection signal="switched_on" from="PuzzleElements/SwitchL1" to="PuzzleElements/DoorL2_0" method="open"]
+[connection signal="switched_on" from="PuzzleElements/SwitchL1" to="PuzzleElements/DoorL2_1" method="open"]
+[connection signal="switched_on" from="PuzzleElements/SwitchL1" to="PuzzleElements/DoorR2_0" method="open"]
+[connection signal="switched_on" from="PuzzleElements/SwitchL1" to="PuzzleElements/DoorR2_1" method="open"]
+[connection signal="switched_on" from="PuzzleElements/SwitchR0" to="PuzzleElements/DoorR0" method="close"]
+[connection signal="switched_on" from="PuzzleElements/SwitchR0" to="PuzzleElements/DoorR1" method="open"]
+[connection signal="switched_on" from="PuzzleElements/SwitchR0" to="PuzzleElements/DoorR3_0" method="open"]
+[connection signal="switched_on" from="PuzzleElements/SwitchR0" to="PuzzleElements/DoorR3_1" method="open"]
+[connection signal="switched_on" from="PuzzleElements/SwitchR1" to="PuzzleElements/DoorL2_0" method="open"]
+[connection signal="switched_on" from="PuzzleElements/SwitchR1" to="PuzzleElements/DoorL2_1" method="open"]
+[connection signal="switched_on" from="PuzzleElements/SwitchR1" to="PuzzleElements/DoorR1" method="open"]
+[connection signal="switched_on" from="PuzzleElements/SwitchR1" to="PuzzleElements/DoorR2_0" method="open"]
+[connection signal="switched_on" from="PuzzleElements/SwitchR1" to="PuzzleElements/DoorR2_1" method="open"]
+
+[editable path="Sentinel"]

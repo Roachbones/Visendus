@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://level_components/Sentinel.gd" type="Script" id=1]
 [ext_resource path="res://textures/sentinel_body.png" type="Texture" id=2]
@@ -7,8 +7,11 @@
 [ext_resource path="res://textures/sentinel_pupil.png" type="Texture" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 57.6912
-height = 31.5601
+radius = 63.968
+height = 41.2342
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 35.2505
 
 [node name="Sentinel" type="StaticBody2D"]
 input_pickable = true
@@ -22,6 +25,10 @@ texture = ExtResource( 2 )
 position = Vector2( -1.08075, 27.5584 )
 rotation = 1.57251
 shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( -2.45885, -39.3416 )
+shape = SubResource( 2 )
 
 [node name="Scannable" parent="." instance=ExtResource( 3 )]
 hud_name = "Sentinel"

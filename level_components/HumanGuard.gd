@@ -1,11 +1,13 @@
 extends KinematicBody2D
 
-enum travel_modes {STATIONARY, RIDE_PATH, OSCILLATE}
+enum travel_modes {STATIONARY, RIDE_PATH, OSCILLATE, STARE}
 
 export(travel_modes) var travel_mode = travel_modes.STATIONARY
 export(float) var speed = 100
 export(float) var oscillation_speed = 1
 export(float) var oscillation_angle = 1 #radians
+export(NodePath) var stare_target_path
+var stare_target
 
 var path_follower: PathFollow2D
 
@@ -18,6 +20,7 @@ func _ready():
 	if travel_mode == travel_modes.RIDE_PATH:
 		path_follower = get_parent()
 	primary_rotation = rotation
+	stare_target = get_node(stare_target_path)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -26,6 +29,8 @@ func _process(delta):
 	if travel_mode == travel_modes.OSCILLATE:
 		oscillation_time_elapsed += delta
 		rotation = sin(oscillation_speed * oscillation_time_elapsed) * oscillation_angle + primary_rotation
+	if travel_mode == travel_modes.STARE:
+		rotation = position.direction_to(stare_target.global_position).angle()
 
 func _on_Seer_seen_ides(ides: Node2D):
 	if not ides.disguised:
