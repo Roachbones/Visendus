@@ -1,7 +1,7 @@
 extends Label
 
 var sum_delta = 0.0
-const CERTAINTY = 6
+const CERTAINTY = 5
 
 func _ready():
 	pass

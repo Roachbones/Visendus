@@ -34,6 +34,7 @@ progress_path = NodePath("ColorRect/MarginContainer/VBoxContainer/CenterContaine
 system_log_path = NodePath("ColorRect/MarginContainer/VBoxContainer/CenterContainer2/SystemLog")
 node_preview_path = NodePath("ColorRect/MarginContainer/VBoxContainer/CenterContainer3/NodePreview")
 transmission_log_path = NodePath("ColorRect/MarginContainer/VBoxContainer/CenterContainer4/TransmissionLog")
+time_label_path = NodePath("ColorRect/MarginContainer/VBoxContainer/CenterContainer5/HBoxContainer/TimeLabel")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_left = 1.0

@@ -4,11 +4,13 @@ export var progress_path: NodePath
 export var system_log_path: NodePath
 export var node_preview_path: NodePath
 export var transmission_log_path: NodePath
+export var time_label_path: NodePath
 
 var progress: TextureProgress
 var system_log: RichTextLabel
 var node_preview: TextureRect
 var transmission_log: RichTextLabel
+var time_label: Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,6 +18,7 @@ func _ready():
 	system_log = get_node(system_log_path)
 	node_preview = get_node(node_preview_path)
 	transmission_log = get_node(transmission_log_path)
+	time_label = get_node(time_label_path)
 
 func _on_Ides_scan_progress_changed(scan_progress):
 	progress.value = scan_progress
@@ -41,4 +44,7 @@ func append_transmission(bbcode: String):
 func append_log(bbcode: String):
 	assert system_log.append_bbcode(bbcode) == OK
 
+func report_time():
+	$"/root/Options".speedrun_segment_times[get_tree().current_scene.name] = time_label.sum_delta
+	print($"/root/Options".speedrun_segment_times)
 
