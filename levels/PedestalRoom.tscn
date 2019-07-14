@@ -6,7 +6,6 @@
 [ext_resource path="res://textures/light.png" type="Texture" id=4]
 [ext_resource path="res://levels/FirstFrameHider.gd" type="Script" id=5]
 
-
 [node name="LevelTemplate" instance=ExtResource( 1 )]
 
 [node name="TileMap" parent="." index="0"]
@@ -71,8 +70,8 @@ margin_right = 40.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 1920, 1080 )
 script = ExtResource( 5 )
-[connection signal="lost_bruce" from="Pedestal" to="MonitorPanel" method="bluescreen"]
 [connection signal="lost_bruce" from="Pedestal" to="MonitorPanel2" method="bluescreen"]
+[connection signal="lost_bruce" from="Pedestal" to="MonitorPanel" method="bluescreen"]
 
 [editable path="Pedestal"]
 

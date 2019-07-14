@@ -5,10 +5,7 @@
 [ext_resource path="res://level_components/enemies/Doomba.tscn" type="PackedScene" id=3]
 [ext_resource path="res://level_components/DialogTrigger.tscn" type="PackedScene" id=4]
 [ext_resource path="res://level_components/LoadingZone.tscn" type="PackedScene" id=5]
-[ext_resource path="res://levels/IntroducingDoors.tscn" type="PackedScene" id=6]
-
-
-
+[ext_resource path="res://levels/IntroducingLasers.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -89,7 +86,6 @@ next_scene = ExtResource( 6 )
 shape = SubResource( 5 )
 
 [node name="HUD" parent="." index="10"]
-progress_path = NodePath("../../IntroducingDoomba/HUD/ColorRect/MarginContainer/VBoxContainer/CenterContainer/TextureProgress")
 system_log_path = NodePath("../../IntroducingDoomba/HUD/ColorRect/MarginContainer/VBoxContainer/CenterContainer2/SystemLog")
 node_preview_path = NodePath("../../IntroducingDoomba/HUD/ColorRect/MarginContainer/VBoxContainer/CenterContainer3/NodePreview")
 transmission_log_path = NodePath("../../IntroducingDoomba/HUD/ColorRect/MarginContainer/VBoxContainer/CenterContainer4/TransmissionLog")

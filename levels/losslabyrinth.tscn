@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://level_components/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://textures/light.png" type="Texture" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://level_components/furniture/PottedPlant.tscn" type="PackedScene" id=9]
 [ext_resource path="res://level_components/furniture/SteelBox.tscn" type="PackedScene" id=10]
 [ext_resource path="res://level_components/LoadingZone.tscn" type="PackedScene" id=11]
+[ext_resource path="res://levels/PedestalRoom.tscn" type="PackedScene" id=12]
+[ext_resource path="res://textures/white.png" type="Texture" id=13]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -22,10 +24,10 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 12.8567, -0.270081, 0, 0, 0, 0, 387.837, -17.7625, 0, 0, 0, 0, 389.421, 107.018, 0, 0, 0, 0, 12.1321, 124.604, 0, 0, 0, 0, -13.4895, -451.186, 0, 0, 0, 0, -330.813, -437.184, 0, 0, 0, 0, -311.205, 18.6288, 0, 0, 0, 0, 12.8567, -0.270081 )
 }
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 10, 8.22691 )
 
-[sub_resource type="Shader" id=5]
+[sub_resource type="Shader" id=4]
 code = "shader_type canvas_item;
 
 void fragment() {
@@ -34,8 +36,8 @@ void fragment() {
     COLOR.rgb = c;
 }"
 
-[sub_resource type="ShaderMaterial" id=6]
-shader = SubResource( 5 )
+[sub_resource type="ShaderMaterial" id=5]
+shader = SubResource( 4 )
 
 [node name="LossLabyrinth" type="Node2D"]
 
@@ -73,22 +75,65 @@ transmission_log_path = NodePath("../../../LossLabyrinth/LevelTemplate/HUD/Color
 time_label_path = NodePath("../../../LossLabyrinth/LevelTemplate/HUD/ColorRect/MarginContainer/VBoxContainer/CenterContainer5/HBoxContainer/TimeLabel")
 
 [node name="LaserCaster" parent="." instance=ExtResource( 3 )]
+editor/display_folded = true
 position = Vector2( 66.3865, 221.837 )
 fix_emission_point = true
 
+[node name="Light2D3" type="Light2D" parent="LaserCaster"]
+position = Vector2( 29.3062, -0.23877 )
+rotation = -3.12756
+scale = Vector2( 0.818518, 0.181293 )
+texture = ExtResource( 2 )
+texture_scale = 0.2
+color = Color( 0.8, 0.152941, 0.152941, 1 )
+energy = 1.5
+shadow_enabled = true
+
 [node name="LaserCaster2" parent="." instance=ExtResource( 3 )]
+editor/display_folded = true
 position = Vector2( 1028.72, 582.592 )
 fix_emission_point = true
 
+[node name="Light2D3" type="Light2D" parent="LaserCaster2"]
+position = Vector2( 54.7292, -1.44873 )
+rotation = -3.13421
+scale = Vector2( 1.5021, 0.160793 )
+texture = ExtResource( 2 )
+texture_scale = 0.2
+color = Color( 0.8, 0.152941, 0.152941, 1 )
+energy = 1.5
+shadow_enabled = true
+
 [node name="LaserCaster3" parent="." instance=ExtResource( 3 )]
+editor/display_folded = true
 position = Vector2( 525.825, 275.738 )
 rotation = 1.11331
 fix_emission_point = true
+
+[node name="Light2D2" type="Light2D" parent="LaserCaster3"]
+position = Vector2( 29.0168, -2.40674 )
+rotation = 3.13915
+scale = Vector2( 4.30936, 0.101301 )
+texture = ExtResource( 2 )
+texture_scale = 0.2
+color = Color( 0.8, 0.152941, 0.152941, 1 )
+energy = 1.5
+shadow_enabled = true
 
 [node name="LaserCaster4" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1077.3, 887.063 )
 rotation = 3.14398
 fix_emission_point = true
+
+[node name="Light2D4" type="Light2D" parent="LaserCaster4"]
+position = Vector2( 4.02344, 1.08069 )
+rotation = 0.00499517
+scale = Vector2( 1.5021, 0.160793 )
+texture = ExtResource( 2 )
+texture_scale = 0.2
+color = Color( 0.8, 0.152941, 0.152941, 1 )
+energy = 1.5
+shadow_enabled = true
 
 [node name="Doomba" parent="." instance=ExtResource( 4 )]
 editor/display_folded = true
@@ -97,27 +142,25 @@ rotation = 3.23655
 scale = Vector2( 0.478779, 0.478779 )
 
 [node name="Light2D" type="Light2D" parent="Doomba"]
-visible = false
 position = Vector2( 27.4944, 1.43445 )
 rotation = -1.49012e-008
 texture = ExtResource( 2 )
-texture_scale = 0.1
+texture_scale = 0.2
 color = Color( 0.529412, 0.215686, 0.215686, 1 )
 
 [node name="Doomba2" parent="." instance=ExtResource( 4 )]
 editor/display_folded = true
-position = Vector2( 1311.77, 99.7687 )
-rotation = 3.13657
+position = Vector2( 216.482, 99.7687 )
+rotation = 6.27195
 scale = Vector2( 0.478779, 0.478779 )
 rotation_speed = 1.0
 adjustment_angle = 3.142
 
 [node name="Light2D" type="Light2D" parent="Doomba2"]
-visible = false
 position = Vector2( 27.4944, 1.43445 )
 rotation = -1.49012e-008
 texture = ExtResource( 2 )
-texture_scale = 0.1
+texture_scale = 0.2
 color = Color( 0.529412, 0.215686, 0.215686, 1 )
 
 [node name="Sentinel" parent="." instance=ExtResource( 5 )]
@@ -151,6 +194,7 @@ shadow_gradient_length = 704.7
 editor/display_folded = true
 position = Vector2( 1107.45, 734.801 )
 rotation = -1.54113
+scale = Vector2( 0.7, 0.7 )
 travel_mode = 2
 oscillation_speed = 0.5
 oscillation_angle = 0.2
@@ -159,12 +203,11 @@ oscillation_angle = 0.2
 editor/display_folded = true
 
 [node name="Light2D2" type="Light2D" parent="HumanGuard"]
-visible = false
 position = Vector2( -0.479126, -0.493164 )
 rotation = -1.50551
 scale = Vector2( 0.478779, 0.478779 )
 texture = ExtResource( 2 )
-texture_scale = 0.1
+texture_scale = 0.3
 color = Color( 0.529412, 0.215686, 0.215686, 1 )
 
 [node name="Path2D2" type="Path2D" parent="."]
@@ -179,6 +222,7 @@ rotation = 3.14159
 [node name="HumanGuardKitty" parent="Path2D2/PathFollow2D" instance=ExtResource( 7 )]
 position = Vector2( 3.89392, 1.50616 )
 rotation = 0.0564272
+scale = Vector2( 0.7, 0.7 )
 travel_mode = 1
 speed = 60.0
 oscillation_speed = 0.01
@@ -192,11 +236,10 @@ position = Vector2( -1.13892, 0.725159 )
 rotation = 0.0385282
 scale = Vector2( 0.478779, 0.478779 )
 texture = ExtResource( 2 )
-texture_scale = 0.1
+texture_scale = 0.3
 color = Color( 0.529412, 0.215686, 0.215686, 1 )
 
 [node name="Path2D" type="Path2D" parent="."]
-editor/display_folded = true
 position = Vector2( 670.64, 535.251 )
 rotation = 1.61126
 curve = SubResource( 2 )
@@ -208,6 +251,7 @@ rotation = -0.0466151
 [node name="HumanGuardBear" parent="Path2D/PathFollow2D" instance=ExtResource( 8 )]
 position = Vector2( -12.8553, -0.329285 )
 rotation = 0.0466149
+scale = Vector2( 0.7, 0.7 )
 travel_mode = 1
 
 [node name="LoseAura" parent="Path2D/PathFollow2D/HumanGuardBear" index="4"]
@@ -218,7 +262,7 @@ position = Vector2( -3.47974, 1.88367 )
 rotation = 1.62529
 scale = Vector2( 0.478779, 0.478779 )
 texture = ExtResource( 2 )
-texture_scale = 0.1
+texture_scale = 0.3
 color = Color( 0.529412, 0.215686, 0.215686, 1 )
 
 [node name="PottedPlant4" parent="." instance=ExtResource( 9 )]
@@ -232,7 +276,6 @@ scale = Vector2( 1.25, 1.25 )
 texture = ExtResource( 2 )
 texture_scale = 0.15
 color = Color( 0.447059, 0.854902, 0.258824, 1 )
-energy = 0.6
 
 [node name="PottedPlant5" parent="." instance=ExtResource( 9 )]
 editor/display_folded = true
@@ -245,7 +288,6 @@ scale = Vector2( 1.25, 1.25 )
 texture = ExtResource( 2 )
 texture_scale = 0.15
 color = Color( 0.447059, 0.854902, 0.258824, 1 )
-energy = 0.6
 
 [node name="SteelBox" parent="." instance=ExtResource( 10 )]
 position = Vector2( 98.3838, 993.484 )
@@ -254,20 +296,20 @@ scale = Vector2( 0.120001, 0.120001 )
 [node name="LoadingZone" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1190.25, 669.396 )
 scale = Vector2( 7.28, 3.52 )
+next_scene = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LoadingZone"]
 rotation = 1.56738
 scale = Vector2( 2.27018, 0.56224 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.521569, 0.521569, 0.521569, 1 )
+color = Color( 0.32549, 0.32549, 0.32549, 1 )
 
-[node name="ShaderFilter" type="ColorRect" parent="."]
-material = SubResource( 6 )
-margin_right = 1920.0
-margin_bottom = 1080.0
-rect_min_size = Vector2( 1920, 1080 )
+[node name="ShaderFilter" type="Sprite" parent="."]
+material = SubResource( 5 )
+texture = ExtResource( 13 )
+centered = false
 
 [editable path="LevelTemplate"]
 

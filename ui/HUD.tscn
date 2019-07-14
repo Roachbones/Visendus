@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://ui/HUD.gd" type="Script" id=1]
 [ext_resource path="res://TextureProgress_old.tscn" type="PackedScene" id=2]
@@ -9,6 +9,11 @@
 [ext_resource path="res://ui/RestartLevelButton.gd" type="Script" id=7]
 [ext_resource path="res://fonts/Courier_New_Bold_timer.tres" type="DynamicFont" id=8]
 [ext_resource path="res://ui/TimeLabel.gd" type="Script" id=9]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.290196, 0.529412, 0.737255, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.231373, 0.231373, 0.231373, 1 )
@@ -30,7 +35,7 @@ thickness = 0
 "hud",
 ]]
 script = ExtResource( 1 )
-progress_path = NodePath("ColorRect/MarginContainer/VBoxContainer/CenterContainer/TextureProgress")
+progress_path = NodePath("ColorRect/MarginContainer/VBoxContainer/CenterContainer/MarginContainer/ProgressBar")
 system_log_path = NodePath("ColorRect/MarginContainer/VBoxContainer/CenterContainer2/SystemLog")
 node_preview_path = NodePath("ColorRect/MarginContainer/VBoxContainer/CenterContainer3/NodePreview")
 transmission_log_path = NodePath("ColorRect/MarginContainer/VBoxContainer/CenterContainer4/TransmissionLog")
@@ -56,14 +61,38 @@ custom_constants/separation = 0
 
 [node name="CenterContainer" type="CenterContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
 margin_right = 530.0
-margin_bottom = 64.0
+margin_bottom = 31.47
 
 [node name="TextureProgress" parent="ColorRect/MarginContainer/VBoxContainer/CenterContainer" instance=ExtResource( 2 )]
+visible = false
+margin_top = -17.0
+margin_bottom = 47.0
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/MarginContainer/VBoxContainer/CenterContainer"]
+margin_left = 65.0
+margin_right = 465.0
+margin_bottom = 31.47
+size_flags_horizontal = 3
+custom_constants/margin_right = 0
+custom_constants/margin_top = 8
+custom_constants/margin_left = 0
+custom_constants/margin_bottom = 8
+
+[node name="ProgressBar" type="ProgressBar" parent="ColorRect/MarginContainer/VBoxContainer/CenterContainer/MarginContainer"]
+margin_top = 8.0
+margin_right = 400.0
+margin_bottom = 23.47
+rect_min_size = Vector2( 400, 15.47 )
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
+max_value = 1.0
+step = 0.0
+percent_visible = false
 
 [node name="CenterContainer3" type="CenterContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
-margin_top = 64.0
+margin_top = 31.0
 margin_right = 530.0
-margin_bottom = 399.0
+margin_bottom = 366.0
 
 [node name="Panel" type="Panel" parent="ColorRect/MarginContainer/VBoxContainer/CenterContainer3"]
 margin_left = 97.0
@@ -84,25 +113,25 @@ expand = true
 stretch_mode = 6
 
 [node name="HSeparator" type="HSeparator" parent="ColorRect/MarginContainer/VBoxContainer"]
-margin_top = 399.0
+margin_top = 366.0
 margin_right = 530.0
-margin_bottom = 409.74
+margin_bottom = 376.74
 rect_min_size = Vector2( 0, 10.74 )
 custom_styles/separator = SubResource( 2 )
 
 [node name="SystemLogTitle" type="Label" parent="ColorRect/MarginContainer/VBoxContainer"]
-margin_top = 409.0
+margin_top = 376.0
 margin_right = 530.0
-margin_bottom = 446.0
+margin_bottom = 413.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
 text = "SYSTEM LOG"
 align = 1
 
 [node name="CenterContainer2" type="CenterContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
-margin_top = 446.0
+margin_top = 413.0
 margin_right = 530.0
-margin_bottom = 618.08
+margin_bottom = 585.08
 size_flags_horizontal = 3
 size_flags_vertical = 0
 
@@ -124,25 +153,25 @@ text = "Prototype 15 online.
 scroll_following = true
 
 [node name="HSeparator2" type="HSeparator" parent="ColorRect/MarginContainer/VBoxContainer"]
-margin_top = 618.0
+margin_top = 585.0
 margin_right = 530.0
-margin_bottom = 628.74
+margin_bottom = 595.74
 rect_min_size = Vector2( 0, 10.74 )
 custom_styles/separator = SubResource( 2 )
 
 [node name="TransmissionLogTitle" type="Label" parent="ColorRect/MarginContainer/VBoxContainer"]
-margin_top = 628.0
+margin_top = 595.0
 margin_right = 530.0
-margin_bottom = 665.0
+margin_bottom = 632.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
 text = "TRANSMISSION LOG"
 align = 1
 
 [node name="CenterContainer4" type="CenterContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
-margin_top = 665.0
+margin_top = 632.0
 margin_right = 530.0
-margin_bottom = 980.99
+margin_bottom = 947.99
 size_flags_horizontal = 3
 size_flags_vertical = 0
 
@@ -164,16 +193,16 @@ text = "Incoming transmission from BRUCE.
 scroll_following = true
 
 [node name="HSeparator3" type="HSeparator" parent="ColorRect/MarginContainer/VBoxContainer"]
-margin_top = 980.0
+margin_top = 947.0
 margin_right = 530.0
-margin_bottom = 1002.28
+margin_bottom = 969.28
 rect_min_size = Vector2( 0, 22.28 )
 custom_styles/separator = SubResource( 2 )
 
 [node name="CenterContainer5" type="CenterContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
-margin_top = 1002.0
+margin_top = 969.0
 margin_right = 530.0
-margin_bottom = 1060.0
+margin_bottom = 1027.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/CenterContainer5"]
 margin_left = 46.0

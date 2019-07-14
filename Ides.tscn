@@ -7,7 +7,6 @@
 [ext_resource path="res://sound/ides_walk_3.ogg" type="AudioStream" id=5]
 [ext_resource path="res://textures/light.png" type="Texture" id=6]
 
-
 [sub_resource type="CircleShape2D" id=1]
 radius = 18.0
 
@@ -26,7 +25,6 @@ shader = SubResource( 2 )
 ]]
 collision_mask = 3
 script = ExtResource( 1 )
-mortal = true
 
 [node name="Sprite" type="Sprite" parent="."]
 rotation = 1.5708

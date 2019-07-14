@@ -6,7 +6,7 @@ export var node_preview_path: NodePath
 export var transmission_log_path: NodePath
 export var time_label_path: NodePath
 
-var progress: TextureProgress
+var progress: ProgressBar
 var system_log: RichTextLabel
 var node_preview: TextureRect
 var transmission_log: RichTextLabel

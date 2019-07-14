@@ -4,7 +4,6 @@
 [ext_resource path="res://Ides.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ui/HUD.tscn" type="PackedScene" id=3]
 
-
 [node name="LevelTemplate" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]

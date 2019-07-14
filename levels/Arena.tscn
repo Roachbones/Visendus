@@ -63,11 +63,7 @@ mortal = false
 
 [node name="HUD" parent="." instance=ExtResource( 3 )]
 editor/display_folded = true
-progress_path = NodePath("../../Arena/HUD/ColorRect/MarginContainer/VBoxContainer/CenterContainer/TextureProgress")
 system_log_path = NodePath("../../Arena/HUD/ColorRect/MarginContainer/VBoxContainer/CenterContainer2/SystemLog")
-node_preview_path = NodePath("../../Arena/HUD/ColorRect/MarginContainer/VBoxContainer/CenterContainer3/NodePreview")
-transmission_log_path = NodePath("../../Arena/HUD/ColorRect/MarginContainer/VBoxContainer/CenterContainer4/TransmissionLog")
-time_label_path = NodePath("../../Arena/HUD/ColorRect/MarginContainer/VBoxContainer/CenterContainer5/HBoxContainer/TimeLabel")
 
 [node name="PottedPlant" parent="." instance=ExtResource( 4 )]
 position = Vector2( 897.898, 707.351 )
