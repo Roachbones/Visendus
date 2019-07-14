@@ -14,4 +14,4 @@ func _ready():
 
 
 func _on_Button_pressed():
-	assert get_tree().reload_current_scene() == OK
+	get_tree().reload_current_scene() == OK

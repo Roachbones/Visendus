@@ -39,10 +39,10 @@ func _on_Ides_scanned_node_changed(scanned_node: Node2D):
 		))
 
 func append_transmission(bbcode: String):
-	assert transmission_log.append_bbcode(bbcode) == OK
+	print(transmission_log.append_bbcode(bbcode))
 
 func append_log(bbcode: String):
-	assert system_log.append_bbcode(bbcode) == OK
+	system_log.append_bbcode(bbcode)
 
 func report_time():
 	$"/root/Options".speedrun_segment_times[get_tree().current_scene.name] = time_label.sum_delta

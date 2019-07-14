@@ -59,7 +59,6 @@ tile_data = PoolIntArray( 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 
 [node name="Ides" parent="." instance=ExtResource( 2 )]
 light_mask = 0
 position = Vector2( 1093.2, 867.914 )
-mortal = false
 
 [node name="HUD" parent="." instance=ExtResource( 3 )]
 editor/display_folded = true
