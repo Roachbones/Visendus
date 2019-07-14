@@ -13,6 +13,5 @@ func _ready():
 
 func _on_DialogTrigger_body_entered(body):
 	if not triggered and body.is_in_group("ides") and hud:
-		print("appending transmission")
 		hud.append_transmission(colored_bbcode_dialog)
 		triggered = true

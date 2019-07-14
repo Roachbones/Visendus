@@ -1,17 +1,8 @@
 extends Button
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	get_tree().paused = false
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
+	self.focus_mode = Control.FOCUS_NONE #so you don't accidentally press it with Space
 
 func _on_Button_pressed():
-	get_tree().reload_current_scene() == OK
+	get_tree().reload_current_scene()

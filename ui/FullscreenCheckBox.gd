@@ -1,9 +1,7 @@
 extends CheckBox
 
 func _ready():
-	pass
+	pressed = OS.window_fullscreen
 
-func _on_Fullscreen_button_down():
-	OS.window_fullscreen = true
-func _on_FullscreenCheckbox_button_up():
-	OS.window_fullscreen = false
+func _on_FullscreenCheckBox_toggled(_button_pressed):
+	OS.window_fullscreen = pressed
