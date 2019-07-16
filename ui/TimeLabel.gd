@@ -4,7 +4,7 @@ var sum_delta = 0.0
 const CERTAINTY = 5
 
 func _ready():
-	pass
+	visible = $"/root/Options".speedrun_mode_enabled
 
 func _process(delta):
 	sum_delta += delta

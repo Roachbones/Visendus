@@ -1,13 +1,26 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://sound/music.ogg" type="AudioStream" id=1]
+[ext_resource path="res://MusicHandler.gd" type="Script" id=1]
+[ext_resource path="res://sound/music.ogg" type="AudioStream" id=2]
+[ext_resource path="res://sound/mainmenu.ogg" type="AudioStream" id=3]
+[ext_resource path="res://sound/bruceroom_mixdown.ogg" type="AudioStream" id=4]
+[ext_resource path="res://sound/ending.ogg" type="AudioStream" id=5]
 
-[node name="MusicHandler" type="Node2D"]
+[node name="MusicHandler" type="Node"]
+script = ExtResource( 1 )
 
-[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 1 )
-volume_db = -1.0
+[node name="StandardMusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -5.0
 
-[node name="MusicPlayer2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 1 )
-volume_db = -4.0
+[node name="MainMenuMusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -5.0
+
+[node name="BruceRoomMusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -5.0
+
+[node name="EndScreenMusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -5.0

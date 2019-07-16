@@ -92,20 +92,20 @@ percent_visible = false
 [node name="CenterContainer3" type="CenterContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
 margin_top = 31.0
 margin_right = 530.0
-margin_bottom = 366.0
+margin_bottom = 371.0
 
 [node name="Panel" type="Panel" parent="ColorRect/MarginContainer/VBoxContainer/CenterContainer3"]
-margin_left = 97.0
-margin_right = 432.0
-margin_bottom = 335.0
-rect_min_size = Vector2( 335, 335 )
+margin_left = 95.0
+margin_right = 435.0
+margin_bottom = 340.0
+rect_min_size = Vector2( 340, 340 )
 custom_styles/panel = SubResource( 3 )
 
 [node name="NodePreview" type="TextureRect" parent="ColorRect/MarginContainer/VBoxContainer/CenterContainer3"]
 margin_left = 102.0
-margin_top = 5.0
+margin_top = 7.0
 margin_right = 427.0
-margin_bottom = 330.0
+margin_bottom = 332.0
 rect_min_size = Vector2( 325, 325 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -113,25 +113,25 @@ expand = true
 stretch_mode = 6
 
 [node name="HSeparator" type="HSeparator" parent="ColorRect/MarginContainer/VBoxContainer"]
-margin_top = 366.0
+margin_top = 371.0
 margin_right = 530.0
-margin_bottom = 376.74
+margin_bottom = 381.74
 rect_min_size = Vector2( 0, 10.74 )
 custom_styles/separator = SubResource( 4 )
 
 [node name="SystemLogTitle" type="Label" parent="ColorRect/MarginContainer/VBoxContainer"]
-margin_top = 376.0
+margin_top = 381.0
 margin_right = 530.0
-margin_bottom = 413.0
+margin_bottom = 418.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
 text = "SYSTEM LOG"
 align = 1
 
 [node name="CenterContainer2" type="CenterContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
-margin_top = 413.0
+margin_top = 418.0
 margin_right = 530.0
-margin_bottom = 585.08
+margin_bottom = 590.08
 size_flags_horizontal = 3
 size_flags_vertical = 0
 
@@ -153,25 +153,25 @@ text = "Prototype 15 online.
 scroll_following = true
 
 [node name="HSeparator2" type="HSeparator" parent="ColorRect/MarginContainer/VBoxContainer"]
-margin_top = 585.0
+margin_top = 590.0
 margin_right = 530.0
-margin_bottom = 595.74
+margin_bottom = 600.74
 rect_min_size = Vector2( 0, 10.74 )
 custom_styles/separator = SubResource( 4 )
 
 [node name="TransmissionLogTitle" type="Label" parent="ColorRect/MarginContainer/VBoxContainer"]
-margin_top = 595.0
+margin_top = 600.0
 margin_right = 530.0
-margin_bottom = 632.0
+margin_bottom = 637.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
 text = "TRANSMISSION LOG"
 align = 1
 
 [node name="CenterContainer4" type="CenterContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
-margin_top = 632.0
+margin_top = 637.0
 margin_right = 530.0
-margin_bottom = 947.99
+margin_bottom = 952.99
 size_flags_horizontal = 3
 size_flags_vertical = 0
 
@@ -193,34 +193,37 @@ text = "Incoming transmission from BRUCE.
 scroll_following = true
 
 [node name="HSeparator3" type="HSeparator" parent="ColorRect/MarginContainer/VBoxContainer"]
-margin_top = 947.0
+margin_top = 952.0
 margin_right = 530.0
-margin_bottom = 969.28
+margin_bottom = 974.28
 rect_min_size = Vector2( 0, 22.28 )
 custom_styles/separator = SubResource( 4 )
 
 [node name="CenterContainer5" type="CenterContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
-margin_top = 969.0
+margin_top = 974.0
 margin_right = 530.0
-margin_bottom = 1027.0
+margin_bottom = 1032.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/CenterContainer5"]
-margin_left = 46.0
-margin_right = 483.0
+margin_left = 24.0
+margin_right = 505.0
 margin_bottom = 58.0
 custom_constants/separation = 77
 
 [node name="RestartLevelButton" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/CenterContainer5/HBoxContainer"]
 pause_mode = 2
-margin_right = 150.0
+margin_right = 194.0
 margin_bottom = 58.0
 rect_min_size = Vector2( 150, 40 )
+focus_mode = 0
+custom_fonts/font = ExtResource( 5 )
+enabled_focus_mode = 0
 text = "restart level"
 script = ExtResource( 7 )
 
 [node name="TimeLabel" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/CenterContainer5/HBoxContainer"]
-margin_left = 227.0
-margin_right = 437.0
+margin_left = 271.0
+margin_right = 481.0
 margin_bottom = 58.0
 rect_min_size = Vector2( 100.8, 0 )
 custom_fonts/font = ExtResource( 8 )

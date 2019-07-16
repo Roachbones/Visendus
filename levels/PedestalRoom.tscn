@@ -65,6 +65,7 @@ texture = ExtResource( 4 )
 shadow_enabled = true
 
 [node name="FirstFrameHider" type="ColorRect" parent="." index="9"]
+visible = false
 light_mask = 0
 margin_right = 40.0
 margin_bottom = 40.0

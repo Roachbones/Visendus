@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://level_components/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://level_components/enemies/HumanGuardBear.tscn" type="PackedScene" id=2]
@@ -11,7 +11,6 @@
 [ext_resource path="res://level_components/BruceArrow.tscn" type="PackedScene" id=9]
 [ext_resource path="res://level_components/DialogTrigger.tscn" type="PackedScene" id=10]
 [ext_resource path="res://level_components/LoadingZone.tscn" type="PackedScene" id=11]
-[ext_resource path="res://levels/LossLabyrinth.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 55.1315, 39.6146 )
@@ -102,7 +101,7 @@ shape = SubResource( 2 )
 
 [node name="LoadingZone" parent="." index="18" instance=ExtResource( 11 )]
 position = Vector2( 1088.53, 1069.46 )
-next_scene = ExtResource( 12 )
+scene_path = "res://levels/LossLabyrinth.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LoadingZone" index="0"]
 shape = SubResource( 3 )

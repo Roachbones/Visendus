@@ -9,11 +9,6 @@
 [ext_resource path="res://level_components/LoadingZone.tscn" type="PackedScene" id=7]
 [ext_resource path="res://level_components/enemies/HumanGuardKitty.tscn" type="PackedScene" id=8]
 
-
-
-
-
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 38.914, 13.7623 )
 
@@ -56,7 +51,6 @@ open_direction = -1
 [node name="Door3" parent="." index="9" instance=ExtResource( 5 )]
 position = Vector2( 1084.54, 761.134 )
 rotation = -3.12823
-open_direction = 1
 
 [node name="PottedPlant" parent="." index="10" instance=ExtResource( 6 )]
 position = Vector2( 768.284, 123.594 )

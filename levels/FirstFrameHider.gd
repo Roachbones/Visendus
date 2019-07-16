@@ -3,7 +3,7 @@ extends ColorRect
 var f = false
 
 func _ready():
-	pass
+	visible = true
 
 func _process(_delta):
 	if f:

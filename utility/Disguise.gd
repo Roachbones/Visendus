@@ -11,11 +11,11 @@ var base_rotation
 func _on_Ides_scanned_node_changed(scanned_node):
 	if scanned_node.has_node("Sprite"):
 		texture = scanned_node.get_node("Sprite").texture
-		scale = scanned_node.get_node("Sprite").scale * scanned_node.global_scale
+		scale = scanned_node.get_node("Sprite").scale * scanned_node.global_scale / get_parent().scale
 		base_rotation = scanned_node.get_node("Sprite").rotation
 	elif scanned_node.has_node("AnimatedSprite"):
 		texture = scanned_node.get_node("AnimatedSprite").frames.get_frame(scanned_node.get_node("AnimatedSprite").animation, 0)
-		scale = scanned_node.get_node("AnimatedSprite").scale * scanned_node.global_scale
+		scale = scanned_node.get_node("AnimatedSprite").scale * scanned_node.global_scale / get_parent().scale
 		base_rotation = scanned_node.get_node("AnimatedSprite").rotation
 	rotation = base_rotation
 	should_keep_rotation = not scanned_node.get_node("Scannable").spinnable

@@ -15,8 +15,9 @@ var bootlines = [
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$"/root/MusicHandler/MusicPlayer".play()
+	$"/root/MusicHandler".switch_player("StandardMusicPlayer")
 	play("Tutorial Intro")
+	$ColorRect.visible = true
 
 func update_log():
 	emit_signal("logged_bbcode", bootlines.pop_front())

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Ides.tscn" type="PackedScene" id=2]
@@ -9,14 +9,13 @@
 [ext_resource path="res://level_components/enemies/HumanGuard.tscn" type="PackedScene" id=7]
 [ext_resource path="res://level_components/furniture/tables.tscn" type="PackedScene" id=8]
 [ext_resource path="res://level_components/LoadingZone.tscn" type="PackedScene" id=9]
-[ext_resource path="res://levels/Tutorial.tscn" type="PackedScene" id=10]
-[ext_resource path="res://level_components/furniture/Door.tscn" type="PackedScene" id=11]
-[ext_resource path="res://level_components/Switch.tscn" type="PackedScene" id=12]
-[ext_resource path="res://level_components/enemies/HumanGuardKitty.tscn" type="PackedScene" id=13]
-[ext_resource path="res://level_components/enemies/Sentinel.tscn" type="PackedScene" id=14]
-[ext_resource path="res://level_components/furniture/SteelBox.tscn" type="PackedScene" id=15]
-[ext_resource path="res://level_components/furniture/Shelves.tscn" type="PackedScene" id=16]
-[ext_resource path="res://level_components/enemies/LaserCaster.tscn" type="PackedScene" id=17]
+[ext_resource path="res://level_components/furniture/Door.tscn" type="PackedScene" id=10]
+[ext_resource path="res://level_components/Switch.tscn" type="PackedScene" id=11]
+[ext_resource path="res://level_components/enemies/HumanGuardKitty.tscn" type="PackedScene" id=12]
+[ext_resource path="res://level_components/enemies/Sentinel.tscn" type="PackedScene" id=13]
+[ext_resource path="res://level_components/furniture/SteelBox.tscn" type="PackedScene" id=14]
+[ext_resource path="res://level_components/furniture/Shelves.tscn" type="PackedScene" id=15]
+[ext_resource path="res://level_components/enemies/LaserCaster.tscn" type="PackedScene" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 214.644, 210.863 )
@@ -109,7 +108,7 @@ position = Vector2( 1221.36, 696.587 )
 
 [node name="LoadingZone" parent="." instance=ExtResource( 9 )]
 position = Vector2( 1183.32, 478.223 )
-next_scene = ExtResource( 10 )
+scene_path = "res://levels/Tutorial.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LoadingZone"]
 shape = SubResource( 4 )
@@ -124,31 +123,31 @@ shape = SubResource( 5 )
 [node name="PottedPlant5" parent="." instance=ExtResource( 4 )]
 position = Vector2( 170.519, 925.984 )
 
-[node name="Door" parent="." instance=ExtResource( 11 )]
+[node name="Door" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1156.57, 826.817 )
 open_direction = -1
 
-[node name="Switch" parent="." instance=ExtResource( 12 )]
+[node name="Switch" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1298.8, 872.071 )
 rotation = 1.56136
 
-[node name="HumanGuardKitty" parent="." instance=ExtResource( 13 )]
+[node name="HumanGuardKitty" parent="." instance=ExtResource( 12 )]
 position = Vector2( 1219.56, 138.732 )
 
-[node name="Sentinel" parent="." instance=ExtResource( 14 )]
+[node name="Sentinel" parent="." instance=ExtResource( 13 )]
 editor/display_folded = true
 position = Vector2( 767.005, 565.253 )
 
 [node name="LowerPupil" parent="Sentinel" index="4"]
 rotation = 2.84097
 
-[node name="SteelBox" parent="." instance=ExtResource( 15 )]
+[node name="SteelBox" parent="." instance=ExtResource( 14 )]
 position = Vector2( 895.729, 882.058 )
 
-[node name="Shelves" parent="." instance=ExtResource( 16 )]
+[node name="Shelves" parent="." instance=ExtResource( 15 )]
 position = Vector2( 659.591, 139.232 )
 
-[node name="LaserCaster" parent="." instance=ExtResource( 17 )]
+[node name="LaserCaster" parent="." instance=ExtResource( 16 )]
 position = Vector2( 355.752, 939.767 )
 rotation = -1.75527
 fix_emission_point = true
