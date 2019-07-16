@@ -11,8 +11,11 @@ func stop_all():
 			player.stop()
 
 func switch_player(player_name):
-	stop_all()
+	if not $"/root/Options".music_enabled:
+		return
 	for player in players:
 		if player.name == player_name:
-			player.play()
-			break
+			if not player.playing:
+				player.play()
+		elif player.playing:
+			player.stop()

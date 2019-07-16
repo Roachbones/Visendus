@@ -3,14 +3,14 @@ extends Node
 var loader
 var wait_frames
 var time_max = 500 # msec
-var current_scene
+#var current_scene
 #texture_progress's visibility is used by other nodes to determine if loading is happening
 onready var texture_progress = $CanvasLayer/TextureProgress
 
 func _ready():
-	var root = get_tree().get_root()
-	current_scene = root.get_child(root.get_child_count() -1)
-	print(get_children())
+	pass
+	#var root = get_tree().get_root()
+	#current_scene = root.get_child(root.get_child_count() -1)
 
 func goto_scene(path): # game requests to switch to this scene
 	loader = ResourceLoader.load_interactive(path)
@@ -18,8 +18,7 @@ func goto_scene(path): # game requests to switch to this scene
 		print("error")
 		return
 	set_process(true)
-	
-	current_scene.queue_free() # get rid of the old scene
+	get_tree().get_root().get_child(get_tree().get_root().get_child_count() -1).queue_free() # get rid of the old scene
 	texture_progress.visible = true
 	
 	wait_frames = 1
