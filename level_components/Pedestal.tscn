@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://level_components/Pedestal.gd" type="Script" id=1]
 [ext_resource path="res://textures/pedestal.png" type="Texture" id=2]
@@ -7,11 +7,14 @@
 [ext_resource path="res://textures/light.png" type="Texture" id=5]
 [ext_resource path="res://utility/Scannable.tscn" type="PackedScene" id=6]
 
-[sub_resource type="CanvasItemMaterial" id=2]
+[sub_resource type="CanvasItemMaterial" id=1]
 light_mode = 1
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=2]
 radius = 250.0
+
+[sub_resource type="CanvasItemMaterial" id=3]
+blend_mode = 1
 
 [node name="Pedestal" type="StaticBody2D"]
 scale = Vector2( 0.2, 0.2 )
@@ -28,7 +31,7 @@ polygon = PoolVector2Array( -0.0273107, -9.02005, 6.49648, -6.26475, 7.0752, 5.9
 
 [node name="Sparks" parent="." instance=ExtResource( 3 )]
 light_mask = 2
-material = SubResource( 2 )
+material = SubResource( 1 )
 position = Vector2( 18.1536, -294.8 )
 scale = Vector2( 6, 6 )
 z_index = 1
@@ -46,9 +49,16 @@ texture = ExtResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BruceOrb"]
 visible = false
 position = Vector2( 6.612, -11.011 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="BruceOrb"]
+modulate = Color( 0.972549, 0.572549, 0.184314, 0.407843 )
+material = SubResource( 3 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 5 )
 
 [node name="Light2D" type="Light2D" parent="BruceOrb"]
+visible = false
 position = Vector2( 13.6225, -20.4337 )
 texture = ExtResource( 5 )
 texture_scale = 25.0

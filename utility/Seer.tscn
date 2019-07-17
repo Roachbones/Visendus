@@ -32,7 +32,7 @@ animation = "0"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 3 )
-volume_db = -2.0
+volume_db = -9.0
 
 [node name="LineCasterLeft" parent="." instance=ExtResource( 4 )]
 visible = false
