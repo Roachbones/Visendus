@@ -49,7 +49,8 @@ func alert(ides):
 		
 
 func placeholder_alert():
-	$AnimatedSprite.play("alert")
+	if not $AnimatedSprite.playing:
+		$AnimatedSprite.play("alert")
 	$AnimatedSprite.set_frame(0)
 
 

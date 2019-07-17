@@ -1,7 +1,6 @@
 extends RichTextLabel
 
-const credits_text = """
-Game made by Vivian and Dero for [i]My First Game Jam: Summer 2019[/i]
+const credits_text = """Game made by Vivian and Dero for [i]My First Game Jam: Summer 2019[/i]
 
 Sources used:
 	Freesound.org
@@ -31,17 +30,21 @@ Where can you find us??? RIGHT HERE
 
 Thank you for playing our game.
 """
-var credits_text_lines = credits_text.split("\n")
+var credits_text_lines = credits_text.split("\n") as Array
 
 var sum_delta = 0.0
-const seconds_per_line = 0.2
+const seconds_per_line = 0.1
 func _ready():
-	pass
+	bbcode_text = ""
 func _process(delta):
 	sum_delta += delta
 	#visible_characters = int(sum_delta * characters_per_second)
 	if sum_delta > seconds_per_line:
 		sum_delta = sum_delta - seconds_per_line
+		bbcode_text = bbcode_text + credits_text_lines.pop_front() + "\n"
+		if not credits_text_lines:
+			set_process(false)
+		
 
 func _on_Credits_meta_clicked(meta):
 	var err = OS.shell_open(meta)
