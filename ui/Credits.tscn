@@ -5,32 +5,33 @@
 [ext_resource path="res://Credits.gd" type="Script" id=3]
 
 [node name="Credits" type="RichTextLabel"]
-margin_right = 500.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 800, 1000 )
+margin_right = 900.0
+margin_bottom = 1000.0
 custom_fonts/italics_font = ExtResource( 1 )
 custom_fonts/normal_font = ExtResource( 2 )
 bbcode_enabled = true
 bbcode_text = "Game made by Vivian and Dero
 
 Sources used:
-
-Freesound.org
-	[i]Alert[/i] - flowerdove2168
-	[i]Drone dark emptiness[/i] - ceich93
-	[i]Low resonant dark tone[/i] - Robinhood76	
-	[i]Low pitch drone plus[/i] - benbonecan
-	[i]Low pitch drone 1-3[/i] - benbonecan	
-	[i]Pencil sharpener with crank[/i] - roivasugo
-	[i]Sorpresa 2[/i] - poderarcano
-	[i]Whispers[/i] - thanvannispen
-
-Dig.ccmixter.org
-	[i]Excessive exposure[/i] - acclivity
-	[i]Eyes Closed[/i] - mwic
+	Freesound.org
+		[i]Acoustic guitar[/i] - frankyboomer
+		[i]Alert[/i] - flowerdove2168
+		[i]Cavernous drone[/i] - glueissobar
+		[i]Drone dark emptiness[/i] - ceich93
+		[i]Dark ambience[/i] - patricklieberkind
+		[i]London underground train interior[/i] - inspectorj
+		[i]Low resonant dark tone[/i] - Robinhood76	
+		[i]Low pitch drone plus[/i] - benbonecan
+		[i]Low pitch drone 1-3[/i] - benbonecan	
+		[i]Pencil sharpener with crank[/i] - roivasugo
+		[i]Sorpresa 2[/i] - poderarcano
+		[i]Whispers[/i] - thanvannispen
+		[i]Windchime tolling[/i] - inspectorj
+	Dig.ccmixter.org
+		[i]Excessive exposure[/i] - acclivity
+		[i]Eyes Closed[/i] - mwic
 
 Where can you find us??? RIGHT HERE
-
 	Vivian
 		[url=https://rose.systems/]https://rose.systems/[/url]
 	Dero
@@ -39,23 +40,25 @@ Where can you find us??? RIGHT HERE
 text = "Game made by Vivian and Dero
 
 Sources used:
-
-Freesound.org
-	Alert - flowerdove2168
-	Drone dark emptiness - ceich93
-	Low resonant dark tone - Robinhood76	
-	Low pitch drone plus - benbonecan
-	Low pitch drone 1-3 - benbonecan	
-	Pencil sharpener with crank - roivasugo
-	Sorpresa 2 - poderarcano
-	Whispers - thanvannispen
-
-Dig.ccmixter.org
-	Excessive exposure - acclivity
-	Eyes Closed - mwic
+	Freesound.org
+		Acoustic guitar - frankyboomer
+		Alert - flowerdove2168
+		Cavernous drone - glueissobar
+		Drone dark emptiness - ceich93
+		Dark ambience - patricklieberkind
+		London underground train interior - inspectorj
+		Low resonant dark tone - Robinhood76	
+		Low pitch drone plus - benbonecan
+		Low pitch drone 1-3 - benbonecan	
+		Pencil sharpener with crank - roivasugo
+		Sorpresa 2 - poderarcano
+		Whispers - thanvannispen
+		Windchime tolling - inspectorj
+	Dig.ccmixter.org
+		Excessive exposure - acclivity
+		Eyes Closed - mwic
 
 Where can you find us??? RIGHT HERE
-
 	Vivian
 		https://rose.systems/
 	Dero

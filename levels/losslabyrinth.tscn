@@ -337,7 +337,7 @@ scale = Vector2( 0.120001, 0.120001 )
 editor/display_folded = true
 position = Vector2( 1190.25, 669.396 )
 scale = Vector2( 7.28, 3.52 )
-scene_path = "res://levels/PedestalRoom.tscn"
+scene_path = "res://levels/BruceRoom.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LoadingZone"]
 rotation = 1.56738
