@@ -6,7 +6,7 @@
 
 [node name="Credits" type="RichTextLabel"]
 margin_right = 900.0
-margin_bottom = 1000.0
+margin_bottom = 818.0
 custom_fonts/italics_font = ExtResource( 1 )
 custom_fonts/normal_font = ExtResource( 2 )
 bbcode_enabled = true
