@@ -11,3 +11,32 @@ margin_bottom = 40.0
 texture = ExtResource( 1 )
 
 [node name="Credits" parent="." instance=ExtResource( 2 )]
+text = "Made by Vivian and Dero for My First Game Jam: Summer 2019
+
+Sources used:
+	Freesound.org
+		Acoustic guitar - frankyboomer
+		Alert - flowerdove2168
+		Cavernous drone - glueissobar
+		Drone dark emptiness - ceich93
+		Dark ambience - patricklieberkind
+		London underground train interior - inspectorj
+		Low resonant dark tone - Robinhood76	
+		Low pitch drone plus - benbonecan
+		Low pitch drone 1-3 - benbonecan	
+		Pencil sharpener with crank - roivasugo
+		Sorpresa 2 - poderarcano
+		Whispers - thanvannispen
+		Windchime tolling - inspectorj
+	Dig.ccmixter.org
+		Excessive exposure - acclivity
+		Eyes Closed - mwic
+
+Where can you find us??? RIGHT HERE
+	Vivian
+		https://rose.systems/
+	Dero
+		Twitter: @inhumanrobot
+		Instagram: @inhumanrobot
+
+Thank you for playing our game."

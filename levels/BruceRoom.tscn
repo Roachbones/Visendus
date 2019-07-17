@@ -80,8 +80,8 @@ margin_right = 40.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 1920, 1080 )
 script = ExtResource( 6 )
-[connection signal="lost_bruce" from="Pedestal" to="MonitorPanel" method="bluescreen"]
 [connection signal="lost_bruce" from="Pedestal" to="MonitorPanel2" method="bluescreen"]
+[connection signal="lost_bruce" from="Pedestal" to="MonitorPanel" method="bluescreen"]
 
 [editable path="Pedestal"]
 
