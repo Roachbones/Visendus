@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Visendus"
-run/main_scene="res://ui/MainMenu.tscn"
+run/main_scene="res://levels/BruceRoom.tscn"
 config/icon="res://textures/eyealert.png"
 
 [autoload]

@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://level_components/Pedestal.gd" type="Script" id=1]
 [ext_resource path="res://textures/pedestal.png" type="Texture" id=2]
 [ext_resource path="res://Sparks.tscn" type="PackedScene" id=3]
-[ext_resource path="res://textures/BRUCE_orb.png" type="Texture" id=4]
-[ext_resource path="res://textures/light.png" type="Texture" id=5]
-[ext_resource path="res://utility/Scannable.tscn" type="PackedScene" id=6]
+[ext_resource path="res://CPUSparks.tscn" type="PackedScene" id=4]
+[ext_resource path="res://textures/BRUCE_orb.png" type="Texture" id=5]
+[ext_resource path="res://textures/light.png" type="Texture" id=6]
+[ext_resource path="res://utility/Scannable.tscn" type="PackedScene" id=7]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 light_mode = 1
@@ -29,12 +30,19 @@ position = Vector2( 26.0284, -112.247 )
 scale = Vector2( 61.8413, 87.3817 )
 polygon = PoolVector2Array( -0.0273107, -9.02005, 6.49648, -6.26475, 7.0752, 5.91069, -0.606035, 9.59683, -7.81377, 5.76175, -7.86638, -5.07327 )
 
-[node name="Sparks" parent="." instance=ExtResource( 3 )]
+[node name="Sparks_old" parent="." instance=ExtResource( 3 )]
+visible = false
 light_mask = 2
 material = SubResource( 1 )
 position = Vector2( 18.1536, -294.8 )
 scale = Vector2( 6, 6 )
 z_index = 1
+emitting = false
+one_shot = true
+
+[node name="Sparks" parent="." instance=ExtResource( 4 )]
+position = Vector2( 18.0408, -316.76 )
+scale = Vector2( 20, 20 )
 emitting = false
 one_shot = true
 
@@ -44,7 +52,7 @@ input_pickable = true
 
 [node name="Sprite" type="Sprite" parent="BruceOrb"]
 scale = Vector2( 0.338418, 0.338418 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BruceOrb"]
 visible = false
@@ -55,12 +63,12 @@ shape = SubResource( 2 )
 modulate = Color( 0.972549, 0.572549, 0.184314, 0.407843 )
 material = SubResource( 3 )
 scale = Vector2( 5, 5 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="Light2D" type="Light2D" parent="BruceOrb"]
 visible = false
 position = Vector2( 13.6225, -20.4337 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 texture_scale = 25.0
 color = Color( 0.960784, 0.631373, 0.258824, 1 )
 energy = 0.5
@@ -68,7 +76,7 @@ range_z_min = 0
 range_z_max = 0
 shadow_enabled = true
 
-[node name="Scannable" parent="BruceOrb" instance=ExtResource( 6 )]
+[node name="Scannable" parent="BruceOrb" instance=ExtResource( 7 )]
 hud_name = "BRUCE"
 spinnable = false
 [connection signal="input_event" from="BruceOrb" to="." method="_on_BruceOrb_input_event"]

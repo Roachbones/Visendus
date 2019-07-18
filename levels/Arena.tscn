@@ -158,6 +158,10 @@ material = SubResource( 7 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 1920, 1080 )
+
+[node name="HumanGuard" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1220.15, 220.547 )
+travel_mode = 4
 [connection signal="logged_bbcode" from="Ides" to="HUD" method="_on_Ides_logged_bbcode"]
 [connection signal="scan_progress_changed" from="Ides" to="HUD" method="_on_Ides_scan_progress_changed"]
 [connection signal="scanned_node_changed" from="Ides" to="HUD" method="_on_Ides_scanned_node_changed"]

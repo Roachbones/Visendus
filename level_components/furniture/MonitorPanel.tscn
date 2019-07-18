@@ -26,10 +26,10 @@ position = Vector2( 4.41226, 61.7723 )
 shape = SubResource( 1 )
 
 [node name="MonitorLight" type="Node2D" parent="."]
+modulate = Color( 1, 0.752941, 0.14902, 0.709804 )
 position = Vector2( -510.893, -205.62 )
 
 [node name="Sprite" type="Sprite" parent="MonitorLight"]
-modulate = Color( 1, 0.870588, 0.556863, 0.709804 )
 material = SubResource( 2 )
 position = Vector2( 982.107, 805.044 )
 rotation = 1.5708
@@ -40,7 +40,6 @@ region_rect = Rect2( 191, -107, 744, 954 )
 region_filter_clip = true
 
 [node name="Sprite3" type="Sprite" parent="MonitorLight"]
-modulate = Color( 1, 0.870588, 0.556863, 0.709804 )
 material = SubResource( 2 )
 position = Vector2( 469.467, 777.021 )
 rotation = 1.5708
@@ -51,7 +50,6 @@ region_rect = Rect2( 191, -107, 744, 954 )
 region_filter_clip = true
 
 [node name="Sprite2" type="Sprite" parent="MonitorLight"]
-modulate = Color( 1, 0.870588, 0.556863, 0.709804 )
 material = SubResource( 2 )
 position = Vector2( -56.3013, 925.994 )
 rotation = 1.5708

@@ -1,11 +1,12 @@
 extends KinematicBody2D
 
-enum travel_modes {STATIONARY, RIDE_PATH, OSCILLATE, STARE}
+enum travel_modes {STATIONARY, RIDE_PATH, OSCILLATE, STARE, SPIN}
 
 export(travel_modes) var travel_mode = travel_modes.STATIONARY
 export(float) var speed = 100
 export(float) var oscillation_speed = 1
 export(float) var oscillation_angle = 1 #radians
+export(float) var spin_speed = 1
 export(NodePath) var stare_target_path
 var stare_target
 
@@ -29,6 +30,8 @@ func _process(delta):
 	if travel_mode == travel_modes.OSCILLATE:
 		oscillation_time_elapsed += delta
 		rotation = sin(oscillation_speed * oscillation_time_elapsed) * oscillation_angle + primary_rotation
+	if travel_mode == travel_modes.SPIN:
+		rotation += spin_speed * delta
 	if travel_mode == travel_modes.STARE:
 		rotation = position.direction_to(stare_target.global_position).angle()
 
