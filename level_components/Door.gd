@@ -4,6 +4,7 @@ enum d {CLOCKWISE = 1, COUNTERCLOCKWISE = -1}
 export(d) var open_direction = d.CLOCKWISE
 var base_rotation
 const ANGLE = PI/2
+export var angle_multiplier = 1.0
 const opening_time = 1 #seconds
 export var opened = false
 
@@ -12,7 +13,7 @@ func _ready():
 	if not opened:
 		base_rotation = rotation
 	else:
-		base_rotation = rotation - ANGLE * open_direction
+		base_rotation = rotation - ANGLE * angle_multiplier * open_direction
 
 func open():
 	if not opened:
@@ -22,7 +23,7 @@ func open():
 			self,
 			"rotation",
 			null,
-			base_rotation + ANGLE * open_direction,
+			base_rotation + ANGLE * angle_multiplier * open_direction,
 			opening_time,
 			Tween.TRANS_CUBIC,
 			Tween.EASE_OUT
