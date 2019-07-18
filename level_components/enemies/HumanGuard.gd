@@ -48,7 +48,8 @@ func _on_Seer_seen_ides(ides: Node2D):
 			"Human Guard":
 				if ides.scanned_node == self:
 					if ides.mortal: #otherwise we flood stdout
-						print("You're... ME!? AAAAAAAA")
+						#print("You're... ME!? AAAAAAAA")
+						ides.emit_signal("logged_bbcode", inspect_self_dialog())
 					$Seer.alert(ides)
 			"Switch":
 				$Seer.alert(ides)
@@ -59,6 +60,23 @@ func _on_Seer_seen_ides(ides: Node2D):
 					$Seer.alert(ides)
 			"Shelves":
 				$Seer.alert(ides)
+
+func inspect_self_dialog():
+	var DIALOG_PREFIX = "Dialog interpreted: "
+	var quotes = [
+		"You're... ME!? AAAA",
+		"You're... ME!? AAAAAAAA",
+		"You're... ME!? AAAAAAAAAAAAAAAA",
+		"You're me?? BUT I'M ME!!",
+		"I-Impossible! ...I am very handsome.",
+		"My identical twin is alive!?? No, that's just a hologram. Sigh.",
+		"Doppelgänger!?"
+	]
+	var log_choices = []
+	for quote in quotes:
+		log_choices.append(DIALOG_PREFIX + "\"" + quote + "\"")
+	log_choices.append("[i]The guard looks at you thoughtfully and cleans the spinach from between their teeth. Then they stomp you to pieces.[/i]")
+	return log_choices[randi() % len(log_choices)]
 
 func _on_LoseAura_body_entered(body):
 	if body.is_in_group("ides"):

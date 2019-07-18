@@ -97,7 +97,7 @@ tracks/4/keys = {
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 3 )
-shader_param/cutoff = 0.0
+shader_param/cutoff = 0.733333
 shader_param/smooth_size = 0.589
 shader_param/mask = ExtResource( 4 )
 
@@ -124,7 +124,6 @@ immobile = true
 script = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="AnimationPlayer" index="0"]
-visible = false
 material = SubResource( 2 )
 margin_left = -25.0
 margin_top = -22.0

@@ -207,12 +207,12 @@ position = Vector2( 331.259, 368.272 )
 
 [node name="PottedPlant3" parent="." instance=ExtResource( 10 )]
 position = Vector2( 336.811, 590.345 )
-[connection signal="switched_off" from="PuzzleElements/SwitchFoyer0" to="PuzzleElements/DoorDoombas" method="close"]
 [connection signal="switched_off" from="PuzzleElements/SwitchFoyer0" to="PuzzleElements/DoorSpinner0" method="close"]
 [connection signal="switched_off" from="PuzzleElements/SwitchFoyer0" to="PuzzleElements/DoorSpinner1" method="close"]
-[connection signal="switched_on" from="PuzzleElements/SwitchFoyer0" to="PuzzleElements/DoorDoombas" method="open"]
+[connection signal="switched_off" from="PuzzleElements/SwitchFoyer0" to="PuzzleElements/DoorDoombas" method="close"]
 [connection signal="switched_on" from="PuzzleElements/SwitchFoyer0" to="PuzzleElements/DoorSpinner0" method="open"]
 [connection signal="switched_on" from="PuzzleElements/SwitchFoyer0" to="PuzzleElements/DoorSpinner1" method="open"]
+[connection signal="switched_on" from="PuzzleElements/SwitchFoyer0" to="PuzzleElements/DoorDoombas" method="open"]
 [connection signal="switched_off" from="PuzzleElements/SwitchFoyer1" to="PuzzleElements/DoorLasers" method="close"]
 [connection signal="switched_on" from="PuzzleElements/SwitchFoyer1" to="PuzzleElements/DoorLasers" method="open"]
 [connection signal="switched_off" from="PuzzleElements/SwitchDoombas" to="PuzzleElements/DoorWatcher" method="close"]
