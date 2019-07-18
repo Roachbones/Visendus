@@ -73,12 +73,11 @@ position = Vector2( 596.707, 180.447 )
 rotation = 3.10677
 
 [node name="LaserCasterCluster" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( 93.5046, 504.535 )
 
 [node name="LaserCaster" parent="LaserCasterCluster" instance=ExtResource( 6 )]
-position = Vector2( 0, -88.3967 )
-rotation = 0.150994
+position = Vector2( 0, -91.8957 )
+rotation = 0.201657
 fix_emission_point = true
 
 [node name="LaserCaster2" parent="LaserCasterCluster" instance=ExtResource( 6 )]
@@ -104,6 +103,16 @@ fix_emission_point = true
 [node name="LaserCaster6" parent="LaserCasterCluster" instance=ExtResource( 6 )]
 position = Vector2( 0, -2.45551 )
 rotation = -0.0956153
+fix_emission_point = true
+
+[node name="LaserCaster7" parent="LaserCasterCluster" instance=ExtResource( 6 )]
+position = Vector2( 1.16635, -120.256 )
+rotation = 0.36212
+fix_emission_point = true
+
+[node name="LaserCaster8" parent="LaserCasterCluster" instance=ExtResource( 6 )]
+position = Vector2( 17.4952, 83.854 )
+rotation = -0.353161
 fix_emission_point = true
 
 [node name="LittleDoombaSquad" type="Node2D" parent="."]
@@ -242,6 +251,7 @@ position = Vector2( 331.259, 368.272 )
 position = Vector2( 336.811, 590.345 )
 
 [node name="DialogTrigger" parent="." instance=ExtResource( 4 )]
+editor/display_folded = true
 position = Vector2( 315.663, 476 )
 bbcode_dialog = "The soft glow of the lasers is enough to sustain these plants. Of course, it helps that they are made of plastic."
 
@@ -255,17 +265,17 @@ shape = SubResource( 5 )
 
 [node name="LoadingZone" parent="." instance=ExtResource( 13 )]
 position = Vector2( 652.071, 773.053 )
-scene_path = "res://levels/SplitPath.tscn"
+scene_path = "res://ui/EndScreen.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LoadingZone"]
 position = Vector2( -3.87708, -32.3088 )
 shape = SubResource( 6 )
+[connection signal="switched_off" from="PuzzleElements/SwitchFoyer0" to="PuzzleElements/DoorSpinner0" method="close"]
 [connection signal="switched_off" from="PuzzleElements/SwitchFoyer0" to="PuzzleElements/DoorSpinner1" method="close"]
 [connection signal="switched_off" from="PuzzleElements/SwitchFoyer0" to="PuzzleElements/DoorDoombas" method="close"]
-[connection signal="switched_off" from="PuzzleElements/SwitchFoyer0" to="PuzzleElements/DoorSpinner0" method="close"]
+[connection signal="switched_on" from="PuzzleElements/SwitchFoyer0" to="PuzzleElements/DoorSpinner0" method="open"]
 [connection signal="switched_on" from="PuzzleElements/SwitchFoyer0" to="PuzzleElements/DoorSpinner1" method="open"]
 [connection signal="switched_on" from="PuzzleElements/SwitchFoyer0" to="PuzzleElements/DoorDoombas" method="open"]
-[connection signal="switched_on" from="PuzzleElements/SwitchFoyer0" to="PuzzleElements/DoorSpinner0" method="open"]
 [connection signal="switched_off" from="PuzzleElements/SwitchFoyer1" to="PuzzleElements/DoorLasers" method="close"]
 [connection signal="switched_on" from="PuzzleElements/SwitchFoyer1" to="PuzzleElements/DoorLasers" method="open"]
 [connection signal="switched_off" from="PuzzleElements/SwitchDoombas" to="PuzzleElements/DoorWatcher" method="close"]

@@ -1,17 +1,19 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://ui/EndScreen.gd" type="Script" id=1]
 [ext_resource path="res://textures/end_screen.png" type="Texture" id=2]
 [ext_resource path="res://ui/Credits.tscn" type="PackedScene" id=3]
-[ext_resource path="res://shaders/transition.shader" type="Shader" id=4]
-[ext_resource path="res://shaders/masks/endscreen.png" type="Texture" id=5]
-[ext_resource path="res://ui/SpeedrunResults.tscn" type="PackedScene" id=6]
+[ext_resource path="res://fonts/Courier_New_Bold_Italics_credits.tres" type="DynamicFont" id=4]
+[ext_resource path="res://fonts/Courier_New_Bold_credits.tres" type="DynamicFont" id=5]
+[ext_resource path="res://shaders/transition.shader" type="Shader" id=6]
+[ext_resource path="res://shaders/masks/endscreen.png" type="Texture" id=7]
+[ext_resource path="res://ui/SpeedrunResults.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ShaderMaterial" id=1]
-shader = ExtResource( 4 )
+shader = ExtResource( 6 )
 shader_param/cutoff = 1.0
 shader_param/smooth_size = 0.392
-shader_param/mask = ExtResource( 5 )
+shader_param/mask = ExtResource( 7 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "anim"
@@ -52,10 +54,13 @@ margin_bottom = 40.0
 texture = ExtResource( 2 )
 
 [node name="Credits" parent="." instance=ExtResource( 3 )]
-margin_left = 20.5055
-margin_top = 18.4549
-margin_right = 918.505
-margin_bottom = 888.455
+margin_left = 21.0
+margin_top = 18.0
+margin_right = 1035.0
+margin_bottom = 1071.0
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/normal_font = ExtResource( 5 )
+custom_colors/default_color = Color( 0.780392, 0.780392, 0.780392, 1 )
 text = "Made by Vivian and Dero for My First Game Jam: Summer 2019
 
 Sources used:
@@ -90,11 +95,12 @@ Thank you for playing our game."
 material = SubResource( 1 )
 margin_right = 1920.0
 margin_bottom = 1080.0
+mouse_filter = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/anim = SubResource( 2 )
 
-[node name="SpeedrunResults" parent="." instance=ExtResource( 6 )]
+[node name="SpeedrunResults" parent="." instance=ExtResource( 8 )]
 margin_left = 1414.16
 margin_top = 674.607
 margin_right = 1914.16

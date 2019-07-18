@@ -1,0 +1,215 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Ides.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ui/HUD.tscn" type="PackedScene" id=3]
+[ext_resource path="res://level_components/furniture/PottedPlant.tscn" type="PackedScene" id=4]
+[ext_resource path="res://level_components/furniture/Shelves.tscn" type="PackedScene" id=5]
+[ext_resource path="res://level_components/furniture/MonitorPanel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://level_components/furniture/Door.tscn" type="PackedScene" id=7]
+[ext_resource path="res://level_components/LoadingZone.tscn" type="PackedScene" id=8]
+[ext_resource path="res://textures/directional_light_feathered.png" type="Texture" id=9]
+[ext_resource path="res://level_components/enemies/HumanGuard.tscn" type="PackedScene" id=10]
+[ext_resource path="res://level_components/enemies/HumanGuardBear.tscn" type="PackedScene" id=11]
+[ext_resource path="res://level_components/enemies/HumanGuardKitty.tscn" type="PackedScene" id=12]
+[ext_resource path="res://level_components/enemies/Doomba.tscn" type="PackedScene" id=13]
+[ext_resource path="res://level_components/furniture/SteelBox.tscn" type="PackedScene" id=14]
+[ext_resource path="res://level_components/IdesDetector.tscn" type="PackedScene" id=15]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 15.3155 )
+
+[sub_resource type="CanvasItemMaterial" id=3]
+blend_mode = 1
+
+[sub_resource type="Curve2D" id=4]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -143.294, 11.7505, 0, 0, 0, 0, 132.759, 11.7505, 0, 0, 0, 0, 132.759, 28.6517, 0, 0, 0, 0, -145.172, 34.2855, 0, 0, 0, 0, -143.294, 11.7505 )
+}
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 41.2171, 74.6669 )
+
+[node name="BeforeTheEnd" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 65550, 0, 0, 65551, 0, 0, 65552, 0, 0, 65553, 0, 0, 65554, 0, 0, 65555, 0, 0, 65556, 0, 0, 65557, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131085, 0, 0, 131086, 0, 0, 131087, 0, 0, 131088, 0, 0, 131089, 0, 0, 131090, 0, 0, 131091, 0, 0, 131092, 0, 0, 131093, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 196624, 0, 0, 196625, 0, 0, 196626, 0, 0, 196627, 0, 0, 196628, 0, 0, 196629, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 262160, 0, 0, 262161, 0, 0, 262162, 0, 0, 262163, 0, 0, 262164, 0, 0, 262165, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 327696, 0, 0, 327697, 0, 0, 327698, 0, 0, 327699, 0, 0, 327700, 0, 0, 327701, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 393232, 0, 0, 393233, 0, 0, 393234, 0, 0, 393235, 0, 0, 393236, 0, 0, 393237, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0, 458773, 0, 0, 524288, 3, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 524304, 0, 0, 524305, 0, 0, 524306, 0, 0, 524307, 0, 0, 524308, 0, 0, 524309, 0, 0, 589824, 3, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0, 589844, 0, 0, 589845, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786448, 0, 0, 786449, 0, 0, 786450, 0, 0, 786451, 0, 0, 786452, 0, 0, 786453, 0, 0, 851968, 0, 0, 851969, 0, 0, 851970, 0, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 851977, 0, 0, 851978, 0, 0, 851979, 0, 0, 851980, 0, 0, 851981, 0, 0, 851982, 0, 0, 851983, 0, 0, 851984, 0, 0, 851985, 0, 0, 851986, 0, 0, 851987, 0, 0, 851988, 0, 0, 851989, 0, 0, 917504, 0, 0, 917505, 0, 0, 917506, 0, 0, 917507, 0, 0, 917508, 0, 0, 917509, 0, 0, 917510, 0, 0, 917511, 0, 0, 917512, 0, 0, 917513, 0, 0, 917514, 0, 0, 917515, 0, 0, 917516, 0, 0, 917517, 0, 0, 917518, 0, 0, 917519, 0, 0, 917520, 0, 0, 917521, 0, 0, 917522, 0, 0, 917523, 0, 0, 917524, 0, 0, 917525, 0, 0, 983040, 0, 0, 983041, 0, 0, 983042, 0, 0, 983043, 0, 0, 983044, 0, 0, 983045, 0, 0, 983046, 0, 0, 983047, 0, 0, 983048, 0, 0, 983049, 0, 0, 983050, 0, 0, 983051, 0, 0, 983052, 0, 0, 983053, 0, 0, 983054, 0, 0, 983055, 0, 0, 983056, 0, 0, 983057, 0, 0, 983058, 0, 0, 983059, 0, 0, 983060, 0, 0, 983061, 0, 0, 1048576, 0, 0, 1048577, 0, 0, 1048578, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0, 1048591, 0, 0, 1048592, 0, 0, 1048593, 0, 0, 1048594, 0, 0, 1048595, 0, 0, 1048596, 0, 0, 1048597, 0, 0 )
+
+[node name="TileMap2" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 6, 2, 0, 7, 2, 0, 8, 2, 0, 9, 2, 0, 10, 2, 0, 11, 2, 0, 12, 2, 0, 13, 2, 0, 14, 2, 0, 15, 2, 0, 16, 2, 0, 17, 2, 0, 18, 2, 0, 19, 2, 0, 20, 2, 0, 21, 2, 0, 65536, -1073741822, 0, 65537, -1073741822, 0, 65538, -1073741822, 0, 65539, -1073741822, 0, 65540, -1073741822, 0, 65541, -1073741822, 0, 65542, -1073741822, 0, 65543, -1073741822, 0, 65544, -1073741822, 0, 65545, -1073741822, 0, 65546, -1073741822, 0, 65547, -1073741822, 0, 65548, -1073741822, 0, 65549, -1073741822, 0, 65550, -1073741822, 0, 65551, -1073741822, 0, 65552, -1073741822, 0, 65553, -1073741822, 0, 65554, -1073741822, 0, 65555, -1073741822, 0, 65556, -1073741822, 0, 65557, -1073741822, 0, 131093, 1610612740, 0, 196629, 1610612740, 0, 262165, 1610612740, 0, 327680, 4, 0, 327701, 1610612740, 0, 393216, 4, 0, 393237, 1610612740, 0, 458752, -1073741819, 0, 458753, -1073741820, 0, 458754, -1073741820, 0, 458755, -1073741820, 0, 458756, -1073741820, 0, 458757, -1073741820, 0, 458758, -1073741820, 0, 458759, -1073741820, 0, 458760, -1073741820, 0, 458761, -1073741820, 0, 458762, -1073741820, 0, 458763, -1073741820, 0, 458764, -1073741820, 0, 458765, -1073741820, 0, 458766, -1073741820, 0, 458767, -1073741820, 0, 458768, -1073741820, 0, 458769, -1073741820, 0, 458770, -1073741820, 0, 458771, -1073741820, 0, 458772, -1073741820, 0, 458773, 1610612741, 0, 458774, -1073741820, 0, 524288, 4, 0, 524289, -1073741821, 0, 524290, -1073741821, 0, 524291, -1073741821, 0, 524292, -1073741821, 0, 524293, -1073741821, 0, 524294, -1073741821, 0, 524295, -1073741821, 0, 524296, -1073741821, 0, 524297, -1073741821, 0, 524298, -1073741821, 0, 524299, -1073741821, 0, 524300, -1073741821, 0, 524301, -1073741821, 0, 524302, -1073741821, 0, 524303, -1073741821, 0, 524304, -1073741821, 0, 524305, -1073741821, 0, 524306, -1073741821, 0, 524307, -1073741821, 0, 524308, -1073741821, 0, 524309, -1073741821, 0, 589824, 4, 0, 589825, -1073741821, 0, 589826, -1073741821, 0, 589827, -1073741821, 0, 589828, -1073741821, 0, 589829, -1073741821, 0, 589830, -1073741821, 0, 589831, -1073741821, 0, 589832, -1073741821, 0, 589833, -1073741821, 0, 589834, -1073741821, 0, 589835, -1073741821, 0, 589836, -1073741821, 0, 589837, -1073741821, 0, 589838, -1073741821, 0, 589839, -1073741821, 0, 589840, -1073741821, 0, 589841, -1073741821, 0, 589842, -1073741821, 0, 589843, -1073741821, 0, 589844, -1073741821, 0, 589845, -1073741821, 0, 655360, 5, 0, 655361, -1610612732, 0, 655362, -1610612732, 0, 655363, -1610612732, 0, 655364, -1610612732, 0, 655365, -1610612732, 0, 655366, -1610612732, 0, 655367, -1610612732, 0, 655368, -1610612732, 0, 655369, -1610612732, 0, 655370, -1610612732, 0, 655371, -1610612732, 0, 655372, -1610612732, 0, 655373, -1610612732, 0, 655374, -1610612732, 0, 655375, -1610612732, 0, 655376, -1610612732, 0, 655377, -1610612732, 0, 655378, -1610612732, 0, 655379, -1610612732, 0, 655380, -1610612732, 0, 655381, -1610612731, 0, 655382, -1610612732, 0, 720896, 4, 0, 720917, 1610612740, 0, 786432, 4, 0, 786453, 1610612740, 0, 851989, 1610612740, 0, 917525, 1610612740, 0, 983061, 1610612740, 0, 1048576, 2, 0, 1048577, 2, 0, 1048578, 2, 0, 1048579, 2, 0, 1048580, 2, 0, 1048581, 2, 0, 1048582, 2, 0, 1048583, 2, 0, 1048584, 2, 0, 1048585, 2, 0, 1048586, 2, 0, 1048587, 2, 0, 1048588, 2, 0, 1048589, 2, 0, 1048590, 2, 0, 1048591, 2, 0, 1048592, 2, 0, 1048593, 2, 0, 1048594, 2, 0, 1048595, 2, 0, 1048596, 2, 0, 1048597, 2, 0 )
+
+[node name="Ides" parent="." instance=ExtResource( 2 )]
+position = Vector2( 94.6992, 573.358 )
+
+[node name="HUD" parent="." instance=ExtResource( 3 )]
+progress_path = NodePath("../../BeforeTheEnd/HUD/ColorRect/MarginContainer/VBoxContainer/CenterContainer/MarginContainer/ProgressBar")
+system_log_path = NodePath("../../BeforeTheEnd/HUD/ColorRect/MarginContainer/VBoxContainer/CenterContainer2/SystemLog")
+node_preview_path = NodePath("../../BeforeTheEnd/HUD/ColorRect/MarginContainer/VBoxContainer/CenterContainer3/NodePreview")
+transmission_log_path = NodePath("../../BeforeTheEnd/HUD/ColorRect/MarginContainer/VBoxContainer/CenterContainer4/TransmissionLog")
+time_label_path = NodePath("../../BeforeTheEnd/HUD/ColorRect/MarginContainer/VBoxContainer/CenterContainer5/HBoxContainer/TimeLabel")
+
+[node name="PottedPlant" parent="." instance=ExtResource( 4 )]
+position = Vector2( 381.217, 170.89 )
+
+[node name="PottedPlant2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 379.339, 974.639 )
+
+[node name="Shelves" parent="." instance=ExtResource( 5 )]
+position = Vector2( 587.788, 200.937 )
+
+[node name="Shelves2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 967.127, 952.104 )
+rotation = -3.14037
+
+[node name="MonitorPanel" parent="." instance=ExtResource( 6 )]
+editor/display_folded = true
+position = Vector2( 166.492, 213.92 )
+rotation = -0.00954602
+scale = Vector2( 0.210019, 0.21 )
+
+[node name="MonitorLight" parent="MonitorPanel" index="2"]
+modulate = Color( 0, 0.0862745, 1, 1 )
+
+[node name="MonitorPanel5" parent="." instance=ExtResource( 6 )]
+editor/display_folded = true
+position = Vector2( 962.729, 212.042 )
+rotation = -0.00954602
+scale = Vector2( 0.210019, 0.21 )
+
+[node name="MonitorLight" parent="MonitorPanel5" index="2"]
+editor/display_folded = true
+modulate = Color( 0, 0.0862745, 1, 1 )
+
+[node name="MonitorPanel4" parent="." instance=ExtResource( 6 )]
+editor/display_folded = true
+position = Vector2( 166.313, 918.407 )
+rotation = -3.14733
+scale = Vector2( 0.210019, 0.21 )
+
+[node name="MonitorLight" parent="MonitorPanel4" index="2"]
+modulate = Color( 0, 0.0862745, 1, 1 )
+
+[node name="MonitorPanel3" parent="." instance=ExtResource( 6 )]
+editor/display_folded = true
+position = Vector2( 615.135, 920.285 )
+rotation = -3.14733
+scale = Vector2( 0.210019, 0.21 )
+
+[node name="MonitorLight" parent="MonitorPanel3" index="2"]
+modulate = Color( 0, 0.0862745, 1, 1 )
+
+[node name="Door" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1343.3, 515.869 )
+rotation = 1.57296
+scale = Vector2( 1.00009, 1 )
+
+[node name="Door2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1344.04, 635.964 )
+rotation = -1.56581
+scale = Vector2( 1.00009, 1 )
+open_direction = -1
+
+[node name="LoadingZone" parent="." instance=ExtResource( 8 )]
+scene_path = "res://ui/EndScreen.tscn"
+
+[node name="load end" type="CollisionShape2D" parent="LoadingZone"]
+position = Vector2( 1490.16, 576.676 )
+scale = Vector2( 4.16, 4.12705 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="LoadingZone"]
+modulate = Color( 0.72549, 0.705882, 0.560784, 1 )
+self_modulate = Color( 0.780392, 0.756863, 0.654902, 1 )
+material = SubResource( 3 )
+position = Vector2( 298.038, 578.591 )
+rotation = 3.14121
+scale = Vector2( 3.04432, 0.433877 )
+texture = ExtResource( 9 )
+
+[node name="HumanGuard" parent="." instance=ExtResource( 10 )]
+position = Vector2( 410.691, 689.679 )
+rotation = 1.66343
+travel_mode = 2
+speed = 169.0
+oscillation_speed = 2.0
+
+[node name="HumanGuard2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1308.34, 946.953 )
+rotation = -2.17529
+travel_mode = 3
+stare_target_path = NodePath("../../BeforeTheEnd/Doomba")
+
+[node name="HumanGuardBear" parent="." instance=ExtResource( 11 )]
+position = Vector2( 230.411, 340.386 )
+rotation = -1.57332
+travel_mode = 2
+oscillation_speed = 0.5
+oscillation_angle = 0.5
+
+[node name="HumanGuardKitty" parent="." instance=ExtResource( 12 )]
+position = Vector2( 166.562, 759.162 )
+rotation = 2.00843
+travel_mode = 4
+spin_speed = 5.0
+
+[node name="Doomba" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1114.91, 738.504 )
+rotation = -2.73947
+scale = Vector2( 0.41274, 0.41274 )
+
+[node name="Doomba2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1168.06, 176.524 )
+rotation = 1.61351
+
+[node name="SteelBox" parent="." instance=ExtResource( 14 )]
+position = Vector2( 1178.76, 971.366 )
+
+[node name="PottedPlant3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1338.38, 699.068 )
+
+[node name="PottedPlant4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1338.38, 451.183 )
+
+[node name="HumanGuardBear2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1330.87, 366.677 )
+travel_mode = 2
+oscillation_speed = 15.0
+oscillation_angle = 0.2
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2( 969.005, 326.758 )
+curve = SubResource( 4 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( -143.294, 11.7505 )
+
+[node name="HumanGuardKitty" parent="Path2D/PathFollow2D" instance=ExtResource( 12 )]
+rotation = 6.37376
+travel_mode = 1
+speed = 200.0
+
+[node name="IdesDetector" parent="." instance=ExtResource( 15 )]
+position = Vector2( 929.498, 568.267 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IdesDetector"]
+position = Vector2( 5.37939, 8.1225 )
+shape = SubResource( 5 )
+[connection signal="logged_bbcode" from="Ides" to="HUD" method="_on_Ides_logged_bbcode"]
+[connection signal="scan_progress_changed" from="Ides" to="HUD" method="_on_Ides_scan_progress_changed"]
+[connection signal="scanned_node_changed" from="Ides" to="HUD" method="_on_Ides_scanned_node_changed"]
+[connection signal="ides_detected" from="IdesDetector" to="Door" method="open"]
+[connection signal="ides_detected" from="IdesDetector" to="Door2" method="open"]
+
+[editable path="MonitorPanel"]
+
+[editable path="MonitorPanel5"]
+
+[editable path="MonitorPanel4"]
+
+[editable path="MonitorPanel3"]
+
+[editable path="IdesDetector"]

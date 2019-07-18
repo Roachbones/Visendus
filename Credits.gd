@@ -1,6 +1,7 @@
 extends RichTextLabel
 
-var credits_text = """Made by Vivian and Dero for [i]My First Game Jam: Summer 2019[/i]
+var credits_text = """
+Made by Vivian and Dero for [i]My First Game Jam: Summer 2019[/i]
 
 Sources used:
 	Freesound.org
@@ -43,7 +44,7 @@ func _process(delta):
 	#visible_characters = int(sum_delta * characters_per_second)
 	if sum_delta > seconds_per_line:
 		sum_delta = sum_delta - seconds_per_line
-		bbcode_text += credits_text_lines.pop_front()
+		bbcode_text += " "+credits_text_lines.pop_front()
 		if credits_text_lines:
 			bbcode_text += "\n"
 		else:

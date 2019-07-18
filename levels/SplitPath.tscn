@@ -11,6 +11,7 @@
 [ext_resource path="res://level_components/enemies/HumanGuard.tscn" type="PackedScene" id=9]
 [ext_resource path="res://level_components/DialogTrigger.tscn" type="PackedScene" id=10]
 [ext_resource path="res://level_components/LoadingZone.tscn" type="PackedScene" id=11]
+[ext_resource path="res://level_components/BruceArrow.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -26,10 +27,7 @@ _data = {
 radius = 89.598
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 97.8032, 36.0942 )
-
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 135.314, 10 )
+extents = Vector2( 97.8032, 46.9188 )
 
 [node name="SplitPath" instance=ExtResource( 1 )]
 
@@ -195,7 +193,7 @@ travel_mode = 1
 speed = 200.0
 
 [node name="HumanGuardBear" parent="." index="11" instance=ExtResource( 8 )]
-position = Vector2( 1187.11, 552.741 )
+position = Vector2( 1171.29, 550.983 )
 travel_mode = 3
 stare_target_path = NodePath("../Path2D/PathFollow2D/HumanGuardKitty")
 
@@ -219,30 +217,26 @@ shape = SubResource( 3 )
 
 [node name="LoadingZone" parent="." index="14" instance=ExtResource( 11 )]
 position = Vector2( 705.642, 705.642 )
-scene_path = "res://ui/EndScreen.tscn"
+scene_path = "res://levels/Foyer.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LoadingZone" index="0"]
 shape = SubResource( 4 )
 
-[node name="DialogTrigger2" parent="." index="15" instance=ExtResource( 10 )]
-position = Vector2( 702.762, 502.591 )
-bbcode_dialog = "The garbage shaft behind those doors can get us out of here."
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTrigger2" index="0"]
-shape = SubResource( 5 )
+[node name="BruceArrow" parent="." index="15" instance=ExtResource( 12 )]
+position = Vector2( 701.477, 515.12 )
 [connection signal="switched_on" from="PuzzleElements/SwitchL0" to="PuzzleElements/DoorL0" method="close"]
 [connection signal="switched_on" from="PuzzleElements/SwitchL0" to="PuzzleElements/DoorL1" method="open"]
 [connection signal="switched_on" from="PuzzleElements/SwitchL0" to="PuzzleElements/DoorL3_0" method="open"]
 [connection signal="switched_on" from="PuzzleElements/SwitchL0" to="PuzzleElements/DoorL3_1" method="open"]
+[connection signal="switched_on" from="PuzzleElements/SwitchL1" to="PuzzleElements/DoorL1" method="open"]
 [connection signal="switched_on" from="PuzzleElements/SwitchL1" to="PuzzleElements/DoorL2_0" method="open"]
 [connection signal="switched_on" from="PuzzleElements/SwitchL1" to="PuzzleElements/DoorL2_1" method="open"]
 [connection signal="switched_on" from="PuzzleElements/SwitchL1" to="PuzzleElements/DoorR2_0" method="open"]
-[connection signal="switched_on" from="PuzzleElements/SwitchL1" to="PuzzleElements/DoorL1" method="open"]
 [connection signal="switched_on" from="PuzzleElements/SwitchL1" to="PuzzleElements/DoorR2_1" method="open"]
-[connection signal="switched_on" from="PuzzleElements/SwitchR0" to="PuzzleElements/DoorR0" method="close"]
-[connection signal="switched_on" from="PuzzleElements/SwitchR0" to="PuzzleElements/DoorR1" method="open"]
 [connection signal="switched_on" from="PuzzleElements/SwitchR0" to="PuzzleElements/DoorR3_0" method="open"]
 [connection signal="switched_on" from="PuzzleElements/SwitchR0" to="PuzzleElements/DoorR3_1" method="open"]
+[connection signal="switched_on" from="PuzzleElements/SwitchR0" to="PuzzleElements/DoorR0" method="close"]
+[connection signal="switched_on" from="PuzzleElements/SwitchR0" to="PuzzleElements/DoorR1" method="open"]
 [connection signal="switched_on" from="PuzzleElements/SwitchR1" to="PuzzleElements/DoorL2_0" method="open"]
 [connection signal="switched_on" from="PuzzleElements/SwitchR1" to="PuzzleElements/DoorL2_1" method="open"]
 [connection signal="switched_on" from="PuzzleElements/SwitchR1" to="PuzzleElements/DoorR1" method="open"]

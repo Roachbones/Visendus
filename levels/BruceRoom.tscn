@@ -69,7 +69,7 @@ color = Color( 1, 1, 1, 0.364706 )
 
 [node name="LoadingZone" parent="." index="10" instance=ExtResource( 6 )]
 position = Vector2( 556.344, 249.032 )
-scene_path = "res://levels/IntroducingDoors.tscn"
+scene_path = "res://levels/SplitPath.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LoadingZone" index="0"]
 shape = SubResource( 2 )

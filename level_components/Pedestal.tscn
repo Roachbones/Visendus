@@ -4,7 +4,7 @@
 [ext_resource path="res://textures/pedestal.png" type="Texture" id=2]
 [ext_resource path="res://Sparks.tscn" type="PackedScene" id=3]
 [ext_resource path="res://CPUSparks.tscn" type="PackedScene" id=4]
-[ext_resource path="res://textures/BRUCE_orb.png" type="Texture" id=5]
+[ext_resource path="res://textures/BRUCE_orb_smaller.png" type="Texture" id=5]
 [ext_resource path="res://textures/light.png" type="Texture" id=6]
 [ext_resource path="res://utility/Scannable.tscn" type="PackedScene" id=7]
 
@@ -47,11 +47,12 @@ emitting = false
 one_shot = true
 
 [node name="BruceOrb" type="StaticBody2D" parent="."]
-position = Vector2( 17.1474, -312.942 )
+position = Vector2( -34.2949, -368.672 )
 input_pickable = true
 
 [node name="Sprite" type="Sprite" parent="BruceOrb"]
-scale = Vector2( 0.338418, 0.338418 )
+position = Vector2( 51.4425, 45.0122 )
+scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BruceOrb"]
