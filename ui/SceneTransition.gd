@@ -48,12 +48,13 @@ func _process(_time):
 			break
 
 func update_progress():
-	var progress = float(loader.get_stage()) / loader.get_stage_count()
+	var progress = float((loader.get_stage()+1)) / loader.get_stage_count()
 	# Update your progress bar?
 	texture_progress.value = progress
 	print(progress)
 
 func set_new_scene(scene_resource):
+	texture_progress.value = 0.01
 	texture_progress.visible = false
 	#current_scene = scene_resource.instance()
 	#get_node("/root").add_child(current_scene)
