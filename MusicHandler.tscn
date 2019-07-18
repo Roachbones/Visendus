@@ -19,7 +19,7 @@ volume_db = -10.0
 
 [node name="BruceRoomMusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -10.0
+volume_db = -7.0
 
 [node name="EndScreenMusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )

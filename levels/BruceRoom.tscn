@@ -1,13 +1,17 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://level_components/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://levels/BruceRoom.gd" type="Script" id=2]
 [ext_resource path="res://level_components/Pedestal.tscn" type="PackedScene" id=3]
 [ext_resource path="res://level_components/furniture/MonitorPanel.tscn" type="PackedScene" id=4]
 [ext_resource path="res://textures/light.png" type="Texture" id=5]
+[ext_resource path="res://level_components/LoadingZone.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 2
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 70.3288
 
 [node name="BruceRoom" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -62,6 +66,13 @@ margin_right = 1970.0
 margin_bottom = 1135.0
 mouse_filter = 2
 color = Color( 1, 1, 1, 0.364706 )
+
+[node name="LoadingZone" parent="." index="10" instance=ExtResource( 6 )]
+position = Vector2( 556.344, 249.032 )
+scene_path = "res://levels/IntroducingDoors.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LoadingZone" index="0"]
+shape = SubResource( 2 )
 [connection signal="lost_bruce" from="Pedestal" to="MonitorPanel" method="bluescreen"]
 [connection signal="lost_bruce" from="Pedestal" to="MonitorPanel2" method="bluescreen"]
 

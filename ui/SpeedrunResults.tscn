@@ -1,33 +1,41 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://fonts/Courier_New_Bold_headers.tres" type="DynamicFont" id=1]
-[ext_resource path="res://TimesOutput.gd" type="Script" id=2]
-[ext_resource path="res://ui/SceneLoaderButton.gd" type="Script" id=3]
-[ext_resource path="res://ui/MainMenu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ui/SpeedrunResults.gd" type="Script" id=1]
+[ext_resource path="res://fonts/Courier_New.tres" type="DynamicFont" id=2]
+[ext_resource path="res://TimesOutput.gd" type="Script" id=3]
+[ext_resource path="res://ui/SceneLoaderButton.gd" type="Script" id=4]
 
 [node name="SpeedrunResults" type="CenterContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 1 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 710.0
-margin_top = 278.0
-margin_right = 1210.0
-margin_bottom = 802.0
+margin_left = 810.0
+margin_top = 274.0
+margin_right = 1110.0
+margin_bottom = 806.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 2 )
+text = "Times:"
 
 [node name="TimesOutput" type="Label" parent="VBoxContainer"]
-margin_right = 500.0
-margin_bottom = 500.0
-rect_min_size = Vector2( 500, 500 )
+margin_top = 32.0
+margin_right = 300.0
+margin_bottom = 532.0
+rect_min_size = Vector2( 300, 500 )
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 1 )
-script = ExtResource( 2 )
+custom_fonts/font = ExtResource( 2 )
+script = ExtResource( 3 )
 
 [node name="Button" type="Button" parent="VBoxContainer"]
+visible = false
 margin_top = 504.0
 margin_right = 500.0
 margin_bottom = 524.0
 text = "back to main menu"
-script = ExtResource( 3 )
-next_scene = ExtResource( 4 )
+script = ExtResource( 4 )
 [connection signal="pressed" from="VBoxContainer/Button" to="VBoxContainer/Button" method="_on_Button_pressed"]

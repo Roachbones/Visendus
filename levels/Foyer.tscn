@@ -1,21 +1,38 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://level_components/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://level_components/enemies/Sentinel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://level_components/enemies/HumanGuardBear.tscn" type="PackedScene" id=3]
-[ext_resource path="res://level_components/enemies/HumanGuard.tscn" type="PackedScene" id=4]
-[ext_resource path="res://level_components/enemies/LaserCaster.tscn" type="PackedScene" id=5]
-[ext_resource path="res://level_components/enemies/Doomba.tscn" type="PackedScene" id=6]
-[ext_resource path="res://level_components/Switch.tscn" type="PackedScene" id=7]
-[ext_resource path="res://level_components/furniture/Door.tscn" type="PackedScene" id=8]
-[ext_resource path="res://level_components/enemies/HumanGuardKitty.tscn" type="PackedScene" id=9]
-[ext_resource path="res://level_components/furniture/PottedPlant.tscn" type="PackedScene" id=10]
-[ext_resource path="res://level_components/furniture/SteelBox.tscn" type="PackedScene" id=11]
+[ext_resource path="res://level_components/DialogTrigger.tscn" type="PackedScene" id=4]
+[ext_resource path="res://level_components/enemies/HumanGuard.tscn" type="PackedScene" id=5]
+[ext_resource path="res://level_components/enemies/LaserCaster.tscn" type="PackedScene" id=6]
+[ext_resource path="res://level_components/enemies/Doomba.tscn" type="PackedScene" id=7]
+[ext_resource path="res://level_components/Switch.tscn" type="PackedScene" id=8]
+[ext_resource path="res://level_components/furniture/Door.tscn" type="PackedScene" id=9]
+[ext_resource path="res://level_components/enemies/HumanGuardKitty.tscn" type="PackedScene" id=10]
+[ext_resource path="res://level_components/furniture/PottedPlant.tscn" type="PackedScene" id=11]
+[ext_resource path="res://level_components/furniture/SteelBox.tscn" type="PackedScene" id=12]
+[ext_resource path="res://level_components/LoadingZone.tscn" type="PackedScene" id=13]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 77.4477
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 55.9255
 
 [sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( -83.1651, -3.42949, 83.1651, 3.42949, 314.414, 702.275, 2.06674, -96.1102, -2.06674, 96.1102, 435.59, 836.242, 85.1748, 2.11787, -85.1748, -2.11787, 278.028, 971.115, -3.60548, 124.602, 3.60548, -124.602, 110.383, 822.377, -21.9789, 1.61384, 21.9789, -1.61384, 223.144, 703.464, -24.2163, -1.09853, 24.2163, 1.09853, 314.414, 702.275 )
 }
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 71.6613
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 66.0471
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 117.186, 49.0854 )
 
 [node name="Foyer" type="Node2D"]
 
@@ -45,7 +62,13 @@ position = Vector2( 896.085, 789.565 )
 travel_mode = 4
 spin_speed = 2.0
 
-[node name="HumanGuardSwitchWatcher" parent="." instance=ExtResource( 4 )]
+[node name="DialogTrigger" parent="HumanGuardSpinning" instance=ExtResource( 4 )]
+bbcode_dialog = "This one is having fun."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HumanGuardSpinning/DialogTrigger"]
+shape = SubResource( 2 )
+
+[node name="HumanGuardSwitchWatcher" parent="." instance=ExtResource( 5 )]
 position = Vector2( 596.707, 180.447 )
 rotation = 3.10677
 
@@ -53,32 +76,32 @@ rotation = 3.10677
 editor/display_folded = true
 position = Vector2( 93.5046, 504.535 )
 
-[node name="LaserCaster" parent="LaserCasterCluster" instance=ExtResource( 5 )]
+[node name="LaserCaster" parent="LaserCasterCluster" instance=ExtResource( 6 )]
 position = Vector2( 0, -88.3967 )
 rotation = 0.150994
 fix_emission_point = true
 
-[node name="LaserCaster2" parent="LaserCasterCluster" instance=ExtResource( 5 )]
+[node name="LaserCaster2" parent="LaserCasterCluster" instance=ExtResource( 6 )]
 position = Vector2( -1.22775, -65.0698 )
 rotation = 0.11594
 fix_emission_point = true
 
-[node name="LaserCaster3" parent="LaserCasterCluster" instance=ExtResource( 5 )]
+[node name="LaserCaster3" parent="LaserCasterCluster" instance=ExtResource( 6 )]
 position = Vector2( -3.6832, -33.1488 )
 rotation = -0.0223127
 fix_emission_point = true
 
-[node name="LaserCaster4" parent="LaserCasterCluster" instance=ExtResource( 5 )]
+[node name="LaserCaster4" parent="LaserCasterCluster" instance=ExtResource( 6 )]
 position = Vector2( 4.91092, 33.1488 )
 rotation = -0.180514
 fix_emission_point = true
 
-[node name="LaserCaster5" parent="LaserCasterCluster" instance=ExtResource( 5 )]
+[node name="LaserCaster5" parent="LaserCasterCluster" instance=ExtResource( 6 )]
 position = Vector2( 7.36639, 62.6144 )
 rotation = -0.267507
 fix_emission_point = true
 
-[node name="LaserCaster6" parent="LaserCasterCluster" instance=ExtResource( 5 )]
+[node name="LaserCaster6" parent="LaserCasterCluster" instance=ExtResource( 6 )]
 position = Vector2( 0, -2.45551 )
 rotation = -0.0956153
 fix_emission_point = true
@@ -86,7 +109,7 @@ fix_emission_point = true
 [node name="LittleDoombaSquad" type="Node2D" parent="."]
 editor/display_folded = true
 
-[node name="Doomba" parent="LittleDoombaSquad" instance=ExtResource( 6 )]
+[node name="Doomba" parent="LittleDoombaSquad" instance=ExtResource( 7 )]
 position = Vector2( 815.272, 152.528 )
 rotation = -2.92678
 scale = Vector2( 0.8, 0.8 )
@@ -94,7 +117,13 @@ speed = 175
 rotation_speed = 2.0
 adjustment_angle = 2.0
 
-[node name="Doomba2" parent="LittleDoombaSquad" instance=ExtResource( 6 )]
+[node name="DialogTrigger" parent="LittleDoombaSquad/Doomba" instance=ExtResource( 4 )]
+bbcode_dialog = "Slightly smaller-than-normal robots are always so cute."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LittleDoombaSquad/Doomba/DialogTrigger"]
+shape = SubResource( 3 )
+
+[node name="Doomba2" parent="LittleDoombaSquad" instance=ExtResource( 7 )]
 position = Vector2( 891.876, 154.075 )
 rotation = 0.667487
 scale = Vector2( 0.8, 0.8 )
@@ -102,7 +131,7 @@ speed = 175
 rotation_speed = 2.0
 adjustment_angle = 2.0
 
-[node name="Doomba3" parent="LittleDoombaSquad" instance=ExtResource( 6 )]
+[node name="Doomba3" parent="LittleDoombaSquad" instance=ExtResource( 7 )]
 position = Vector2( 812.177, 226.036 )
 rotation = 1.26201
 scale = Vector2( 0.8, 0.8 )
@@ -110,7 +139,7 @@ speed = 175
 rotation_speed = 2.0
 adjustment_angle = 2.0
 
-[node name="Doomba4" parent="LittleDoombaSquad" instance=ExtResource( 6 )]
+[node name="Doomba4" parent="LittleDoombaSquad" instance=ExtResource( 7 )]
 position = Vector2( 892.65, 220.62 )
 rotation = -0.594521
 scale = Vector2( 0.8, 0.8 )
@@ -119,51 +148,55 @@ rotation_speed = 2.0
 adjustment_angle = 2.0
 
 [node name="PuzzleElements" type="Node" parent="."]
+editor/display_folded = true
 
-[node name="SwitchFoyer0" parent="PuzzleElements" instance=ExtResource( 7 )]
-position = Vector2( 1157.43, 155.326 )
+[node name="SwitchFoyer0" parent="PuzzleElements" instance=ExtResource( 8 )]
+position = Vector2( 1182.04, 157.377 )
 
-[node name="SwitchFoyer1" parent="PuzzleElements" instance=ExtResource( 7 )]
-position = Vector2( 1172.46, 895.214 )
+[node name="SwitchFoyer1" parent="PuzzleElements" instance=ExtResource( 8 )]
+position = Vector2( 1185.71, 903.164 )
+rotation = 3.14159
 
-[node name="SwitchDoombas" parent="PuzzleElements" instance=ExtResource( 7 )]
+[node name="SwitchDoombas" parent="PuzzleElements" instance=ExtResource( 8 )]
 position = Vector2( 975.383, 98.5404 )
 
-[node name="SwitchGuarded" parent="PuzzleElements" instance=ExtResource( 7 )]
-position = Vector2( 207.102, 180.379 )
+[node name="SwitchGuarded" parent="PuzzleElements" instance=ExtResource( 8 )]
+position = Vector2( 183.252, 180.379 )
+rotation = -1.5708
 
-[node name="SwitchFinal" parent="PuzzleElements" instance=ExtResource( 7 )]
+[node name="SwitchFinal" parent="PuzzleElements" instance=ExtResource( 8 )]
 position = Vector2( 297.335, 840.729 )
+rotation = 3.14159
 
-[node name="DoorSpinner0" parent="PuzzleElements" instance=ExtResource( 8 )]
+[node name="DoorSpinner0" parent="PuzzleElements" instance=ExtResource( 9 )]
 position = Vector2( 835.087, 648.972 )
 scale = Vector2( 1.02, 1 )
 
-[node name="DoorSpinner1" parent="PuzzleElements" instance=ExtResource( 8 )]
+[node name="DoorSpinner1" parent="PuzzleElements" instance=ExtResource( 9 )]
 position = Vector2( 956.442, 647.933 )
 rotation = 3.14159
 scale = Vector2( 1.02, 1 )
 open_direction = -1
 
-[node name="DoorLasers" parent="PuzzleElements" instance=ExtResource( 8 )]
+[node name="DoorLasers" parent="PuzzleElements" instance=ExtResource( 9 )]
 position = Vector2( 391.651, 451.721 )
 rotation = 1.5708
 open_direction = -1
 
-[node name="DoorWatcher" parent="PuzzleElements" instance=ExtResource( 8 )]
+[node name="DoorWatcher" parent="PuzzleElements" instance=ExtResource( 9 )]
 position = Vector2( 699.618, 311.845 )
 rotation = -3.14159
 
-[node name="DoorFinalSwitch" parent="PuzzleElements" instance=ExtResource( 8 )]
+[node name="DoorFinalSwitch" parent="PuzzleElements" instance=ExtResource( 9 )]
 position = Vector2( 195.101, 648.359 )
 
-[node name="DoorExit" parent="PuzzleElements" instance=ExtResource( 8 )]
+[node name="DoorExit" parent="PuzzleElements" instance=ExtResource( 9 )]
 position = Vector2( 775.357, 963.62 )
 rotation = 1.5708
 scale = Vector2( 1.02, 1 )
 open_direction = -1
 
-[node name="DoorDoombas" parent="PuzzleElements" instance=ExtResource( 8 )]
+[node name="DoorDoombas" parent="PuzzleElements" instance=ExtResource( 9 )]
 position = Vector2( 775.601, 324.62 )
 scale = Vector2( 3.08, 1 )
 angle_multiplier = 2.0
@@ -182,7 +215,7 @@ curve = SubResource( 1 )
 position = Vector2( 314.414, 702.275 )
 rotation = 0.0479151
 
-[node name="HumanGuardKitty" parent="Path2D/PathFollow2D" instance=ExtResource( 9 )]
+[node name="HumanGuardKitty" parent="Path2D/PathFollow2D" instance=ExtResource( 10 )]
 scale = Vector2( 0.9, 0.9 )
 travel_mode = 1
 
@@ -192,27 +225,47 @@ rotation = 2.91926
 offset = 388.578
 v_offset = 22.67
 
-[node name="HumanGuardKitty" parent="Path2D/PathFollow2D2" instance=ExtResource( 9 )]
+[node name="HumanGuardKitty" parent="Path2D/PathFollow2D2" instance=ExtResource( 10 )]
 scale = Vector2( 0.85, 0.85 )
 travel_mode = 1
 
-[node name="PottedPlant" parent="." instance=ExtResource( 10 )]
+[node name="PottedPlant" parent="." instance=ExtResource( 11 )]
 position = Vector2( 959.912, 984.525 )
 
-[node name="SteelBox" parent="." instance=ExtResource( 11 )]
+[node name="SteelBox" parent="." instance=ExtResource( 12 )]
 position = Vector2( 577.77, 974.167 )
 
-[node name="PottedPlant2" parent="." instance=ExtResource( 10 )]
+[node name="PottedPlant2" parent="." instance=ExtResource( 11 )]
 position = Vector2( 331.259, 368.272 )
 
-[node name="PottedPlant3" parent="." instance=ExtResource( 10 )]
+[node name="PottedPlant3" parent="." instance=ExtResource( 11 )]
 position = Vector2( 336.811, 590.345 )
-[connection signal="switched_off" from="PuzzleElements/SwitchFoyer0" to="PuzzleElements/DoorSpinner0" method="close"]
+
+[node name="DialogTrigger" parent="." instance=ExtResource( 4 )]
+position = Vector2( 315.663, 476 )
+bbcode_dialog = "The soft glow of the lasers is enough to sustain these plants. Of course, it helps that they are made of plastic."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTrigger"]
+position = Vector2( 7.59998, -94.0497 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DialogTrigger"]
+position = Vector2( 7.59998, 104.5 )
+shape = SubResource( 5 )
+
+[node name="LoadingZone" parent="." instance=ExtResource( 13 )]
+position = Vector2( 652.071, 773.053 )
+scene_path = "res://levels/SplitPath.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LoadingZone"]
+position = Vector2( -3.87708, -32.3088 )
+shape = SubResource( 6 )
 [connection signal="switched_off" from="PuzzleElements/SwitchFoyer0" to="PuzzleElements/DoorSpinner1" method="close"]
 [connection signal="switched_off" from="PuzzleElements/SwitchFoyer0" to="PuzzleElements/DoorDoombas" method="close"]
-[connection signal="switched_on" from="PuzzleElements/SwitchFoyer0" to="PuzzleElements/DoorSpinner0" method="open"]
+[connection signal="switched_off" from="PuzzleElements/SwitchFoyer0" to="PuzzleElements/DoorSpinner0" method="close"]
 [connection signal="switched_on" from="PuzzleElements/SwitchFoyer0" to="PuzzleElements/DoorSpinner1" method="open"]
 [connection signal="switched_on" from="PuzzleElements/SwitchFoyer0" to="PuzzleElements/DoorDoombas" method="open"]
+[connection signal="switched_on" from="PuzzleElements/SwitchFoyer0" to="PuzzleElements/DoorSpinner0" method="open"]
 [connection signal="switched_off" from="PuzzleElements/SwitchFoyer1" to="PuzzleElements/DoorLasers" method="close"]
 [connection signal="switched_on" from="PuzzleElements/SwitchFoyer1" to="PuzzleElements/DoorLasers" method="open"]
 [connection signal="switched_off" from="PuzzleElements/SwitchDoombas" to="PuzzleElements/DoorWatcher" method="close"]

@@ -6,9 +6,10 @@ const CERTAINTY = 8
 func _ready():
 	var level_times
 	if $"/root/Options":
-		level_times = $"/root/Options".speedrun_segment_times #{"level 1":23.2223245666644, "crossroads": 4.21122139949, "no": 0.0}
+		level_times = $"/root/Options".speedrun_segment_times
+		#level_times = {"level 1":23.2223245666644, "crossroads": 4.21122139949, "no": 0.0, "SplitPath":67.1, "Tutorial":30.9912}
 	if not level_times:
-		text = "no times..?"
+		text = "[times go here]"
 		return
 	var line
 	var sum_times = 0.0

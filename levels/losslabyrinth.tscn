@@ -14,23 +14,23 @@
 [ext_resource path="res://level_components/LoadingZone.tscn" type="PackedScene" id=12]
 [ext_resource path="res://textures/white.png" type="Texture" id=13]
 
-[sub_resource type="CanvasItemMaterial" id=6]
+[sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 1
 
-[sub_resource type="Curve2D" id=1]
+[sub_resource type="Curve2D" id=2]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 3.89392, 1.50616, 0, 0, 0, 0, -402.231, 1.50616, 0, 0, 0, 0, -393.681, -66.8939, 0, 0, 0, 0, -530.481, -64.7564, 0, 0, 0, 0, -530.481, 10.0561, 0, 0, 0, 0, -534.756, -137.431, 0, 0, 0, 0, -705.757, -135.294, 0, 0, 0, 0, -712.169, -2.76886, 0, 0, 0, 0, -588.194, -7.04388, 0, 0, 0, 0, -588.194, -58.3439, 0, 0, 0, 0, -778.432, -71.1689, 0, 0, 0, 0, -778.432, -896.244, 0, 0, 0, 0, -776.294, -821.432, 0, 0, 0, 0, -716.444, -821.432, 0, 0, 0, 0, -699.344, -639.744, 0, 0, 0, 0, -643.769, -641.882, 0, 0, 0, 0, -641.631, -763.719, 0, 0, 0, 0, -586.056, -767.994, 0, 0, 0, 0, -579.644, -323.394, 0, 0, 0, 0, -526.206, -321.257, 0, 0, 0, 0, -517.656, -381.107, 0, 0, 0, 0, -449.256, -374.694, 0, 0, 0, 0, -451.394, -329.807, 0, 0, 0, 0, -387.269, -331.944, 0, 0, 0, 0, -387.269, -372.557, 0, 0, 0, 0, -380.856, -254.994, 0, 0, 0, 0, -447.119, -252.857, 0, 0, 0, 0, -459.944, -133.156, 0, 0, 0, 0, -402.231, -139.569, 0, 0, 0, 0, -395.819, -188.731, 0, 0, 0, 0, -368.031, -186.594, 0, 0, 0, 0, -395.819, -186.594, 0, 0, 0, 0, -393.681, -135.294, 0, 0, 0, 0, -440.706, -135.294, 0, 0, 0, 0, -444.981, -58.3439, 0, 0, 0, 0, -382.994, -71.1689, 0, 0, 0, 0, -389.406, 1.50616, 0, 0, 0, 0, 3.89392, 1.50616 )
 }
 
-[sub_resource type="Curve2D" id=2]
+[sub_resource type="Curve2D" id=3]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 12.8567, -0.270081, 0, 0, 0, 0, 387.837, -17.7625, 0, 0, 0, 0, 389.421, 107.018, 0, 0, 0, 0, 12.1321, 124.604, 0, 0, 0, 0, -13.4895, -451.186, 0, 0, 0, 0, -330.813, -437.184, 0, 0, 0, 0, -311.205, 18.6288, 0, 0, 0, 0, 12.8567, -0.270081 )
 }
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 10, 8.22691 )
 
-[sub_resource type="Shader" id=4]
+[sub_resource type="Shader" id=5]
 code = "shader_type canvas_item;
 
 vec4 sample_glow_pixel(sampler2D tex, vec2 uv) {
@@ -60,8 +60,8 @@ void fragment() {
 	//COLOR = vec4((col.r + glowing_col.r), col.g, col.b, col.a) * col.r;
 }"
 
-[sub_resource type="ShaderMaterial" id=5]
-shader = SubResource( 4 )
+[sub_resource type="ShaderMaterial" id=6]
+shader = SubResource( 5 )
 
 [node name="LossLabyrinth" type="Node2D"]
 
@@ -113,7 +113,7 @@ scale = Vector2( 0.478779, 0.478779 )
 
 [node name="Sprite2" type="Sprite" parent="Doomba"]
 modulate = Color( 1, 0, 0, 0.2 )
-material = SubResource( 6 )
+material = SubResource( 1 )
 position = Vector2( 27.7842, 0.578125 )
 scale = Vector2( 0.12, 0.12 )
 texture = ExtResource( 5 )
@@ -128,7 +128,7 @@ adjustment_angle = 3.142
 
 [node name="Sprite3" type="Sprite" parent="Doomba2"]
 modulate = Color( 1, 0, 0, 0.2 )
-material = SubResource( 6 )
+material = SubResource( 1 )
 position = Vector2( 25.04, 0 )
 rotation = -3.0354
 scale = Vector2( 0.12, 0.12 )
@@ -164,7 +164,7 @@ editor/display_folded = true
 
 [node name="Path2D2" type="Path2D" parent="."]
 position = Vector2( 872.1, 991.801 )
-curve = SubResource( 1 )
+curve = SubResource( 2 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
 position = Vector2( 3.89392, 1.50616 )
@@ -186,7 +186,7 @@ editor/display_folded = true
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2( 670.64, 535.251 )
 rotation = 1.61126
-curve = SubResource( 2 )
+curve = SubResource( 3 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2( 12.8567, -0.270081 )
@@ -230,7 +230,7 @@ scene_path = "res://levels/BruceRoom.tscn"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LoadingZone"]
 rotation = 1.56738
 scale = Vector2( 2.27018, 0.56224 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
@@ -240,7 +240,7 @@ color = Color( 0.937255, 0.937255, 0.937255, 1 )
 z_index = 30
 
 [node name="TextureRect" type="TextureRect" parent="ShaderFilter"]
-material = SubResource( 5 )
+material = SubResource( 6 )
 margin_right = 1920.0
 margin_bottom = 1080.0
 mouse_filter = 2
