@@ -141,8 +141,8 @@ mouse_filter = 2
 anims/anim = SubResource( 2 )
 
 [node name="SpeedrunResults" parent="." instance=ExtResource( 10 )]
-margin_left = 1611.91
-margin_top = 530.463
-margin_right = -8.0946
-margin_bottom = -17.537
+margin_left = 1248.95
+margin_top = 565.112
+margin_right = -6.05054
+margin_bottom = 17.1121
 [connection signal="pressed" from="MainMenuButton" to="MainMenuButton" method="_on_Button_pressed"]
