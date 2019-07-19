@@ -37,7 +37,7 @@ radius = 71.6613
 radius = 66.0471
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 119.169, 101.219 )
+extents = Vector2( 122.389, 21.1238 )
 
 [node name="Foyer" type="Node2D"]
 
@@ -283,7 +283,7 @@ position = Vector2( 7.59998, 104.5 )
 shape = SubResource( 6 )
 
 [node name="DialogTrigger2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 649.192, 810.115 )
+position = Vector2( 648.084, 873.272 )
 bbcode_dialog = "This should be the last vent we have to crawl through. We are close to the exit!"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTrigger2"]
@@ -293,12 +293,12 @@ shape = SubResource( 7 )
 position = Vector2( 613.891, 736.346 )
 rotation = 2.56351
 scale = Vector2( 0.15, 0.15 )
-[connection signal="switched_off" from="PuzzleElements/SwitchFoyer0" to="PuzzleElements/DoorDoombas" method="close"]
 [connection signal="switched_off" from="PuzzleElements/SwitchFoyer0" to="PuzzleElements/DoorSpinner0" method="close"]
 [connection signal="switched_off" from="PuzzleElements/SwitchFoyer0" to="PuzzleElements/DoorSpinner1" method="close"]
-[connection signal="switched_on" from="PuzzleElements/SwitchFoyer0" to="PuzzleElements/DoorDoombas" method="open"]
+[connection signal="switched_off" from="PuzzleElements/SwitchFoyer0" to="PuzzleElements/DoorDoombas" method="close"]
 [connection signal="switched_on" from="PuzzleElements/SwitchFoyer0" to="PuzzleElements/DoorSpinner0" method="open"]
 [connection signal="switched_on" from="PuzzleElements/SwitchFoyer0" to="PuzzleElements/DoorSpinner1" method="open"]
+[connection signal="switched_on" from="PuzzleElements/SwitchFoyer0" to="PuzzleElements/DoorDoombas" method="open"]
 [connection signal="switched_off" from="PuzzleElements/SwitchFoyer1" to="PuzzleElements/DoorLasers" method="close"]
 [connection signal="switched_on" from="PuzzleElements/SwitchFoyer1" to="PuzzleElements/DoorLasers" method="open"]
 [connection signal="switched_off" from="PuzzleElements/SwitchDoombas" to="PuzzleElements/DoorWatcher" method="close"]

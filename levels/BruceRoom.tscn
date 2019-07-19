@@ -137,10 +137,10 @@ bbcode_dialog = "Come, disconnect me from this throne of nightmares."
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTrigger2" index="0"]
 shape = SubResource( 4 )
 [connection signal="lost_bruce" from="Pedestal" to="HUD" method="append_transmission" binds= [ "[color=#f4a142]Now that we are together, we can finally escape this wretched place. Head into that ventilation shaft.[/color]" ]]
+[connection signal="lost_bruce" from="Pedestal" to="BruceArrow" method="make_visible"]
 [connection signal="lost_bruce" from="Pedestal" to="Vent/LoadingZone" method="enable"]
 [connection signal="lost_bruce" from="Pedestal" to="MonitorPanel" method="bluescreen"]
 [connection signal="lost_bruce" from="Pedestal" to="MonitorPanel2" method="bluescreen"]
-[connection signal="lost_bruce" from="Pedestal" to="BruceArrow" method="make_visible"]
 
 [editable path="Pedestal"]
 

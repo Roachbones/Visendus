@@ -5,6 +5,8 @@ const CERTAINTY = 5
 
 func _ready():
 	visible = $"/root/Options".speedrun_mode_enabled
+	sum_delta = $"/root/Options".held_speedrun_time
+	$"/root/Options".held_speedrun_time = 0.0
 
 func _process(delta):
 	sum_delta += delta
@@ -24,6 +26,6 @@ func seconds_to_string(seconds): #I miss Python
 		seconds_string = seconds_string + "0"
 	return String(minutes) + ":" + seconds_string
 	
-	
-	
+func hold_current_time():
+	$"/root/Options".held_speedrun_time = sum_delta
 

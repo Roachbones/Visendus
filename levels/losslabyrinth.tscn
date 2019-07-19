@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://textures/floorvent.png" type="Texture" id=1]
 [ext_resource path="res://level_components/LoadingZone.tscn" type="PackedScene" id=2]
@@ -7,19 +7,23 @@
 [ext_resource path="res://level_components/enemies/Doomba.tscn" type="PackedScene" id=5]
 [ext_resource path="res://shaders/dark_with_red_highlight.tres" type="Material" id=6]
 [ext_resource path="res://textures/light.png" type="Texture" id=7]
-[ext_resource path="res://level_components/enemies/Sentinel.tscn" type="PackedScene" id=8]
-[ext_resource path="res://level_components/enemies/HumanGuard.tscn" type="PackedScene" id=9]
-[ext_resource path="res://level_components/enemies/HumanGuardKitty.tscn" type="PackedScene" id=10]
-[ext_resource path="res://level_components/enemies/HumanGuardBear.tscn" type="PackedScene" id=11]
-[ext_resource path="res://level_components/furniture/PottedPlant.tscn" type="PackedScene" id=12]
-[ext_resource path="res://level_components/furniture/SteelBox.tscn" type="PackedScene" id=13]
-[ext_resource path="res://textures/white.png" type="Texture" id=14]
+[ext_resource path="res://level_components/DialogTrigger.tscn" type="PackedScene" id=8]
+[ext_resource path="res://level_components/enemies/Sentinel.tscn" type="PackedScene" id=9]
+[ext_resource path="res://level_components/enemies/HumanGuard.tscn" type="PackedScene" id=10]
+[ext_resource path="res://level_components/enemies/HumanGuardKitty.tscn" type="PackedScene" id=11]
+[ext_resource path="res://level_components/enemies/HumanGuardBear.tscn" type="PackedScene" id=12]
+[ext_resource path="res://level_components/furniture/PottedPlant.tscn" type="PackedScene" id=13]
+[ext_resource path="res://level_components/furniture/SteelBox.tscn" type="PackedScene" id=14]
+[ext_resource path="res://textures/white.png" type="Texture" id=15]
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 1.75704, 6.59061 )
 
 [sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 1
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 57.056
 
 [sub_resource type="Curve2D" id=2]
 _data = {
@@ -63,6 +67,21 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id=6]
 shader = SubResource( 5 )
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 54.6358
+
+[sub_resource type="CircleShape2D" id=9]
+radius = 57.8253
+
+[sub_resource type="CircleShape2D" id=10]
+radius = 81.5642
+
+[sub_resource type="CircleShape2D" id=11]
+radius = 69.8168
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 15.3025, 83.527 )
 
 [node name="LossLabyrinth" type="Node2D"]
 
@@ -136,7 +155,14 @@ position = Vector2( 27.7842, 0.578125 )
 scale = Vector2( 0.12, 0.12 )
 texture = ExtResource( 7 )
 
+[node name="DialogTrigger" parent="Doomba" instance=ExtResource( 8 )]
+bbcode_dialog = "It glows, like me."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doomba/DialogTrigger"]
+shape = SubResource( 7 )
+
 [node name="Doomba2" parent="." instance=ExtResource( 5 )]
+editor/display_folded = true
 material = ExtResource( 6 )
 position = Vector2( 216.482, 99.7687 )
 rotation = 6.27195
@@ -152,7 +178,8 @@ rotation = -3.0354
 scale = Vector2( 0.12, 0.12 )
 texture = ExtResource( 7 )
 
-[node name="Sentinel" parent="." instance=ExtResource( 8 )]
+[node name="Sentinel" parent="." instance=ExtResource( 9 )]
+editor/display_folded = true
 material = ExtResource( 6 )
 position = Vector2( 929.813, 367.65 )
 
@@ -168,7 +195,8 @@ rotation = 2.29164
 [node name="UpperPupil" parent="Sentinel" index="5"]
 rotation = -0.974107
 
-[node name="HumanGuard" parent="." instance=ExtResource( 9 )]
+[node name="HumanGuard" parent="." instance=ExtResource( 10 )]
+editor/display_folded = true
 material = ExtResource( 6 )
 position = Vector2( 1107.45, 734.801 )
 rotation = -1.54113
@@ -181,6 +209,7 @@ oscillation_angle = 0.2
 editor/display_folded = true
 
 [node name="Path2D2" type="Path2D" parent="."]
+editor/display_folded = true
 position = Vector2( 872.1, 991.801 )
 curve = SubResource( 2 )
 
@@ -188,7 +217,7 @@ curve = SubResource( 2 )
 position = Vector2( 3.89392, 1.50616 )
 rotation = 3.14159
 
-[node name="HumanGuardKitty" parent="Path2D2/PathFollow2D" instance=ExtResource( 10 )]
+[node name="HumanGuardKitty" parent="Path2D2/PathFollow2D" instance=ExtResource( 11 )]
 material = ExtResource( 6 )
 position = Vector2( 3.89392, 1.50616 )
 rotation = 0.0564272
@@ -202,6 +231,7 @@ oscillation_angle = 0.5
 editor/display_folded = true
 
 [node name="Path2D" type="Path2D" parent="."]
+editor/display_folded = true
 position = Vector2( 670.64, 535.251 )
 rotation = 1.61126
 curve = SubResource( 3 )
@@ -210,7 +240,7 @@ curve = SubResource( 3 )
 position = Vector2( 12.8567, -0.270081 )
 rotation = -0.0466151
 
-[node name="HumanGuardBear" parent="Path2D/PathFollow2D" instance=ExtResource( 11 )]
+[node name="HumanGuardBear" parent="Path2D/PathFollow2D" instance=ExtResource( 12 )]
 material = ExtResource( 6 )
 position = Vector2( -12.8553, -0.329285 )
 rotation = 0.0466149
@@ -224,17 +254,17 @@ visible = false
 editor/display_folded = true
 visible = false
 
-[node name="PottedPlant4" parent="." instance=ExtResource( 12 )]
+[node name="PottedPlant4" parent="." instance=ExtResource( 13 )]
 modulate = Color( 0.607843, 0.607843, 0.607843, 1 )
 position = Vector2( 1189.49, 603.557 )
 scale = Vector2( 0.64, 0.64 )
 
-[node name="PottedPlant5" parent="." instance=ExtResource( 12 )]
+[node name="PottedPlant5" parent="." instance=ExtResource( 13 )]
 modulate = Color( 0.607843, 0.607843, 0.607843, 1 )
 position = Vector2( 1257, 721.232 )
 scale = Vector2( 0.64, 0.64 )
 
-[node name="SteelBox" parent="." instance=ExtResource( 13 )]
+[node name="SteelBox" parent="." instance=ExtResource( 14 )]
 modulate = Color( 0.564706, 0.564706, 0.564706, 1 )
 position = Vector2( 98.3838, 993.484 )
 scale = Vector2( 0.120001, 0.120001 )
@@ -250,7 +280,43 @@ material = SubResource( 6 )
 margin_right = 1920.0
 margin_bottom = 1080.0
 mouse_filter = 2
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
+
+[node name="DialogTrigger" parent="." instance=ExtResource( 8 )]
+position = Vector2( 96.2062, 102.789 )
+bbcode_dialog = "I should tell you your mission. It is to rescue me."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTrigger"]
+shape = SubResource( 8 )
+
+[node name="DialogTrigger2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 177.04, 931.288 )
+bbcode_dialog = "They have kept me here too long."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTrigger2"]
+shape = SubResource( 9 )
+
+[node name="DialogTrigger3" parent="." instance=ExtResource( 8 )]
+position = Vector2( -31.9135, 28.2006 )
+bbcode_dialog = "I tire of this place."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTrigger3"]
+position = Vector2( 902.326, 955.501 )
+shape = SubResource( 10 )
+
+[node name="DialogTrigger4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 701.606, 558.229 )
+bbcode_dialog = "Soon, you will break me out of here."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTrigger4"]
+shape = SubResource( 11 )
+
+[node name="DialogTrigger5" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1173.33, 665.843 )
+bbcode_dialog = "Come forth, through the vent, my friend."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTrigger5"]
+shape = SubResource( 12 )
 
 [editable path="LevelTemplate"]
 

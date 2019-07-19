@@ -27,4 +27,3 @@ func _on_Ides_scanned_node_changed(scanned_node):
 			expended = true
 		else: #scanned the guard
 			emit_signal("transmission_triggered", bbcode_guard)
-		
