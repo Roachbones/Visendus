@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://level_components/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://levels/IntroducingDoors.gd" type="Script" id=2]
@@ -22,6 +22,9 @@ radius = 24.3828
 
 [sub_resource type="CircleShape2D" id=3]
 radius = 128.047
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 65.0436, 152.251 )
 
 [node name="IntroducingDoors" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -115,6 +118,13 @@ shape = SubResource( 3 )
 
 [node name="Shelves" parent="." index="19" instance=ExtResource( 13 )]
 position = Vector2( 1026.23, 139.17 )
+
+[node name="DialogTrigger3" parent="." index="20" instance=ExtResource( 12 )]
+position = Vector2( 781.852, 894.709 )
+bbcode_dialog = "By the way, I took the liberty of personalizing you. Your name is now Ides. Much better, don't you think?"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTrigger3" index="0"]
+shape = SubResource( 4 )
 [connection signal="switched_off" from="Switch" to="Door" method="close"]
 [connection signal="switched_off" from="Switch" to="Door2" method="close"]
 [connection signal="switched_on" from="Switch" to="Door" method="open"]

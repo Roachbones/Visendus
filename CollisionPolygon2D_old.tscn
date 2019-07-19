@@ -1,7 +1,0 @@
-[gd_scene format=2]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D"]
-position = Vector2( -9.03743, -6.18349 )
-rotation = -1.57072
-polygon = PoolVector2Array( 26.5035, 70.1442, 53.7913, 45.057, 53.7913, -13.0397, 24.3028, -49.5702, -43.0365, -51.7709, -61.962, -17.441, -67.6836, 39.7755, -43.9168, 70.1442 )
-disabled = true
