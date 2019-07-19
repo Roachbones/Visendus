@@ -2,7 +2,7 @@
 
 [ext_resource path="res://ui/SpeedrunResults.gd" type="Script" id=1]
 [ext_resource path="res://fonts/Courier_New.tres" type="DynamicFont" id=2]
-[ext_resource path="res://TimesOutput.gd" type="Script" id=3]
+[ext_resource path="res://ui/TimesOutput.gd" type="Script" id=3]
 [ext_resource path="res://ui/SceneLoaderButton.gd" type="Script" id=4]
 
 [node name="SpeedrunResults" type="CenterContainer"]

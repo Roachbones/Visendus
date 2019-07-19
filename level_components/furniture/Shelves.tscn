@@ -14,6 +14,7 @@ input_pickable = true
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 0, -20.51 )
 shape = SubResource( 1 )
 

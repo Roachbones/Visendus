@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Ides.tscn" type="PackedScene" id=2]
@@ -15,20 +15,24 @@
 [ext_resource path="res://level_components/enemies/Doomba.tscn" type="PackedScene" id=13]
 [ext_resource path="res://level_components/furniture/SteelBox.tscn" type="PackedScene" id=14]
 [ext_resource path="res://level_components/IdesDetector.tscn" type="PackedScene" id=15]
+[ext_resource path="res://level_components/DialogTrigger.tscn" type="PackedScene" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 15.3155 )
 
-[sub_resource type="CanvasItemMaterial" id=3]
+[sub_resource type="CanvasItemMaterial" id=2]
 blend_mode = 1
 
-[sub_resource type="Curve2D" id=4]
+[sub_resource type="Curve2D" id=3]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -143.294, 11.7505, 0, 0, 0, 0, 132.759, 11.7505, 0, 0, 0, 0, 132.759, 28.6517, 0, 0, 0, 0, -145.172, 34.2855, 0, 0, 0, 0, -143.294, 11.7505 )
 }
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 41.2171, 74.6669 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 14.4598, 64.5604 )
 
 [node name="BeforeTheEnd" type="Node2D"]
 
@@ -124,7 +128,7 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="LoadingZone"]
 modulate = Color( 0.72549, 0.705882, 0.560784, 1 )
 self_modulate = Color( 0.780392, 0.756863, 0.654902, 1 )
-material = SubResource( 3 )
+material = SubResource( 2 )
 position = Vector2( 298.038, 578.591 )
 rotation = 3.14121
 scale = Vector2( 3.04432, 0.433877 )
@@ -182,7 +186,7 @@ oscillation_angle = 0.2
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2( 969.005, 326.758 )
-curve = SubResource( 4 )
+curve = SubResource( 3 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2( -143.294, 11.7505 )
@@ -197,6 +201,13 @@ position = Vector2( 929.498, 568.267 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IdesDetector"]
 position = Vector2( 5.37939, 8.1225 )
+shape = SubResource( 4 )
+
+[node name="DialogTrigger" parent="." instance=ExtResource( 16 )]
+position = Vector2( 1024.34, 574.893 )
+bbcode_dialog = "We meet the light of freedom, my friend."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTrigger"]
 shape = SubResource( 5 )
 [connection signal="logged_bbcode" from="Ides" to="HUD" method="_on_Ides_logged_bbcode"]
 [connection signal="scan_progress_changed" from="Ides" to="HUD" method="_on_Ides_scan_progress_changed"]

@@ -223,7 +223,7 @@ scale = Vector2( 0.120001, 0.120001 )
 
 [node name="LoadingZone" parent="." instance=ExtResource( 12 )]
 editor/display_folded = true
-position = Vector2( 1190.25, 669.396 )
+position = Vector2( 1238.08, 667.545 )
 scale = Vector2( 7.28, 3.52 )
 scene_path = "res://levels/BruceRoom.tscn"
 

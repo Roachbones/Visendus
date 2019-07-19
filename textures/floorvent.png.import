@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/checkbox_checked.png-d52d528e3cd014444614f03082fe5b81.stex"
+path="res://.import/floorvent.png-5a1c4e66be0c455deedff3060382c72b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/gui/checkbox_checked.png"
-dest_files=[ "res://.import/checkbox_checked.png-d52d528e3cd014444614f03082fe5b81.stex" ]
+source_file="res://textures/floorvent.png"
+dest_files=[ "res://.import/floorvent.png-5a1c4e66be0c455deedff3060382c72b.stex" ]
 
 [params]
 

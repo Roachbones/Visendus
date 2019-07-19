@@ -1,8 +1,11 @@
 extends Area2D
 
 export(String, FILE, "*.tscn") var scene_path
+export var disabled = false
 
 func _on_LoadingZone_body_entered(body):
+	if disabled:
+		return
 	if not scene_path:
 		print("scene_path not set for ", name)
 		return
@@ -13,3 +16,6 @@ func _on_LoadingZone_body_entered(body):
 			$"/root/SceneTransition".goto_scene(scene_path)
 		else:
 			get_tree().change_scene(scene_path)
+
+func enable():
+	disabled = false

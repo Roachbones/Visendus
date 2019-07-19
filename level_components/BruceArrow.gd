@@ -10,4 +10,9 @@ func _ready():
 
 func _process(delta):
 	sum_delta += delta
-	position = base_position + Vector2(0, sin(sum_delta * speed) * magnitude)
+	position = base_position + Vector2(0, sin(sum_delta * speed) * magnitude).rotated(rotation)
+
+func make_visible():
+	visible = true
+func make_invisible():
+	visible = false

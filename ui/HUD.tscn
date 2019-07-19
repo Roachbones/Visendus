@@ -1,14 +1,13 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://ui/HUD.gd" type="Script" id=1]
-[ext_resource path="res://TextureProgress_old.tscn" type="PackedScene" id=2]
-[ext_resource path="res://fonts/Courier_New_Bold_headers.tres" type="DynamicFont" id=3]
-[ext_resource path="res://other_resources/styleboxflat.tres" type="StyleBox" id=4]
-[ext_resource path="res://fonts/Courier_New_Bold.tres" type="DynamicFont" id=5]
-[ext_resource path="res://fonts/Courier_New.tres" type="DynamicFont" id=6]
-[ext_resource path="res://ui/RestartLevelButton.gd" type="Script" id=7]
-[ext_resource path="res://fonts/Courier_New_Bold_timer.tres" type="DynamicFont" id=8]
-[ext_resource path="res://ui/TimeLabel.gd" type="Script" id=9]
+[ext_resource path="res://fonts/Courier_New_Bold_headers.tres" type="DynamicFont" id=2]
+[ext_resource path="res://other_resources/styleboxflat.tres" type="StyleBox" id=3]
+[ext_resource path="res://fonts/Courier_New_Bold.tres" type="DynamicFont" id=4]
+[ext_resource path="res://fonts/Courier_New.tres" type="DynamicFont" id=5]
+[ext_resource path="res://ui/RestartLevelButton.gd" type="Script" id=6]
+[ext_resource path="res://fonts/Courier_New_Bold_timer.tres" type="DynamicFont" id=7]
+[ext_resource path="res://ui/TimeLabel.gd" type="Script" id=8]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.290196, 0.529412, 0.737255, 1 )
@@ -63,13 +62,6 @@ custom_constants/separation = 0
 [node name="CenterContainer" type="CenterContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
 margin_right = 513.0
 margin_bottom = 31.47
-
-[node name="TextureProgress" parent="ColorRect/MarginContainer/VBoxContainer/CenterContainer" instance=ExtResource( 2 )]
-visible = false
-margin_left = 128.0
-margin_top = -17.0
-margin_right = 384.0
-margin_bottom = 47.0
 
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect/MarginContainer/VBoxContainer/CenterContainer"]
 margin_left = 56.0
@@ -127,7 +119,7 @@ margin_top = 403.0
 margin_right = 513.0
 margin_bottom = 440.0
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 2 )
 text = "SYSTEM LOG"
 align = 1
 
@@ -145,9 +137,9 @@ margin_bottom = 174.0
 rect_min_size = Vector2( 496, 174 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/normal = ExtResource( 4 )
-custom_fonts/bold_font = ExtResource( 5 )
-custom_fonts/normal_font = ExtResource( 6 )
+custom_styles/normal = ExtResource( 3 )
+custom_fonts/bold_font = ExtResource( 4 )
+custom_fonts/normal_font = ExtResource( 5 )
 bbcode_enabled = true
 bbcode_text = "Prototype 15 online.
 "
@@ -167,7 +159,7 @@ margin_top = 626.0
 margin_right = 513.0
 margin_bottom = 663.0
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 2 )
 text = "TRANSMISSION LOG"
 align = 1
 
@@ -185,9 +177,9 @@ margin_bottom = 315.99
 rect_min_size = Vector2( 496, 315.99 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/normal = ExtResource( 4 )
-custom_fonts/bold_font = ExtResource( 5 )
-custom_fonts/normal_font = ExtResource( 6 )
+custom_styles/normal = ExtResource( 3 )
+custom_fonts/bold_font = ExtResource( 4 )
+custom_fonts/normal_font = ExtResource( 5 )
 bbcode_enabled = true
 bbcode_text = "Incoming transmission from BRUCE.
 "
@@ -208,28 +200,29 @@ margin_right = 513.0
 margin_bottom = 1058.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/CenterContainer5"]
-margin_left = 16.0
-margin_right = 497.0
+margin_left = 32.0
+margin_right = 481.0
 margin_bottom = 58.0
-custom_constants/separation = 77
+rect_min_size = Vector2( 0, 57.45 )
+custom_constants/separation = 39
 
 [node name="RestartLevelButton" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/CenterContainer5/HBoxContainer"]
 pause_mode = 2
-margin_right = 194.0
+margin_right = 200.0
 margin_bottom = 58.0
-rect_min_size = Vector2( 150, 40 )
+rect_min_size = Vector2( 200, 40 )
 focus_mode = 0
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 4 )
 enabled_focus_mode = 0
 text = "restart level"
-script = ExtResource( 7 )
+script = ExtResource( 6 )
 
 [node name="TimeLabel" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/CenterContainer5/HBoxContainer"]
-margin_left = 271.0
-margin_right = 481.0
+margin_left = 239.0
+margin_right = 449.0
 margin_bottom = 58.0
 rect_min_size = Vector2( 100.8, 0 )
-custom_fonts/font = ExtResource( 8 )
+custom_fonts/font = ExtResource( 7 )
 text = "0:00.00"
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 [connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/CenterContainer5/HBoxContainer/RestartLevelButton" to="ColorRect/MarginContainer/VBoxContainer/CenterContainer5/HBoxContainer/RestartLevelButton" method="_on_Button_pressed"]

@@ -47,4 +47,3 @@ func append_log(bbcode: String):
 
 func report_time():
 	$"/root/Options".speedrun_segment_times[get_tree().current_scene.name] = time_label.sum_delta
-
