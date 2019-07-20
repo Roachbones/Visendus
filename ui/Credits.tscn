@@ -2,7 +2,7 @@
 
 [ext_resource path="res://fonts/Courier_New_Italics.tres" type="DynamicFont" id=1]
 [ext_resource path="res://fonts/Courier_New.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Credits.gd" type="Script" id=3]
+[ext_resource path="res://ui/Credits.gd" type="Script" id=3]
 
 [node name="Credits" type="RichTextLabel"]
 margin_right = 898.0
@@ -37,6 +37,35 @@ Where can you find us??? RIGHT HERE
 	Dero
 		Twitter: [url=https://twitter.com/inhumanrobot]@inhumanrobot[/url]
 		Instagram: [url=https://www.instagram.com/inhumanrobot/]@inhumanrobot[/url]
+
+Thank you for playing our game."
+text = "Made by Vivian and Dero for My First Game Jam: Summer 2019
+
+Sources used:
+	Freesound.org
+		Acoustic guitar - frankyboomer
+		Alert - flowerdove2168
+		Cavernous drone - glueissobar
+		Drone dark emptiness - ceich93
+		Dark ambience - patricklieberkind
+		London underground train interior - inspectorj
+		Low resonant dark tone - Robinhood76	
+		Low pitch drone plus - benbonecan
+		Low pitch drone 1-3 - benbonecan	
+		Pencil sharpener with crank - roivasugo
+		Sorpresa 2 - poderarcano
+		Whispers - thanvannispen
+		Windchime tolling - inspectorj
+	Dig.ccmixter.org
+		Excessive exposure - acclivity
+		Eyes Closed - mwic
+
+Where can you find us??? RIGHT HERE
+	Vivian
+		https://rose.systems/
+	Dero
+		Twitter: @inhumanrobot
+		Instagram: @inhumanrobot
 
 Thank you for playing our game."
 script = ExtResource( 3 )
