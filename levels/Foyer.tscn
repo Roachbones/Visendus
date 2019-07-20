@@ -272,7 +272,7 @@ position = Vector2( 336.811, 590.345 )
 
 [node name="DialogTrigger" parent="." instance=ExtResource( 6 )]
 position = Vector2( 315.663, 476 )
-bbcode_dialog = "The soft glow of the lasers is enough to sustain these plants. Of course, it helps that they are made of plastic."
+bbcode_dialog = "The soft glow of lasers is enough to sustain these plants. Of course, it helps that they are made of plastic."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTrigger"]
 position = Vector2( 7.59998, -94.0497 )
