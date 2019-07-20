@@ -26,7 +26,7 @@ radius = 128.047
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 65.0436, 152.251 )
 
-[node name="IntroducingDoors" instance=ExtResource( 1 )]
+[node name="IntroducingDoors" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
 [node name="TileMap" parent="." index="0"]
